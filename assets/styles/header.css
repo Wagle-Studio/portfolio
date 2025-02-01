@@ -45,8 +45,7 @@
 }
 
 .header__nav__item:first-child > a {
-  font-family: "Poppins", serif;
-  font-weight: 600;
+  font-family: "Poppins-SemiBold", serif;
   font-size: 24px;
 
   @media screen and (min-width: 460px) {
@@ -61,8 +60,7 @@
 
   @media screen and (min-width: 460px) {
     display: inline;
-    font-family: "Poppins", serif;
-    font-weight: 400;
+    font-family: "Poppins-Regular", serif;
     font-size: 18px;
   }
 }
