@@ -18,6 +18,9 @@
                 <li>
                     <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank">Profil Linkedin</a>
                 </li>
+                <li>
+                    <a href="https://github.com/Wagle-Studio" target="_blank">Profil Github</a>
+                </li>
             </ul>
         </nav>
     </div>

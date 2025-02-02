@@ -22,6 +22,7 @@ require_once "config.php";
     <link rel="stylesheet" href="./assets/styles/header.css">
     <link rel="stylesheet" href="./assets/styles/banner_process.css">
     <link rel="stylesheet" href="./assets/styles/banner_about.css">
+    <link rel="stylesheet" href="./assets/styles/banner_links.css">
     <link rel="stylesheet" href="./assets/styles/footer.css">
     <title>Portfolio Wolff Kévin développeur web fullstack indépendant</title>
     <meta name="description" content="Développeur web fullstack indépendant à Grenoble, je conçoit des applications web sur mesure pour optimiser les processus métiers des entreprises. Découvrez mon processus d'audit, de conception et de livraison pour des solutions numériques performantes.">
@@ -32,6 +33,7 @@ require_once "config.php";
     <main>
         <?php include_once PROJECT_ROOT_PATH . "/templates/banner_process.php" ?>
         <?php include_once PROJECT_ROOT_PATH . "/templates/banner_about.php" ?>
+        <?php include_once PROJECT_ROOT_PATH . "/templates/banner_links.php" ?>
     </main>
     <?php include_once PROJECT_ROOT_PATH . "/templates/footer.php" ?>
     <script src="./assets/scripts/animatable.js" type="module" defer></script>

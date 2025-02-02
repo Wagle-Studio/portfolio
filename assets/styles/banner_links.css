@@ -1,0 +1,25 @@
+.banner__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.banner__links > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  .banner__links > ul {
+    flex-direction: row;
+    justify-content: unset;
+  }
+}
+
+.banner__links > ul > li {
+  margin: 0 auto;
+}
