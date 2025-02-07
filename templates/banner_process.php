@@ -32,6 +32,6 @@
     </ul>
     <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank" class="button">
         <span>Parlons de votre projet</span>
-        <?php include PROJECT_ROOT_PATH . "/templates/components/icon_arrow.php" ?>
+        <?php include PROJECT_ROOT_PATH . "/templates/components/icon_linkedin.php" ?>
     </a>
 </section>

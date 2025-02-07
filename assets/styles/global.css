@@ -61,7 +61,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: 128px;
+  gap: 194px;
 }
 
 h1 {
@@ -135,7 +135,7 @@ h3 {
 
 .button.small {
   font-size: 14px;
-  padding: 6px 18px;
+  padding: 6px 30px;
 }
 
 .button:hover {

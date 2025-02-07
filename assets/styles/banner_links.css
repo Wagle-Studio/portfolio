@@ -23,3 +23,8 @@
 .banner__links > ul > li {
   margin: 0 auto;
 }
+
+.banner__links > ul > li > svg {
+  width: 18px;
+  height: 18px;
+}

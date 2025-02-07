@@ -24,8 +24,8 @@ require_once "config.php";
     <link rel="stylesheet" href="./assets/styles/banner_about.css">
     <link rel="stylesheet" href="./assets/styles/banner_links.css">
     <link rel="stylesheet" href="./assets/styles/footer.css">
-    <title>Portfolio Wolff Kévin développeur web fullstack indépendant</title>
-    <meta name="description" content="Développeur web fullstack indépendant à Grenoble, je conçoit des applications web sur mesure pour optimiser les processus métiers des entreprises. Découvrez mon processus d'audit, de conception et de livraison pour des solutions numériques performantes.">
+    <title>Portfolio Wolff Kévin développeur web indépendant</title>
+    <meta name="description" content="Développeur web indépendant à Grenoble, je conçoit des applications web sur mesure pour optimiser les processus métiers des entreprises. Découvrez mon processus d'audit, de conception et de livraison pour des solutions numériques performantes.">
 </head>
 
 <body>

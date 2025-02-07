@@ -1,6 +1,6 @@
 <section class="banner__about" id="about">
     <h2>À propos</h2>
-    <p>Je m'appelle Kévin, je suis développeur web fullstack indépendant, spécialisé dans la création d'applications web métiers. Mon objectif est de fournir des solutions numériques sur mesure qui aident les entreprises à optimiser leur processus.</p>
+    <p>Je m'appelle Kévin, je suis développeur web indépendant, spécialisé dans la création d'applications web métiers. Mon objectif est de fournir des solutions numériques sur mesure qui aident les entreprises à optimiser leur processus.</p>
     <div class="banner__about__bento animatable_top">
         <div class="banner__about__bento__item">
             <h3>Expériences professionnelles</h3>
@@ -8,7 +8,10 @@
                 <p>J’ai contribué au développement de plusieurs applications métiers ainsi qu’au backend de sites institutionnels au sein d’agences grenobloises. Ces projets m’ont permis de renforcer mes compétences en conception technique tout en répondant aux exigences spécifiques de chaque secteur.</p>
                 <p>En janvier 2023, j'ai élargi mes horizons en devenant formateur en développement web. Cette expérience m’a permis de collaborer avec des apprenants aux parcours variés, de partager mes connaissances et d’accompagner leur progression, tout en développant mes compétences en gestion d’équipe et en pédagogie.</p>
             </div>
-            <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank" class="button small">Mon parcours sur Linkedin</a>
+            <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank" class="button small">
+                <span>Mon parcours sur Linkedin</span>
+                <?php include PROJECT_ROOT_PATH . "/templates/components/icon_linkedin.php" ?>
+            </a>
         </div>
         <div class="banner__about__bento__item banner__slider">
             <div class="banner__slider__image banner__slider__image--selected" style="background-image: url('./public/images/profil_picture.webp');"></div>
@@ -39,7 +42,7 @@
                 <p>disponible</p>
             </div>
             <div class="banner__about__bento__item__content">
-                <p>J'interviens sur des missions variées en développement fullstack, avec une affinité particulière pour les problématiques backend.</p>
+                <p>J'interviens sur des missions variées en développement web, avec une affinité particulière pour les problématiques backend.</p>
                 <p>Ouvert à des collaborations de courte ou longue durée, je suis prêt à contribuer à la réussite de vos projets.</p>
             </div>
         </div>
