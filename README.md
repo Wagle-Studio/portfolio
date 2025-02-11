@@ -10,4 +10,4 @@ Portfolio sans prétention 🔗 [instance en ligne](https://wolff-kevin.fr/).
 
 Aucun travail n'a été réalisé pour le SEO, ce canal d'acquisition n'étant pas une priorité pour l'instant.
 
-![Résultats Lighthouse](./public/images/lighthouse_results.gif)
+![Résultats Lighthouse](./public/images/lighthouse_results.gif) 
