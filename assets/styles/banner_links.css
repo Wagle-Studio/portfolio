@@ -1,22 +1,27 @@
 .banner__links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1280px;
+  padding: 64px 48px;
   margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .banner__links > ul {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 32px;
   padding: 0;
   list-style: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   .banner__links > ul {
     flex-direction: row;
-    justify-content: unset;
+    flex-wrap: wrap;
   }
 }
 
@@ -27,4 +32,14 @@
 .banner__links > ul > li > svg {
   width: 18px;
   height: 18px;
+}
+
+.banner__links > ul > li > a {
+  width: 145px;
+  justify-content: center;
+}
+
+.banner__links > ul > li > a .malt {
+  width: 24px;
+  height: 24px;
 }

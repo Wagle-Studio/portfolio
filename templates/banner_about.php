@@ -1,12 +1,12 @@
 <section class="banner__about" id="about">
     <h2>À propos</h2>
-    <p>Je m'appelle Kévin, je suis développeur web indépendant, spécialisé dans la création d'applications web métiers. Mon objectif est de fournir des solutions numériques sur mesure qui aident les entreprises à optimiser leur processus.</p>
+    <p>Concepteur développeur web indépendant, j’accompagne les entreprises dans la conception et le développement d’applications métiers adaptées à leurs enjeux. Mon objectif est de fournir des solutions robustes et évolutives, en mettant l’accent sur la conception, la qualité et la performance.</p>
     <div class="banner__about__bento animatable_top">
         <div class="banner__about__bento__item">
             <h3>Expériences professionnelles</h3>
             <div class="banner__about__bento__item__content">
-                <p>J’ai contribué au développement de plusieurs applications métiers ainsi qu’au backend de sites institutionnels au sein d’agences grenobloises. Ces projets m’ont permis de renforcer mes compétences en conception technique tout en répondant aux exigences spécifiques de chaque secteur.</p>
-                <p>En janvier 2023, j'ai élargi mes horizons en devenant formateur en développement web. Cette expérience m’a permis de collaborer avec des apprenants aux parcours variés, de partager mes connaissances et d’accompagner leur progression, tout en développant mes compétences en gestion d’équipe et en pédagogie.</p>
+                <p>J’ai contribué au développement de plusieurs applications métiers ainsi qu’au backend de sites institutionnels au sein d’agences grenobloises. Ces expériences m’ont permis de renforcer mes compétences en conception technique tout en évoluant au sein d’équipes de développement où la collaboration et le respect des délais étaient essentiels.</p>
+                <p>En janvier 2023, j'ai élargi mes horizons en devenant formateur en développement web. Cette expérience m’a permis de collaborer avec des apprenants aux parcours variés, de partager mes connaissances et d’accompagner leur progression, en alliant coordination, planification et transmission des bonnes pratiques.</p>
             </div>
             <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank" class="button small">
                 <span>Mon parcours sur Linkedin</span>

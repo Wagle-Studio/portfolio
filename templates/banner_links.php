@@ -1,4 +1,5 @@
 <section class="banner__links animatable_bottom">
+    <h2>Mes réseaux</h2>
     <ul>
         <li>
             <a href="https://www.linkedin.com/in/wolff-kevin/" target="_blank" class="button">
@@ -10,6 +11,12 @@
             <a href="https://github.com/Wagle-Studio" target="_blank" class="button">
                 <span>Github</span>
                 <?php include PROJECT_ROOT_PATH . "/templates/components/icon_github.php" ?>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.malt.fr/profile/kevinwolff" target="_blank" class="button">
+                <span>Malt</span>
+                <?php include PROJECT_ROOT_PATH . "/templates/components/icon_malt.php" ?>
             </a>
         </li>
         <li>

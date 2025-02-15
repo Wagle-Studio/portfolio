@@ -116,10 +116,10 @@ h3 {
   border-radius: 30px;
   box-sizing: border-box;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
-  transition: 150ms linear;
+  transition: 110ms linear;
 
   span {
-    transition: 150ms linear;
+    transition: 110ms linear;
   }
 
   svg {

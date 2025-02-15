@@ -4,7 +4,7 @@
             <h3>Kévin Wolff</h3>
             <div>
                 <p>contact@wolff-kevin.fr</p>
-                <p>SIRET : <span>84132048400022</span></p>
+                <p>SIRET : <span>84132048400030</span></p>
                 <p>TVA : <span>FR27841320484</span></p>
                 <p>TVA non applicable Org. Form.</p>
             </div>
