@@ -1,31 +1,28 @@
 import "./Header.scss";
+import { headerData } from "../../data/header";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header" role="banner">
       <div className="header__brand">
-        <p className="brand">Kévin Wolff</p>
+        <p className="brand">{headerData.brand.name}</p>
       </div>
-      <nav>
-        <ul className="header__nav">
-          <li>
-            <a className="nav_item" href="#">
-              Méthode
-            </a>
-          </li>
-          <li>
-            <a className="nav_item" href="#">
-              À propos
-            </a>
-          </li>
-          <li>
-            <a href="#" className="button">
-              Contact
-            </a>
-          </li>
+      <nav aria-label="Navigation principale">
+        <ul className="header__nav" role="list">
+          {headerData.navigation.map((item, index) => (
+            <li key={index}>
+              <a 
+                href={item.href} 
+                className={item.className}
+                aria-label={item.text}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
