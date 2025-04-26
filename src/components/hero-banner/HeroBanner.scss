@@ -1,0 +1,30 @@
+.hero_banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: var(--view-max-width);
+  margin: 0 auto;
+  padding: 0 var(--view-horizontal-mobile-padding);
+  background: url('./../../assets/backgrounds/hero_banner_background.svg') center no-repeat;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    text-align: center;
+
+    &__subtitle {
+      max-width: var(--bloc-max-width);
+      font-size: var(--font-size-medium);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero_banner {
+    padding: 0 var(--view-horizontal-desktop-padding);
+  }
+}

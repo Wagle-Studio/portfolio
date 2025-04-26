@@ -1,0 +1,104 @@
+.MVP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+  width: 100%;
+  max-width: var(--view-max-width);
+  margin: 0 auto;
+  padding: 0 var(--view-horizontal-mobile-padding);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    max-width: var(--bloc-max-width);
+    text-align: center;
+
+    &__subtitles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      width: 100%;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: var(--bloc-max-width);
+    padding: var(--space-3);
+    border-radius: var(--border-radius-base);
+    background: var(--primary-65);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      width: 100%;
+    }
+
+    &__wrapper__tag {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+      background-color: var(--white);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--border-radius-large);
+      text-align: center;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-large);
+    }
+  }
+
+  &__punchline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+
+    &__item {
+      padding: var(--space-2) var(--space-3);
+      width: 100%;
+      background-color: var(--black);
+      text-align: center;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-large);
+      transform: skew(-20deg);
+
+      p {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MVP {
+    padding: 0 var(--view-horizontal-desktop-padding);
+
+    &__tags {
+      &__wrapper {
+        flex-direction: row;
+      }
+
+      &__wrapper__tag {
+        max-width: 446.5px;
+      }
+    }
+
+    &__punchline {
+      max-width: 750px;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

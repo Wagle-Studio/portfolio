@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: var(--view-max-width);
+  margin: 0 auto;
+  padding: 24px var(--view-horizontal-mobile-padding);
+
+  &__nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 24px var(--view-horizontal-desktop-padding);
+
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-3);
+
+      &__subtitle {
+        max-width: var(--bloc-max-width);
+        font-size: var(--font-size-medium);
+      }
+    }
+  }
+}

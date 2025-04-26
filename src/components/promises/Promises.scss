@@ -1,0 +1,74 @@
+.promises {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-15);
+  width: 100%;
+  max-width: var(--view-max-width);
+  margin: 0 auto;
+  padding: 0 var(--view-horizontal-mobile-padding);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    max-width: var(--bloc-max-width);
+    padding: var(--space-3) 0 var(--space-5);
+    text-align: center;
+    background: url("./../../assets/backgrounds/promises_background.svg") center
+      no-repeat;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    row-gap: var(--space-10);
+    width: 100%;
+
+    &__card {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, max-content);
+      row-gap: var(--space-2);
+
+      &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-2);
+
+        svg {
+          width: 35px;
+          height: 35px;
+          padding: 6px;
+          color: var(--white);
+          background-color: var(--primary-65);
+          border-radius: var(--border-radius-large);
+        }
+      }
+
+      &__body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        padding: var(--space-2);
+        margin-left: var(--space-2);
+        border-left: 3px solid var(--gray-deeper);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .promises {
+    padding: 0 var(--view-horizontal-desktop-padding);
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, max-content);
+      gap: var(--space-10);
+    }
+  }
+}
