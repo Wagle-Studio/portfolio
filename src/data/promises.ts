@@ -7,6 +7,11 @@ export const promisesData = {
   title: "Pourquoi me faire confiance ?",
   description:
     "Concevoir une application sur mesure, ce n'est pas seulement de la programmation. C'est d'abord une question d'écoute, de compréhension métier, et de collaboration.",
+  strongParts: [
+    "une question d'écoute",
+    "compréhension métier",
+    "collaboration",
+  ],
   promises: [
     {
       icon: Building,

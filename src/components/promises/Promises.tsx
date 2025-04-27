@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { promisesData } from "./../../data/promises";
+import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,15 @@ const Promises = () => {
         <h2 id="promises-title" className="heading_2">
           {promisesData.title}
         </h2>
-        <p className="paragraph">{promisesData.description}</p>
+        <p
+          className="paragraph"
+          dangerouslySetInnerHTML={{
+            __html: strongPartsFormater(
+              promisesData.description,
+              promisesData.strongParts
+            ),
+          }}
+        />
       </header>
       <ul
         className="promises__list"

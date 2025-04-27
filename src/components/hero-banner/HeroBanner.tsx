@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { heroBannerData } from "./../../data/hero-banner";
+import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,16 +41,6 @@ const HeroBanner = () => {
     animateElement(CTARef.current, { fromY: 30, delay: 0.3 });
   }, []);
 
-  const formatSubtitle = (text: string, strongParts: string[]) => {
-    let formattedText = text;
-    strongParts.forEach((part) => {
-      const escapedPart = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const regex = new RegExp(escapedPart, "g");
-      formattedText = formattedText.replace(regex, `<strong>${part}</strong>`);
-    });
-    return formattedText;
-  };
-
   return (
     <section className="hero_banner" aria-labelledby="hero-title">
       <div className="hero_banner__body">
@@ -62,7 +53,7 @@ const HeroBanner = () => {
           ref={subtitleRef}
           className="hero_banner__body__subtitle paragraph"
           dangerouslySetInnerHTML={{
-            __html: formatSubtitle(
+            __html: strongPartsFormater(
               heroBannerData.subtitle.text,
               heroBannerData.subtitle.strongParts
             ),

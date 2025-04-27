@@ -92,9 +92,13 @@
   --font-size-large: 1.5rem;
   --font-size-extra: 2rem;
 
-  --font-size-heading-1: 3rem;
-  --font-size-heading-2: 2.5rem;
-  --font-size-heading-3: 1.75rem;
+  --font-size-desktop-heading-1: 3rem;
+  --font-size-desktop-heading-2: 2.5rem;
+  --font-size-desktop-heading-3: 1.75rem;
+
+  --font-size-mobile-heading-1: 2.25rem;
+  --font-size-mobile-heading-2: 2rem;
+  --font-size-mobile-heading-3: 1.5rem;
 
   --font-line-height-button: 50%;
   --font-line-height-large: 135%;
@@ -128,21 +132,21 @@ ol {
 
 .heading_1 {
   font-family: var(--font-primary-bold);
-  font-size: var(--font-size-heading-1);
+  font-size: var(--font-size-mobile-heading-1);
   line-height: var(--font-line-height-large);
   color: var(--black);
 }
 
 .heading_2 {
   font-family: var(--font-primary-semi-bold);
-  font-size: var(--font-size-heading-2);
+  font-size: var(--font-size-mobile-heading-2);
   line-height: var(--font-line-height-large);
   color: var(--black);
 }
 
 .heading_3 {
   font-family: var(--font-primary-semi-bold);
-  font-size: var(--font-size-heading-3);
+  font-size: var(--font-size-mobile-heading-3);
   line-height: var(--font-line-height-large);
   color: var(--black);
 }
@@ -189,5 +193,19 @@ ol {
     border: 1px solid var(--gray);
     color: var(--black);
     box-shadow: var(--card-shadow);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heading_1 {
+    font-size: var(--font-size-desktop-heading-1);
+  }
+
+  .heading_2 {
+    font-size: var(--font-size-desktop-heading-2);
+  }
+
+  .heading_3 {
+    font-size: var(--font-size-desktop-heading-3);
   }
 }
