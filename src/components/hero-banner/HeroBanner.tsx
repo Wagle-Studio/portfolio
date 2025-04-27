@@ -1,8 +1,8 @@
+import "./HeroBanner.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import "./HeroBanner.scss";
-import { heroBannerData } from "../../data/hero-banner";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { heroBannerData } from "./../../data/hero-banner";
 
 gsap.registerPlugin(ScrollTrigger);
 

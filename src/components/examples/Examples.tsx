@@ -1,8 +1,8 @@
+import "./Examples.scss";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Examples.scss";
-import { examplesData } from "../../data/examples";
+import { examplesData } from "./../../data/examples";
 
 gsap.registerPlugin(ScrollTrigger);
 

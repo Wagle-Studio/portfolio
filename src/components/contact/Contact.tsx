@@ -1,8 +1,8 @@
+import "./Contact.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Contact.scss";
-import { contactData } from "../../data/contact";
+import { contactData } from "./../../data/contact";
 
 gsap.registerPlugin(ScrollTrigger);
 

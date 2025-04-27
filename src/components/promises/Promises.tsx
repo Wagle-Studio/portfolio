@@ -1,8 +1,8 @@
+import "./Promises.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Promises.scss";
-import { promisesData } from "../../data/promises";
+import { promisesData } from "./../../data/promises";
 
 gsap.registerPlugin(ScrollTrigger);
 

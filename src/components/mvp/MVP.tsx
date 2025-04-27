@@ -1,8 +1,8 @@
+import "./MVP.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./MVP.scss";
-import { mvpData } from "../../data/mvp";
+import { mvpData } from "./../../data/mvp";
 
 gsap.registerPlugin(ScrollTrigger);
 
