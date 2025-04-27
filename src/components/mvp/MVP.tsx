@@ -1,38 +1,58 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./MVP.scss";
 import { mvpData } from "../../data/mvp";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const MVP = () => {
+  const tagsRef = useRef<HTMLElement[]>([]);
+
+  useEffect(() => {
+    if (tagsRef.current.length > 0) {
+      gsap.fromTo(
+        tagsRef.current,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: tagsRef.current[0],
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <section className="MVP" aria-labelledby="mvp-title">
       <header className="MVP__header">
-        <h2 id="mvp-title" className="heading_2">{mvpData.title}</h2>
+        <h2 id="mvp-title" className="heading_2">
+          {mvpData.title}
+        </h2>
         <div className="MVP__header__subtitles">
           {mvpData.subtitles.map((subtitle, index) => (
-            <p key={index} className="paragraph">{subtitle}</p>
+            <p key={index} className="paragraph">
+              {subtitle}
+            </p>
           ))}
         </div>
       </header>
-      <div className="MVP__tags" role="list" aria-label="Avantages du MVP">
-        {mvpData.tags.map((tagGroup, groupIndex) => (
-          <div key={groupIndex} className="MVP__tags__wrapper" role="listitem">
-            {tagGroup.map((tag, tagIndex) => (
-              <p 
-                key={tagIndex} 
-                className="MVP__tags__wrapper__tag paragraph"
-                role="listitem"
-              >
-                {tag}
-              </p>
-            ))}
-          </div>
-        ))}
-      </div>
-      <div className="MVP__punchline" role="list" aria-label="Punchlines">
+      <div className="MVP__punchline" aria-label="Punchlines">
         {mvpData.punchlines.map((punchline, index) => (
-          <div 
-            key={index} 
+          <div
+            ref={(el) => {
+              if (el) tagsRef.current[index] = el;
+            }}
+            key={index}
             className="MVP__punchline__item"
-            role="listitem"
           >
             <p className="paragraph">{punchline}</p>
           </div>

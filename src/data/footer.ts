@@ -11,19 +11,19 @@ export const footerData = {
   navigation: [
     {
       text: "Haut de la page",
-      href: "#"
+      href: "#app"
     },
     {
       text: "Méthode",
-      href: "#"
+      href: "#process"
     },
     {
       text: "À propos",
-      href: "#"
+      href: "#about"
     },
     {
       text: "Contact",
-      href: "#"
+      href: "#contact"
     }
   ]
 }; 

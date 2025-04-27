@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="app">
+    <div id="app" className="app">
       <div className="app__heading">
         <Header />
         <HeroBanner />

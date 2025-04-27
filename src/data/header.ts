@@ -1,22 +1,23 @@
 export const headerData = {
   brand: {
-    name: "Kévin Wolff"
+    name: "Kévin Wolff",
+    href: "#app",
   },
   navigation: [
     {
       text: "Méthode",
-      href: "#",
-      className: "nav_item"
+      href: "#process",
+      className: "nav_item",
     },
     {
       text: "À propos",
-      href: "#",
-      className: "nav_item"
+      href: "#about",
+      className: "nav_item",
     },
     {
       text: "Contact",
-      href: "#",
-      className: "button"
-    }
-  ]
-}; 
+      href: "#contact",
+      className: "button",
+    },
+  ],
+};

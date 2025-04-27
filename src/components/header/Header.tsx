@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="header" role="banner">
       <div className="header__brand">
-        <p className="brand">{headerData.brand.name}</p>
+        <a href={headerData.brand.href} className="brand">{headerData.brand.name}</a>
       </div>
       <nav aria-label="Navigation principale">
         <ul className="header__nav" role="list">

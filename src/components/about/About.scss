@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
-  padding: 0 var(--view-horizontal-mobile-padding);
+  padding: var(--space-5) var(--view-horizontal-mobile-padding);
 
   &__header {
     display: flex;
@@ -49,6 +49,12 @@
       &__header {
         display: flex;
         flex-direction: column;
+        padding-left: var(--space-2);
+        border-left: 5px solid var(--primary-65);
+
+        > p {
+          color: var(--black);
+        }
       }
 
       &__body {
@@ -64,7 +70,7 @@
   .about {
     background: url("./../../assets/backgrounds/about_background.svg") center
       no-repeat;
-    background-size: contain;
+    background-size: cover;
 
     &__card {
       grid-template-columns: max-content 1fr;
@@ -92,7 +98,7 @@
 
 @media screen and (min-width: 768px) {
   .about {
-    padding: 0 var(--view-horizontal-desktop-padding);
+    padding: var(--space-7) var(--view-horizontal-desktop-padding) var(--space-20);
 
     &__card {
       &__pictures {

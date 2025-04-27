@@ -1,12 +1,17 @@
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: var(--space-8);
+  align-items: center;
+  gap: var(--space-2);
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
   padding: 24px var(--view-horizontal-mobile-padding);
+
+  &__brand {
+    padding-right: var(--space-2);
+    border-right: 3px solid var(--primary-65);
+  }
 
   &__nav {
     display: none;
@@ -17,11 +22,20 @@
   .header {
     padding: 24px var(--view-horizontal-desktop-padding);
 
+    nav {
+      flex-grow: 1;
+    }
+
     &__nav {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: var(--space-3);
+      width: 100%;
+
+      > li:last-of-type {
+        margin-left: auto;
+      }
 
       &__subtitle {
         max-width: var(--bloc-max-width);

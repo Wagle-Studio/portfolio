@@ -32,6 +32,7 @@
   --primary: #1b4965;
   --primary-85: #426b89;
   --primary-65: #678fae;
+  --secondary: #e8a93a;
 
   --body: #f7fafc;
   --black: #1e1e1e;
@@ -67,6 +68,7 @@
   --space-12: 96px;
   --space-15: 120px;
   --space-20: 160px;
+  --space-30: 240px;
   --space-40: 320px;
 
   --font-primary: "Poppins-Regular", sans-serif;
@@ -110,6 +112,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -141,13 +144,13 @@ ol {
 
 .brand {
   font-family: var(--font-primary-semi-bold);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
   color: var(--black);
+  text-decoration: none;
 }
 
 .nav_item {
-  font-family: var(--font-primary-semi-bold);
-  font-size: var(--font-size-base);
+  font-family: var(--font-primary-medium);
   letter-spacing: var(--font-letter-spacing-medium);
   color: var(--black);
   text-decoration: none;
@@ -167,11 +170,19 @@ ol {
   margin: 0;
   background-color: var(--primary);
   border-radius: var(--border-radius-large);
-  border: none;
+  border: 1px solid var(--gray-lighter);
   color: var(--white);
   font-family: var(--font-primary-semi-bold);
   font-size: var(--font-size-base);
   letter-spacing: var(--font-letter-spacing-medium);
   line-height: var(--font-line-height-button);
   text-decoration: none;
+  // transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    color: var(--black);
+    box-shadow: var(--card-shadow);
+  }
 }

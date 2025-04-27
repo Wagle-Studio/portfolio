@@ -12,6 +12,6 @@ export const heroBannerData = {
   },
   cta: {
     text: "Découvrez comment",
-    href: "#"
+    href: "#process"
   }
 }; 

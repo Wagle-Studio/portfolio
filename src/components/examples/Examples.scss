@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
-  padding: 0 var(--view-horizontal-mobile-padding);
+  padding: var(--space-5) var(--view-horizontal-mobile-padding);
 
   &__header {
     display: flex;
@@ -35,6 +35,29 @@
       flex-direction: row;
       gap: var(--space-5);
       width: 100%;
+
+      > li:last-of-type {
+        article {
+          background-color: var(--primary);
+          border: 1px solid var(--primary);
+
+          h3,
+          p {
+            color: var(--white);
+          }
+
+          a {
+            background-color: var(--white);
+            color: var(--black);
+
+            &:hover {
+              background-color: var(--secondary);
+              border: 1px solid var(--secondary);
+              color: var(--white);
+            }
+          }
+        }
+      }
 
       &__card {
         display: flex;
@@ -65,6 +88,7 @@
       button {
         font-family: var(--font-primary-bold);
         font-size: var(--font-size-large);
+        cursor: pointer;
       }
     }
   }
@@ -72,7 +96,7 @@
 
 @media screen and (min-width: 768px) {
   .examples {
-    padding: 0 var(--view-horizontal-desktop-padding);
+    padding: var(--space-5) var(--view-horizontal-desktop-padding);
   }
 }
 

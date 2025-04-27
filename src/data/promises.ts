@@ -42,6 +42,6 @@ export const promisesData = {
   ],
   cta: {
     text: "Entrons en contact",
-    href: "#"
+    href: "#contact"
   }
 }; 
