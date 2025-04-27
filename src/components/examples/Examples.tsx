@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { examplesData } from "./../../data/examples";
+import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,9 +167,18 @@ const Examples = () => {
               >
                 <h3 className="heading_3">{card.title}</h3>
                 {card.paragraphs.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="paragraph">
-                    {paragraph}
-                  </p>
+                  <p
+                    key={pIndex}
+                    className="paragraph"
+                    dangerouslySetInnerHTML={{
+                      __html: strongPartsFormater(
+                        paragraph.text,
+                        "strongParts" in paragraph
+                          ? paragraph.strongParts
+                          : undefined
+                      ),
+                    }}
+                  />
                 ))}
                 {card.cta && (
                   <a href={card.cta.link} className="button">

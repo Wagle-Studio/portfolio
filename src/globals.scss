@@ -170,6 +170,10 @@ ol {
   font-size: var(--font-size-medium);
   line-height: var(--font-line-height-extra);
   color: var(--gray-deeper);
+
+  &--strong {
+    color: var(--primary);
+  }
 }
 
 .button {

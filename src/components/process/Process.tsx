@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { processData } from "./../../data/process";
+import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +38,15 @@ const Process = () => {
         <h2 id="process-title" className="heading_2">
           {processData.title}
         </h2>
-        <p className="paragraph">{processData.description}</p>
+        <p
+          className="paragraph"
+          dangerouslySetInnerHTML={{
+            __html: strongPartsFormater(
+              processData.description.text,
+              processData.description.strongParts
+            ),
+          }}
+        />
       </header>
       <ul
         className="process__list"
@@ -62,10 +71,17 @@ const Process = () => {
               </div>
               <div className="process__list__card__body">
                 <h3 className="heading_3">{step.title}</h3>
-                {step.paragraphs.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="paragraph">
-                    {paragraph}
-                  </p>
+                {step.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="paragraph"
+                    dangerouslySetInnerHTML={{
+                      __html: strongPartsFormater(
+                        paragraph.text,
+                        paragraph.strongParts
+                      ),
+                    }}
+                  />
                 ))}
               </div>
             </article>

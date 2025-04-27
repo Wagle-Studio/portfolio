@@ -4,16 +4,24 @@ import illustration_2 from "./../../public/assets/illustrations/illustration_2.p
 
 export const processData = {
   title: "Transformez vos besoins en solutions concrètes",
-  description:
-    "Chaque entreprise est unique. Pour concevoir une application métier pertinente, je commence par comprendre vos besoins et vos processus. Voici comment je procède, étape par étape.",
+  description: {
+    text: "Chaque entreprise est unique. Pour concevoir une application métier pertinente, je commence par comprendre vos besoins et vos processus. Voici comment je procède, étape par étape.",
+    strongParts: ["comprendre vos besoins et vos processus"],
+  },
   steps: [
     {
       illustration: illustration_0,
       illustrationAlt: "Illustration comprend votre activité",
       title: "Comprendre votre activité",
       paragraphs: [
-        "Chaque projet commence par une immersion dans votre métier : vos processus, vos contraintes et vos objectifs.",
-        "Grâce à une phase d'audit ciblée, je cartographie vos flux de travail pour identifier les leviers d'automatisation les plus pertinents.",
+        {
+          text: "Chaque projet commence par une immersion dans votre métier : vos processus, vos contraintes et vos objectifs.",
+          strongParts: ["immersion dans votre métier"],
+        },
+        {
+          text: "Grâce à une phase d'audit ciblée, je cartographie vos flux de travail pour identifier les leviers d'automatisation les plus pertinents.",
+          strongParts: ["identifier les leviers d'automatisation"],
+        },
       ],
     },
     {
@@ -21,8 +29,14 @@ export const processData = {
       illustrationAlt: "Illustration conception d'une solution adaptée",
       title: "Concevoir la solution adaptée",
       paragraphs: [
-        "Sur la base des échanges et de l'audit, je conçois une application intuitive, alignée sur vos usages métier.",
-        "Chaque interface est pensée pour être fonctionnelle, durable et simple à prendre en main, même sans bagage technique.",
+        {
+          text: "Sur la base des échanges et de l'audit, je conçois une application intuitive, alignée sur vos usages métier.",
+          strongParts: ["application intuitive, alignée sur vos usages"],
+        },
+        {
+          text: "Chaque interface est pensée pour être fonctionnelle, durable et simple à prendre en main, même sans bagage technique.",
+          strongParts: [],
+        },
       ],
     },
     {
@@ -30,8 +44,17 @@ export const processData = {
       illustrationAlt: "Illustration livraison, test et accompagnent",
       title: "Livrer, tester, accompagner",
       paragraphs: [
-        "La solution est livrée progressivement, avec des phases de test et de validation à chaque étape clé.",
-        "Vous êtes accompagné jusqu'à la mise en production, avec un suivi dédié pour garantir la qualité et l'évolutivité de l'outil.",
+        {
+          text: "La solution est livrée progressivement, avec des phases de test et de validation à chaque étape clé.",
+          strongParts: [
+            "livrée progressivement",
+            "validation à chaque étape clé",
+          ],
+        },
+        {
+          text: "Vous êtes accompagné jusqu'à la mise en production, avec un suivi dédié pour garantir la qualité et l'évolutivité de l'outil.",
+          strongParts: ["garantir la qualité et l'évolutivité"],
+        },
       ],
     },
   ],

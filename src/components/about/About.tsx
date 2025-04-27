@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { aboutData } from "./../../data/about";
+import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,16 +30,6 @@ const About = () => {
     }
   }, []);
 
-  const formatParagraph = (text: string, strongParts: string[]) => {
-    let formattedText = text;
-    strongParts.forEach((part) => {
-      const escapedPart = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const regex = new RegExp(escapedPart, "g");
-      formattedText = formattedText.replace(regex, `<strong>${part}</strong>`);
-    });
-    return formattedText;
-  };
-
   return (
     <section id="about" className="about" aria-labelledby="about-title">
       <header className="about__header">
@@ -64,7 +55,7 @@ const About = () => {
                 key={index}
                 className="paragraph"
                 dangerouslySetInnerHTML={{
-                  __html: formatParagraph(
+                  __html: strongPartsFormater(
                     paragraph.text,
                     paragraph.strongParts
                   ),
