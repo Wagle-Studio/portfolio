@@ -59,6 +59,7 @@
   --view-max-width: 1280px;
   --bloc-max-width: 950px;
 
+  --space-0: 4px;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -87,6 +88,7 @@
   --font-weight-large: 600;
   --font-weight-xlarge: 700;
 
+  --font-size-small: 0.9rem;
   --font-size-base: 1rem;
   --font-size-medium: 1.25rem;
   --font-size-large: 1.5rem;
@@ -106,6 +108,7 @@
 
   --font-letter-spacing-medium: 3%;
 
+  --border-radius-small: 8px;
   --border-radius-base: 8px;
   --border-radius-medium: 16px;
   --border-radius-large: 32px;
@@ -122,6 +125,11 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+.no_scroll {
+  overflow: hidden;
+  height: 100vh;
 }
 
 ul,

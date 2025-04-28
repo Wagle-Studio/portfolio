@@ -1,5 +1,5 @@
 import "./Examples.scss";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { examplesData } from "./../../data/examples";
@@ -7,54 +7,27 @@ import strongPartsFormater from "./../../utils/strongPartsFormater";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BREAKPOINTS = {
-  mobile: 576,
-  tablet: 768,
-  laptop: 992,
-  desktop: 1260,
-};
-
 const Examples = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState<number>(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [cardWidth, setCardWidth] = useState(0);
   const cardsRef = useRef<HTMLElement[]>([]);
+  const cardListGap = 40;
+  const cardOverlap = window.innerWidth >= 768 ? 20 : 0;
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+  const updateSizes = useCallback(() => {
+    if (cardsRef.current[0]) {
+      setCardWidth(cardsRef.current[0].offsetWidth);
+    }
   }, []);
 
-  const currentBreakpoint = useMemo(() => {
-    if (windowWidth < BREAKPOINTS.mobile) return "smallMobile";
-    if (windowWidth < BREAKPOINTS.tablet) return "mobile";
-    if (windowWidth < BREAKPOINTS.laptop) return "tablet";
-    if (windowWidth < BREAKPOINTS.desktop) return "laptop";
-    return "desktop";
-  }, [windowWidth]);
+  useEffect(() => {
+    window.addEventListener("resize", updateSizes);
+    updateSizes();
 
-  const cardOffset = useMemo(() => {
-    switch (currentBreakpoint) {
-      case "smallMobile":
-        return 397;
-      case "mobile":
-        return 381;
-      case "tablet":
-      case "laptop":
-        return 375;
-      case "desktop":
-        return 350;
-    }
-  }, [currentBreakpoint]);
+    return () => {
+      window.removeEventListener("resize", updateSizes);
+    };
+  }, [updateSizes]);
 
   useEffect(() => {
     if (cardsRef.current.length > 0) {
@@ -78,7 +51,7 @@ const Examples = () => {
     }
   }, []);
 
-  const resetCards = () => {
+  const resetCards = useCallback(() => {
     cardsRef.current.forEach((card) => {
       if (card) {
         gsap.to(card, {
@@ -89,9 +62,11 @@ const Examples = () => {
       }
     });
     setCurrentCardIndex(0);
-  };
+  }, []);
 
   const handleNext = () => {
+    if (!cardWidth) return;
+
     const nextIndex = currentCardIndex + 1;
 
     if (nextIndex >= cardsRef.current.length) {
@@ -99,7 +74,7 @@ const Examples = () => {
       return;
     }
 
-    const xOffset = -cardOffset * nextIndex;
+    const xOffset = -(cardWidth + cardListGap - cardOverlap) * nextIndex;
 
     cardsRef.current.forEach((card, index) => {
       if (card && index >= nextIndex) {
@@ -115,6 +90,8 @@ const Examples = () => {
   };
 
   const handlePrev = () => {
+    if (!cardWidth) return;
+
     const prevIndex = currentCardIndex - 1;
 
     if (prevIndex < 0) {
@@ -122,7 +99,7 @@ const Examples = () => {
       return;
     }
 
-    const xOffset = -cardOffset * prevIndex;
+    const xOffset = -(cardWidth + cardListGap - cardOverlap) * prevIndex;
 
     cardsRef.current.forEach((card, index) => {
       if (card && index >= prevIndex) {
@@ -138,7 +115,11 @@ const Examples = () => {
   };
 
   return (
-    <section className="examples" aria-labelledby="examples-title">
+    <section
+      id="examples"
+      className="examples"
+      aria-labelledby="examples-title"
+    >
       <header className="examples__header">
         <h2 id="examples-title" className="heading_2">
           {examplesData.title}
@@ -165,6 +146,15 @@ const Examples = () => {
                 }}
                 className="examples__body__list__card"
               >
+                <ul className="examples__body__list__card__tags">
+                  {card.tags?.map((tag, tIndex) => (
+                    <li key={tIndex}>
+                      <div className="examples__body__list__card__tags__item">
+                        <p className="paragraph">{tag}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
                 <h3 className="heading_3">{card.title}</h3>
                 {card.paragraphs.map((paragraph, pIndex) => (
                   <p

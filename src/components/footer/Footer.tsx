@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import { footerData } from "../../data/footer";
+import { footerData } from "./../../data/footer";
 
 const Footer = () => {
   return (

@@ -10,6 +10,11 @@ export const headerData = {
       className: "nav_item",
     },
     {
+      text: "Exemples",
+      href: "#examples",
+      className: "nav_item",
+    },
+    {
       text: "À propos",
       href: "#about",
       className: "nav_item",

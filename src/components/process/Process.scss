@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
-  padding: var(--space-5) var(--view-horizontal-mobile-padding);
+  padding: var(--space-15) var(--view-horizontal-mobile-padding);
 
   &__header {
     display: flex;
@@ -61,7 +61,7 @@
 
 @media screen and (min-width: 768px) {
   .process {
-    padding: var(--space-5) var(--view-horizontal-desktop-padding);
+    padding: var(--space-15) var(--view-horizontal-desktop-padding);
 
     &__list {
       gap: var(--space-10);

@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
-  padding: var(--space-5) var(--view-horizontal-mobile-padding);
+  padding: var(--space-15) var(--view-horizontal-mobile-padding);
 
   &__header {
     display: flex;
@@ -21,6 +21,7 @@
 
       > p:first-of-type {
         font-family: var(--font-primary-semi-bold);
+        color: var(--primary);
       }
     }
   }
@@ -35,6 +36,12 @@
       flex-direction: row;
       gap: var(--space-5);
       width: 100%;
+      scroll-snap-type: x mandatory;
+
+      > li {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+      }
 
       > li:last-of-type {
         article {
@@ -44,6 +51,7 @@
           h3,
           p {
             color: var(--white);
+            border-top: unset;
           }
 
           a {
@@ -62,8 +70,7 @@
       &__card {
         display: flex;
         flex-direction: column;
-        gap: var(--space-3);
-        width: 365px;
+        gap: var(--space-2);
         height: 100%;
         padding: var(--space-3);
         background-color: var(--white);
@@ -71,9 +78,42 @@
         border: 1px solid var(--gray-lighter);
         box-shadow: var(--card-shadow);
 
+        &__tags {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: var(--space-1);
+          margin-bottom: var(--space-2);
+
+          &__item {
+            display: flex;
+            flex-direction: row;
+            padding: var(--space-0) var(--space-1);
+            background-color: var(--primary-65);
+            border-radius: var(--border-radius-small);
+
+            > p {
+              font-size: var(--font-size-small);
+              color: var(--white);
+              letter-spacing: var(--font-letter-spacing-medium);
+              font-family: var(--font-primary-medium);
+            }
+          }
+        }
+
+        h3,
+        p:nth-child(4) {
+          margin-bottom: var(--space-2);
+        }
+
         > p:last-of-type {
+          min-height: 120px;
+          padding-top: var(--space-3);
           margin-top: auto;
-          font-family: var(--font-primary-semi-bold);
+          border-top: 1px solid var(--gray-deeper);
+          font-family: var(--font-secondary);
+          font-weight: var(--font-weight-large);
+          color: var(--black);
         }
       }
     }
@@ -96,7 +136,22 @@
 
 @media screen and (min-width: 768px) {
   .examples {
-    padding: var(--space-5) var(--view-horizontal-desktop-padding);
+    padding: var(--space-15) var(--view-horizontal-desktop-padding);
+
+    &__body {
+      &__list {
+        overflow-x: visible;
+
+        > li {
+          flex: 0 0 auto;
+          scroll-snap-align: unset;
+        }
+
+        &__card {
+          width: 450px;
+        }
+      }
+    }
   }
 }
 
