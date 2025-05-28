@@ -6,6 +6,11 @@ export default defineConfig({
   preview: {
     port: 4173,
     host: true,
-    allowedHosts: ["dev.wolff-kevin.fr", "www.dev.wolff-kevin.fr"],
+    allowedHosts: [
+      "dev.wolff-kevin.fr",
+      "www.dev.wolff-kevin.fr",
+      "wolff-kevin.fr",
+      "www.wolff-kevin.fr",
+    ],
   },
 });

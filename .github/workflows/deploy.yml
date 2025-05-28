@@ -19,34 +19,41 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.REMOTE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SFTP_PROD_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/id_rsa
           ssh-keyscan -H "${{ secrets.REMOTE_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Deploy via SFTP
         run: |
-          WORKDIR=$(pwd)
+          LOCALDIR=$(pwd)
+          REMOTEDIR="${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }}"
+
           lftp sftp://${{ secrets.SFTP_PROD_USERNAME }}:${{ secrets.SFTP_PROD_PWD }}@${{ secrets.REMOTE_HOST }} -e "
             set sftp:auto-confirm yes;
             set net:timeout 300;
             set net:max-retries 3;
-            cd ./www/;
+            cd $REMOTEDIR;
             mirror -R -v --only-newer --delete \
               --exclude dist/ \
               --exclude .git/ \
               --exclude .github/ \
               --exclude github/ \
-              --exclude README.md \
               --exclude node_modules/ \
-              $WORKDIR/ ./
+              $LOCALDIR/ ./
             quit
           "
 
-      - name: Remote SSH - Run deploy.sh
+      - name: Remote SSH - Install, Build and Restart
         run: |
-          ssh ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "bash -c \"
-            cd ${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }} &&
-            echo 'y' | ./deploy.sh
-          \""
+          SSH_USER=${{ secrets.SFTP_PROD_USERNAME }}
+          SSH_HOST=${{ secrets.REMOTE_HOST }}
+          APP_NAME=${{ secrets.REMOTE_APP_NAME }}
+          APP_DIR=${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }}
+
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
+            cd "$APP_DIR"
+            npm install
+            npm run build
+            pm2 restart "$APP_NAME" 2>/dev/null || pm2 start npm --name "$APP_NAME" -- run start
+            pm2 save
+          EOF
