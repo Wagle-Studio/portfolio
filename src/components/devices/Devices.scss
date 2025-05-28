@@ -4,6 +4,8 @@
   grid-template-rows: repeat(2, max-content);
   gap: var(--space-10);
   padding: var(--space-15) var(--view-horizontal-mobile-padding);
+  background-color: var(--body-secondary);
+  border-radius: var(--border-radius-base);
 
   &__illustration {
     width: 100%;

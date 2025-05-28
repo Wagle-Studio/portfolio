@@ -18,11 +18,11 @@ export const examplesData = {
           ],
         },
         {
-          text: "Avec une application mobile connectée à votre activité, chaque intervenant peut consulter ses missions, remonter des infos et cocher les étapes réalisées.",
+          text: "Avec une application mobile connectée à votre activité, chaque intervenant peut consulter ses missions, remonter des infos et valider les étapes réalisées.",
           strongParts: [
             "application mobile connectée à votre activité",
             "consulter ses missions",
-            "cocher les étapes réalisées",
+            "valider les étapes réalisées",
           ],
         },
         {
