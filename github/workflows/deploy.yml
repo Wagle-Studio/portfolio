@@ -1,0 +1,52 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y lftp openssh-client
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.REMOTE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.REMOTE_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy via SFTP
+        run: |
+          WORKDIR=$(pwd)
+          lftp sftp://${{ secrets.SFTP_PROD_USERNAME }}:${{ secrets.SFTP_PROD_PWD }}@${{ secrets.REMOTE_HOST }} -e "
+            set sftp:auto-confirm yes;
+            set net:timeout 300;
+            set net:max-retries 3;
+            cd ./www/;
+            mirror -R -v --only-newer --delete \
+              --exclude dist/ \
+              --exclude .git/ \
+              --exclude .github/ \
+              --exclude github/ \
+              --exclude README.md \
+              --exclude node_modules/ \
+              $WORKDIR/ ./
+            quit
+          "
+
+      - name: Remote SSH - Run deploy.sh
+        run: |
+          ssh ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "bash -c \"
+            cd ${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }} &&
+            echo 'y' | ./deploy.sh
+          \""
