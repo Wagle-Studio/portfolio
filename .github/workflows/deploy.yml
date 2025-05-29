@@ -47,13 +47,10 @@ jobs:
         run: |
           SSH_USER=${{ secrets.SFTP_PROD_USERNAME }}
           SSH_HOST=${{ secrets.REMOTE_HOST }}
-          APP_NAME=${{ secrets.REMOTE_APP_NAME }}
           APP_DIR=${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }}
 
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
             cd "$APP_DIR"
             npm install
             npm run build
-            pm2 restart "$APP_NAME" 2>/dev/null || pm2 start npm --name "$APP_NAME" -- run start
-            pm2 save
           EOF
