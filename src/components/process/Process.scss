@@ -15,12 +15,20 @@
     gap: var(--space-5);
     max-width: var(--bloc-max-width);
     text-align: center;
+
+    .heading_2 {
+      letter-spacing: 0.01em;
+    }
+
+    .paragraph {
+      opacity: 0.95;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-20);
+    gap: var(--space-15);
     width: 100%;
 
     &__card {
@@ -31,6 +39,12 @@
       border-radius: var(--border-radius-base);
       border: 1px solid var(--gray-lighter);
       box-shadow: var(--card-shadow);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+      }
 
       &__header {
         position: relative;
@@ -54,6 +68,10 @@
         gap: var(--space-3);
         padding: var(--space-4) var(--space-4) var(--space-6) var(--space-4);
         border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+
+        .paragraph {
+          opacity: 0.9;
+        }
       }
     }
   }
@@ -64,7 +82,7 @@
     padding: var(--space-15) var(--view-horizontal-desktop-padding);
 
     &__list {
-      gap: var(--space-10);
+      gap: var(--space-5);
 
       &__card {
         grid-template-columns: var(--space-6) 1fr;
@@ -118,5 +136,17 @@
         }
       }
     }
+  }
+}
+
+.process :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 70%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process * {
+    transition: none !important;
   }
 }

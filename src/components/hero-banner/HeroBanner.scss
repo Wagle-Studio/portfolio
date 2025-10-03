@@ -8,6 +8,8 @@
   margin: 0 auto;
   padding: 0 var(--view-horizontal-mobile-padding);
   background: url('./../../assets/backgrounds/hero_banner_background.svg') center no-repeat;
+  background-size: cover;
+  text-align: center;
 
   &__body {
     display: flex;
@@ -19,6 +21,18 @@
     &__subtitle {
       max-width: var(--bloc-max-width);
       font-size: var(--font-size-medium);
+      opacity: 0.9;
+      line-height: var(--font-line-height-extra);
+    }
+  }
+
+  .button {
+    margin-top: var(--space-3);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
   }
 }
@@ -26,5 +40,21 @@
 @media screen and (min-width: 768px) {
   .hero_banner {
     padding: 0 var(--view-horizontal-desktop-padding);
+
+    &__body__subtitle {
+      font-size: var(--font-size-large);
+    }
+  }
+}
+
+.hero_banner :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 70%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero_banner * {
+    transition: none !important;
   }
 }

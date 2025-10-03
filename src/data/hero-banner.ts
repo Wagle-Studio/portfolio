@@ -1,13 +1,14 @@
 export const heroBannerData = {
   title: {
     main: "Libérez votre potentiel",
-    sub: "avec une application métier sur mesure",
+    sub: "avec une solution SaaS sur mesure",
   },
   subtitle: {
-    text: "Je conçois et développe des applications métiers intuitives et efficaces pour automatiser vos tâches, libérer votre temps et faire progresser votre entreprise",
+    text: "Je conçois et développe des plateformes SaaS intuitives et évolutives qui automatisent vos processus, centralisent vos données et vous libèrent du temps pour vous concentrer sur l'essentiel.",
     strongParts: [
-      "applications métiers intuitives et efficaces",
-      "automatiser vos tâches, libérer votre temps",
+      "plateformes SaaS intuitives et évolutives",
+      "automatisent vos processus, centralisent vos données",
+      "vous libèrent du temps pour vous concentrer sur l'essentiel",
     ],
   },
   cta: {

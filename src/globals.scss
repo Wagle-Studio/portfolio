@@ -1,35 +1,16 @@
 @font-face {
-  font-family: "Poppins-Regular";
-  src: url("./../public/assets/fonts/poppins/Poppins-Regular.woff2")
-    format("woff2");
+  font-family: "InterVariable";
+  src: url("./../public/assets/fonts/inter/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins-Medium";
-  src: url("./../public/assets/fonts/poppins/Poppins-Medium.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("./../public/assets/fonts/poppins/Poppins-SemiBold.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins-Bold";
-  src: url("./../public/assets/fonts/poppins/Poppins-Bold.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url("./../public/assets/fonts/roboto/Roboto-Regular.woff2")
-    format("woff2");
+  font-family: "SpaceGroteskVariable";
+  src: url("./../public/assets/fonts/space-grotesk/SpaceGrotesk-Variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -80,11 +61,11 @@
   --space-30: 240px;
   --space-40: 320px;
 
-  --font-primary: "Poppins-Regular", sans-serif;
-  --font-primary-medium: "Poppins-Medium", sans-serif;
-  --font-primary-semi-bold: "Poppins-SemiBold", sans-serif;
-  --font-primary-bold: "Poppins-Bold", sans-serif;
-  --font-secondary: "Open Sans", sans-serif;
+  --font-primary: "SpaceGroteskVariable", "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-primary-medium: var(--font-primary);
+  --font-primary-semi-bold: var(--font-primary);
+  --font-primary-bold: var(--font-primary);
+  --font-secondary: "InterVariable", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
 
   --font-weight-base: 400;
   --font-weight-medium: 500;
@@ -142,38 +123,43 @@ ol {
 }
 
 .heading_1 {
-  font-family: var(--font-primary-bold);
+  font-family: var(--font-primary);
   font-size: var(--font-size-mobile-heading-1);
   line-height: var(--font-line-height-large);
   color: var(--black);
+  font-weight: var(--font-weight-xlarge);
 }
 
 .heading_2 {
-  font-family: var(--font-primary-semi-bold);
+  font-family: var(--font-primary);
   font-size: var(--font-size-mobile-heading-2);
   line-height: var(--font-line-height-large);
   color: var(--black);
+  font-weight: var(--font-weight-xlarge);
 }
 
 .heading_3 {
-  font-family: var(--font-primary-semi-bold);
+  font-family: var(--font-primary);
   font-size: var(--font-size-mobile-heading-3);
   line-height: var(--font-line-height-large);
   color: var(--black);
+  font-weight: var(--font-weight-xlarge);
 }
 
 .brand {
-  font-family: var(--font-primary-semi-bold);
+  font-family: var(--font-primary);
   font-size: var(--font-size-large);
   color: var(--black);
   text-decoration: none;
+  font-weight: var(--font-weight-xlarge);
 }
 
 .nav_item {
-  font-family: var(--font-primary-medium);
+  font-family: var(--font-primary);
   letter-spacing: var(--font-letter-spacing-medium);
   color: var(--black);
   text-decoration: none;
+  font-weight: var(--font-weight-medium);
 }
 
 .paragraph {
@@ -181,10 +167,11 @@ ol {
   font-size: var(--font-size-medium);
   line-height: var(--font-line-height-extra);
   color: var(--gray-deeper);
+  font-weight: var(--font-weight-base);
+}
 
-  &--strong {
-    color: var(--primary);
-  }
+.paragraph--strong {
+  color: var(--primary);
 }
 
 .button {
@@ -196,19 +183,19 @@ ol {
   border-radius: var(--border-radius-large);
   border: 1px solid var(--gray-lighter);
   color: var(--white);
-  font-family: var(--font-primary-semi-bold);
+  font-family: var(--font-primary);
   font-size: var(--font-size-base);
   letter-spacing: var(--font-letter-spacing-medium);
   line-height: var(--font-line-height-button);
   text-decoration: none;
-  // transition: 0.2s ease-in-out;
+  font-weight: var(--font-weight-xlarge);
+}
 
-  &:hover {
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    color: var(--black);
-    box-shadow: var(--card-shadow);
-  }
+.button:hover {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  color: var(--black);
+  box-shadow: var(--card-shadow);
 }
 
 @media screen and (min-width: 768px) {

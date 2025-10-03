@@ -1,15 +1,12 @@
 export const mvpData = {
-  title: "Donnez vie à vos idées sans délai",
+  title: "Lancez rapidement votre SaaS",
   subtitles: [
-    "Vous avez une idée, un besoin, ou simplement l'intuition d'un outil qui pourrait améliorer votre activité ?",
-    "Je conçois une version minimale de votre application centrée sur les fonctionnalités utiles, prête à être testée sur le terrain. Vous avancez rapidement, validez les usages réels, et faites évoluer votre solution au bon rythme.",
+    "Vous avez une idée, un besoin ou l’intuition d’un outil qui pourrait transformer votre activité ?",
+    "Je conçois une version minimale de votre solution SaaS : déployée en ligne, centrée sur les fonctionnalités utiles, prête à être testée par vos utilisateurs. Vous avancez vite, validez les usages réels et faites évoluer votre plateforme en continu.",
   ],
   tags: [
     ["Cibler l'essentiel, sans superflu", "Réduire l'investissement initial"],
-    [
-      "Apprendre vite, décider mieux",
-      "Faire évoluer l'outil au fil de vos besoins",
-    ],
+    ["Apprendre vite, décider mieux", "Itérer comme un SaaS moderne"],
   ],
-  punchlines: ["Avancez vite", "Dépensez juste", "Construisez mieux"],
+  punchlines: ["Déployez vite", "Testez mieux", "Évoluez en continu"],
 };

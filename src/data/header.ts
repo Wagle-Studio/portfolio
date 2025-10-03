@@ -15,13 +15,8 @@ export const headerData = {
       className: "nav_item",
     },
     {
-      text: "À propos",
-      href: "#about",
-      className: "nav_item",
-    },
-    {
-      text: "Contact",
-      href: "#contact",
+      text: "Linkedin",
+      href: "https://www.linkedin.com/in/wolff-kevin/",
       className: "button",
     },
   ],

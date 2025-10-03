@@ -3,7 +3,7 @@ export const examplesData = {
     "Et si votre outil de travail devenait un vrai levier de performance ?",
   subtitles: [
     "Le bon outil, c'est celui qui épouse votre façon de travailler",
-    "Une application métier ne doit pas être une dépense technique, mais un levier de performance. Voici des exemples concrets où le sur-mesure fait toute la différence.",
+    "Une application SaaS ne doit pas être une dépense technique, mais un levier de performance. Voici des exemples concrets où le sur-mesure fait toute la différence.",
   ],
   cards: [
     {
@@ -113,7 +113,7 @@ export const examplesData = {
       ],
       cta: {
         text: "Parlons de votre projet",
-        link: "#contact",
+        link: "https://www.linkedin.com/in/wolff-kevin/",
       },
     },
   ],

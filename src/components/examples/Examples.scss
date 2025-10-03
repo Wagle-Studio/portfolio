@@ -22,6 +22,8 @@
       > p:first-of-type {
         font-family: var(--font-primary-semi-bold);
         color: var(--primary);
+        letter-spacing: 0.02em;
+        font-weight: 700;
       }
     }
   }
@@ -37,6 +39,7 @@
       gap: var(--space-5);
       width: 100%;
       scroll-snap-type: x mandatory;
+      padding-bottom: var(--space-2);
 
       > li {
         flex: 0 0 100%;
@@ -57,6 +60,7 @@
           a {
             background-color: var(--white);
             color: var(--black);
+            transition: background-color 150ms ease, color 150ms ease, border 150ms ease;
 
             &:hover {
               background-color: var(--secondary);
@@ -77,6 +81,12 @@
         border-radius: var(--border-radius-base);
         border: 1px solid var(--gray-lighter);
         box-shadow: var(--card-shadow);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.1);
+        }
 
         &__tags {
           display: flex;
@@ -114,6 +124,7 @@
           font-family: var(--font-secondary);
           font-weight: var(--font-weight-large);
           color: var(--black);
+          opacity: 0.9;
         }
       }
     }
@@ -129,6 +140,11 @@
         font-family: var(--font-primary-bold);
         font-size: var(--font-size-large);
         cursor: pointer;
+        transition: transform 120ms ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
       }
     }
   }
@@ -167,5 +183,17 @@
         justify-content: left;
       }
     }
+  }
+}
+
+.examples :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 70%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .examples * {
+    transition: none !important;
   }
 }

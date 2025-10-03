@@ -23,6 +23,11 @@
       .brand {
         font-weight: var(--font-weight-large);
         font-size: var(--font-size-large);
+        transition: color 150ms ease;
+
+        &:hover {
+          color: var(--primary);
+        }
       }
     }
 
@@ -39,6 +44,11 @@
         width: 34px;
         height: 34px;
         box-sizing: border-box;
+        transition: transform 160ms ease;
+      }
+
+      &:hover svg {
+        transform: scale(1.1);
       }
     }
 
@@ -90,6 +100,11 @@
               border-top: 1px solid var(--gray-deep);
               text-align: center;
               box-sizing: border-box;
+              transition: background-color 150ms ease;
+
+              &:hover {
+                background-color: var(--gray-lighter);
+              }
             }
           }
         }
@@ -129,6 +144,7 @@
         &__subtitle {
           max-width: var(--bloc-max-width);
           font-size: var(--font-size-medium);
+          opacity: 0.85;
         }
 
         &__mobile {
@@ -173,5 +189,17 @@
         }
       }
     }
+  }
+}
+
+.header :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header * {
+    transition: none !important;
   }
 }

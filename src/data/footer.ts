@@ -22,8 +22,8 @@ export const footerData = {
       href: "#about",
     },
     {
-      text: "Contact",
-      href: "#contact",
+      text: "Linkedin",
+      href: "https://www.linkedin.com/in/wolff-kevin/",
     },
   ],
 };

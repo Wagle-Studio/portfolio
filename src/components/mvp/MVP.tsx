@@ -40,7 +40,8 @@ const MVP = () => {
         <div className="MVP__header__subtitles">
           {mvpData.subtitles.map((subtitle, index) => (
             <p key={index} className="paragraph">
-              {subtitle}
+              {index === 0 && <strong>{subtitle}</strong>}
+              {index !== 0 && subtitle}
             </p>
           ))}
         </div>

@@ -6,43 +6,39 @@ import Handshake from "./../components/icons/Handshake";
 export const promisesData = {
   title: "Pourquoi me faire confiance ?",
   description:
-    "Concevoir une application sur mesure, ce n'est pas seulement de la programmation. C'est d'abord une question d'écoute, de compréhension métier, et de collaboration.",
-  strongParts: [
-    "une question d'écoute",
-    "compréhension métier",
-    "collaboration",
-  ],
+    "Concevoir un SaaS sur mesure ne se résume pas à coder. C’est d’abord une question d’écoute, de compréhension métier et de collaboration.",
+  strongParts: ["écoute", "compréhension métier", "collaboration"],
   promises: [
     {
       icon: Building,
-      title: "Une approche métier et process",
+      title: "Une approche orientée métier",
       paragraphs: [
-        "Avant de parler de fonctionnalités, je m'attache à comprendre vos opérations, vos flux, vos contraintes terrain grâce à votre expertise.",
-        "Mon approche est orientée processus : c'est votre métier qui dicte la solution, pas l'inverse.",
+        "Avant de parler de fonctionnalités, je comprends vos flux et vos contraintes pour créer une solution SaaS qui colle à votre réalité.",
+        "C’est votre activité qui dicte la plateforme, pas l’inverse.",
       ],
     },
     {
       icon: Map,
-      title: "Une méthode pilotée par étapes",
+      title: "Une méthode agile et continue",
       paragraphs: [
-        "Chaque projet suit un déroulé structuré, avec des validations claires à chaque phase : cadrage, prototype, développement, tests.",
-        "Vous avancez avec des jalons définis, des livrables visibles et un suivi transparent.",
+        "Chaque projet suit un cycle agile avec validations claires : cadrage, prototype, déploiement cloud, tests utilisateurs.",
+        "Vous avancez avec des jalons précis, un suivi transparent et des livrables visibles.",
       ],
     },
     {
       icon: Speaker,
       title: "Un interlocuteur impliqué",
       paragraphs: [
-        "Vous avez affaire à une seule personne : responsable, disponible, engagée.",
-        "Je porte votre projet de bout en bout et m'entoure de professionnels via un réseau de confiance lorsque le besoin l'exige.",
+        "Un seul point de contact : disponible, responsable, engagé.",
+        "Je porte votre SaaS de bout en bout et mobilise un réseau fiable si nécessaire.",
       ],
     },
     {
       icon: Handshake,
       title: "Une collaboration transparente",
       paragraphs: [
-        "Avant toute conception, j'explore les alternatives existantes sur le marché. Si une solution pertinente peut répondre à votre besoin, je vous la recommande.",
-        "Ma priorité est de résoudre vos problèmes, pas de vous vendre une application.",
+        "Avant de développer, j’explore les SaaS existants. Si l’un d’eux répond à vos besoins, je vous l’indique.",
+        "Ma priorité : résoudre vos problèmes, pas vous vendre une ligne de code.",
       ],
     },
   ],

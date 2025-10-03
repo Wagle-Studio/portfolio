@@ -30,18 +30,21 @@
       &__brand {
         h3 {
           color: var(--white);
+          letter-spacing: 0.02em;
         }
 
         p {
           font-size: var(--font-size-base);
           color: var(--white);
+          opacity: 0.85;
         }
       }
 
       &__information {
         p {
-          font-size: var(--font-size-base);
+          font-size: var(--font-size-small);
           color: var(--white);
+          opacity: 0.7;
         }
       }
     }
@@ -53,6 +56,12 @@
 
       &__item {
         color: var(--white);
+        font-size: var(--font-size-base);
+        transition: color 150ms ease;
+
+        &:hover {
+          color: var(--secondary);
+        }
       }
     }
   }
@@ -62,6 +71,7 @@
   .footer {
     &__wrapper {
       flex-direction: row;
+      align-items: flex-start;
       padding: 24px var(--view-horizontal-desktop-padding);
 
       &__identity {
@@ -70,7 +80,20 @@
 
       &__navigation {
         text-align: end;
+        align-items: flex-end;
       }
     }
+  }
+}
+
+.footer :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer * {
+    transition: none !important;
   }
 }
