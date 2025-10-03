@@ -12,7 +12,7 @@ export const heroBannerData = {
     ],
   },
   cta: {
-    text: "Découvrez comment",
-    href: "#process",
+    text: "Découvrez des exemples",
+    href: "#examples",
   },
 };

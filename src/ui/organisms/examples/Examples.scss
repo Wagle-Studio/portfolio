@@ -1,0 +1,153 @@
+.examples {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, max-content);
+  row-gap: var(--space-10);
+  width: 100%;
+  max-width: var(--view-max-width);
+  margin: 0 auto;
+  padding: var(--space-15) var(--view-horizontal-mobile-padding);
+}
+
+.examples__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.examples__subtitles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.examples__subtitles > p:first-of-type {
+  font-family: var(--font-primary-semi-bold);
+  color: var(--primary);
+  font-weight: var(--font-weight-large);
+}
+
+.examples__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.examples__list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-5);
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+}
+
+.examples__list > li {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.examples__list > li:last-of-type .examples__card {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.examples__list > li:last-of-type .examples__card h3,
+.examples__list > li:last-of-type .examples__card p {
+  color: var(--white);
+  border-top: unset;
+}
+
+.examples__list > li:last-of-type .examples__card a {
+  background-color: var(--white);
+  color: var(--black);
+  transition: background-color 150ms ease, color 150ms ease, border 150ms ease;
+}
+
+.examples__list > li:last-of-type .examples__card a:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+  color: var(--white);
+}
+
+.examples__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-3);
+  background-color: var(--white);
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--gray-lighter);
+  box-shadow: var(--card-shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.examples__card:hover {
+  transform: translateY(-2px);
+}
+
+.examples__tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.examples__card h3,
+.examples__card p:nth-child(4) {
+  margin-bottom: var(--space-2);
+}
+
+.examples__card > p:last-of-type {
+  min-height: 120px;
+  padding-top: var(--space-3);
+  margin-top: auto;
+  border-top: 1px solid var(--gray-deeper);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-large);
+  color: var(--black);
+  opacity: 0.9;
+}
+
+.examples__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .examples {
+    padding: var(--space-15) var(--view-horizontal-desktop-padding);
+  }
+
+  .examples__list {
+    overflow-x: visible;
+  }
+
+  .examples__list > li {
+    flex: 0 0 auto;
+    scroll-snap-align: unset;
+  }
+
+  .examples__card {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .examples {
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: max-content;
+    row-gap: unset;
+    column-gap: var(--space-10);
+  }
+
+  .examples__navigation {
+    justify-content: left;
+  }
+}

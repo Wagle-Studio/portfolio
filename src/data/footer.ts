@@ -1,3 +1,5 @@
+import { LinkedinIcon } from "../ui/atoms/icons";
+
 export const footerData = {
   brand: {
     name: "Wagle Studio",
@@ -12,18 +14,34 @@ export const footerData = {
     {
       text: "Haut de la page",
       href: "#app",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
     },
     {
-      text: "Méthode",
-      href: "#process",
+      text: "Portfolio",
+      href: "/",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
     },
     {
-      text: "À propos",
-      href: "#about",
+      text: "Solution SaaS",
+      href: "/saas",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
     },
     {
       text: "Linkedin",
       href: "https://www.linkedin.com/in/wolff-kevin/",
+      variant: "ghost",
+      target: "_blank",
+      icon: LinkedinIcon,
+      icon_side: "right",
     },
   ],
 };

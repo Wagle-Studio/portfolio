@@ -1,3 +1,4 @@
+import { MedalIcon } from "../ui/atoms/icons";
 import ProfilePicture from "./../../public/assets/pictures/profile_picture.jpg";
 
 export const aboutData = {
@@ -5,20 +6,40 @@ export const aboutData = {
   profile: {
     picture: ProfilePicture,
     pictureAlt: "Photo de profil de Kévin Wolff",
-    name: "Kévin Wolff",
-    role: "Entrepreneur et concepteur web",
+    name: "Bienvenue, moi c'est Kévin",
+    role: "Développeur fullstack | Formateur CDA & DWWM",
     paragraphs: [
       {
-        text: "Je suis convaincu que dans chaque organisations, quelques leviers bien identifiés suffisent à débloquer tout le reste. Mon rôle est d'identifier ces leviers avec vous, et de concevoir un outil digital qui les rend simples, fluides et performants.",
+        text: "Développeur fullstack spécialisé en Symfony et React, j’accompagne vos projets backend et fullstack avec rigueur, professionnalisme et bonne humeur.",
         strongParts: [
-          "quelques leviers bien identifiés suffisent à débloquer tout le reste",
-          "un outil digital qui les rend simples, fluides et performants",
+          "fullstack spécialisé en Symfony et React",
+          "rigueur, professionnalisme et bonne humeur",
         ],
       },
       {
-        text: "Je conçois des applications qui automatisent l'essentiel, pour que vous puissiez avancer plus vite, avec moins d'efforts, et concentrer votre énergie sur votre activité, pas sur vos outils.",
-        strongParts: ["automatisent l'essentiel"],
+        text: "Avec plusieurs années d’expérience en agence, enseignement et freelance, je suis attaché à la qualité de mes prestations, tant sur le plan technique qu’humain, avec la volonté d’apporter des solutions concrètes et adaptées à vos besoins.",
+        strongParts: [
+          "qualité de mes prestations",
+          "sur le plan technique qu’humain",
+          "volonté d’apporter des solutions",
+        ],
       },
+    ],
+    profil: {
+      status: "À l'écoute du marché",
+      work_type: "Remote ou présentiel",
+      location: "Grenoble | Paris",
+    },
+    tags: [
+      { label: "5 ans d'expériences", icon: MedalIcon, variant: "ghost" },
+      {
+        label: "Certification Symfony en cours",
+        icon: MedalIcon,
+        variant: "ghost",
+      },
+      // { label: "salariat", icon: undefined, variant: "default" },
+      // { label: "missions freelance", icon: undefined, variant: "default" },
+      // { label: "solutions SaaS", icon: undefined, variant: "default" },
     ],
   },
 };

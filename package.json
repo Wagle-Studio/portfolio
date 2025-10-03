@@ -11,9 +11,11 @@
     "start": "vite preview --port 4173"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "gsap": "^3.12.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router": "^7.9.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",

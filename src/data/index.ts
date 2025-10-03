@@ -1,0 +1,11 @@
+export { aboutData } from "./about";
+export { contactData } from "./contact";
+export { devicesData } from "./devices";
+export { examplesData } from "./examples";
+export { footerData } from "./footer";
+export { headerData } from "./header";
+export { heroBannerData } from "./hero-banner";
+export { mvpData } from "./mvp";
+export { processData } from "./process";
+export { promisesData } from "./promises";
+export { showcaseData } from "./showcase";

@@ -1,23 +1,15 @@
-import "./App.scss";
-import Header from "./components/header/Header";
-import HeroBanner from "./components/hero-banner/HeroBanner";
-import Process from "./components/process/Process";
-import Devices from "./components/devices/Devices";
-import Examples from "./components/examples/Examples";
-import MVP from "./components/mvp/MVP";
-import Footer from "./components/footer/Footer";
+import "./ui/globals.scss";
+import { Route, Routes } from "react-router";
+import { Footer, Portfolio, Header, Saas } from "./ui";
 
 function App() {
   return (
     <div id="app" className="app">
       <Header />
-      <main className="app__main">
-        <HeroBanner />
-        <Process />
-        <Devices />
-        <Examples />
-        <MVP />
-      </main>
+      <Routes location={location}>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/saas" element={<Saas />} />
+      </Routes>
       <Footer />
     </div>
   );
