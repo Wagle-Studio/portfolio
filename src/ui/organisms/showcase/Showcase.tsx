@@ -8,7 +8,7 @@ import { GitHubIcon } from "../../atoms/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ROTATION_MS = 10000;
+const ROTATION_MS = 45000;
 
 export const Showcase = () => {
   const [current, setCurrent] = useState(0);
@@ -18,9 +18,10 @@ export const Showcase = () => {
   const currentItem = useMemo(() => showcaseData.items[current], [current]);
 
   useEffect(() => {
-    if (itemsRef.current.length > 0) {
+    const targets = itemsRef.current.filter(Boolean);
+    if (targets.length > 0) {
       gsap.fromTo(
-        itemsRef.current,
+        targets,
         { opacity: 0, y: -30 },
         {
           opacity: 1,
@@ -29,7 +30,7 @@ export const Showcase = () => {
           ease: "power2.out",
           stagger: 0.15,
           scrollTrigger: {
-            trigger: itemsRef.current[0],
+            trigger: targets[0],
             start: "top 85%",
             toggleActions: "play none none none",
             once: true,
@@ -40,32 +41,31 @@ export const Showcase = () => {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => {
+    const id = window.setTimeout(() => {
       setCurrent((prev) => (prev + 1) % showcaseData.items.length);
       setAnimKey((k) => k + 1);
     }, ROTATION_MS);
-    return () => clearInterval(id);
-  }, []);
+    return () => clearTimeout(id);
+  }, [current]);
 
   const handleSelect = (index: number) => {
     setCurrent(index);
     setAnimKey((k) => k + 1);
   };
 
-  const getPicture = (item: any) =>
-    item?.picture ?? item?.image ?? item?.src ?? "";
-
   return (
     <section
       id="showcase"
       className="showcase"
       aria-labelledby="showcase-title"
+      style={{ ["--showcase-rotation" as any]: `${ROTATION_MS}ms` }}
     >
       <div className="showcase__title__wrapper">
         <h2 id="showcase-title" className="heading_2 showcase__title">
           {showcaseData.title}
         </h2>
       </div>
+
       <div className="showcase__card">
         <ul className="showcase__list" role="list" aria-label="Mises en avant">
           {showcaseData.items.map((item, index) => (
@@ -104,16 +104,13 @@ export const Showcase = () => {
                 </header>
 
                 <div className="showcase__item-indicator" aria-hidden="true">
-                  <div
-                    key={`${animKey}-${index}-${
-                      index === current ? "active" : "idle"
-                    }`}
-                    className={
-                      index === current
-                        ? "showcase__item-progress showcase__item-progress--active"
-                        : "showcase__item-progress"
-                    }
-                  />
+                  {index === current && (
+                    <div
+                      key={`${animKey}-${index}`}
+                      className="showcase__item-progress showcase__item-progress--active"
+                      style={{ animationDuration: `${ROTATION_MS}ms` }}
+                    />
+                  )}
                 </div>
               </article>
             </li>
@@ -126,17 +123,41 @@ export const Showcase = () => {
             className="showcase__frame"
             aria-hidden="true"
           >
-            {showcaseData.items.map((item, index) => (
+            {currentItem.media && currentItem.media_type === "video" && (
+              <video
+                key={`${animKey}-${current}`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="showcase__video"
+              >
+                <source
+                  src={
+                    currentItem.media.startsWith("/")
+                      ? currentItem.media
+                      : `/${currentItem.media}`
+                  }
+                  type="video/webm"
+                />
+              </video>
+            )}
+            {currentItem.media && currentItem.media_type === "image" && (
               <div
-                key={index}
-                className={
-                  index === current
-                    ? "showcase__picture showcase__picture--active"
-                    : "showcase__picture"
-                }
-                style={{ backgroundImage: `url(${getPicture(item)})` }}
+                key={`${animKey}-${current}`}
+                className="showcase__picture showcase__picture--active"
+                style={{ backgroundImage: `url(${currentItem.media})` }}
+                role="img"
+                aria-label={currentItem.title}
               />
-            ))}
+            )}
+            </div>
+          <div className="showcase__mobile-indicator" aria-hidden="true">
+            <div
+              key={`mobile-${animKey}-${current}`}
+              className="showcase__mobile-progress"
+              style={{ animationDuration: `${ROTATION_MS}ms` }}
+            />
           </div>
           <div id="showcase-data" className="showcase__data">
             <div className="showcase__data__bottom">
@@ -166,11 +187,8 @@ export const Showcase = () => {
                 </ButtonLink>
               </div>
             </div>
-            <p
-              className={
-                "paragraph showcase__item-subtitle showcase__item-subtitle--active"
-              }
-            >
+
+            <p className="paragraph showcase__item-subtitle showcase__item-subtitle--active">
               {currentItem.subtitle}
             </p>
           </div>

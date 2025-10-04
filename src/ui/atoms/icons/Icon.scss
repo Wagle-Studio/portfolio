@@ -4,10 +4,7 @@
   stroke: currentColor;
   fill: none;
   stroke-width: 0;
-  transition:
-    color 0.15s ease,
-    opacity 0.15s ease,
-    transform 0.15s ease;
+  transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
 
   &--small {
     width: 16px;

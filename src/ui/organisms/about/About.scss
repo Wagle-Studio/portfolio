@@ -5,7 +5,7 @@
   gap: var(--space-10);
   width: 100%;
   max-width: 768px;
-  padding: 0 var(--view-horizontal-desktop-padding);
+  padding: 0 var(--view-horizontal-mobile-padding);
 
   &__card {
     display: grid;
@@ -58,7 +58,7 @@
       left: -1000px;
       content: "";
       width: 1000px;
-      height: 200px;
+      height: 312px;
       background: var(--primary-45);
     }
 
@@ -68,14 +68,14 @@
       right: -1000px;
       content: "";
       width: 1000px;
-      height: 200px;
+      height: 312px;
       background: var(--primary-45);
     }
   }
 
   &__profile {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: var(--space-3);
     width: max-content;
@@ -97,6 +97,7 @@
   &__status {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-1);
 
     > .paragraph {
@@ -157,8 +158,27 @@
   }
 }
 
+@media screen and (min-width: 560px) {
+  .about {
+    &__profile__wrapper {
+      &::before {
+        height: 200px;
+      }
+
+      &::after {
+        height: 200px;
+      }
+    }
+
+    &__profile {
+      flex-direction: row;
+    }
+  }
+}
+
 @media screen and (min-width: 992px) {
   .about {
+    padding: 0 var(--view-horizontal-desktop-padding);
     max-width: var(--view-max-width);
 
     &__card {

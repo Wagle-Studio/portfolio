@@ -1,7 +1,7 @@
 import "./Header.scss";
 import { useState, useEffect, createElement } from "react";
 import { headerData } from "../../../data";
-import { ButtonLink } from "../../atoms";
+import { ButtonLink, MenuIcon } from "../../atoms";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,7 +50,7 @@ export const Header = () => {
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <h1>TODO</h1>
+          <MenuIcon />
         </button>
         <nav
           id="primary-navigation"
