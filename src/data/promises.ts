@@ -1,8 +1,3 @@
-import Map from "./../components/icons/Map";
-import Speaker from "./../components/icons/Speaker";
-import Building from "./../components/icons/Building";
-import Handshake from "./../components/icons/Handshake";
-
 export const promisesData = {
   title: "Pourquoi me faire confiance ?",
   description:
@@ -10,7 +5,6 @@ export const promisesData = {
   strongParts: ["écoute", "compréhension métier", "collaboration"],
   promises: [
     {
-      icon: Building,
       title: "Une approche orientée métier",
       paragraphs: [
         "Avant de parler de fonctionnalités, je comprends vos flux et vos contraintes pour créer une solution SaaS qui colle à votre réalité.",
@@ -18,7 +12,6 @@ export const promisesData = {
       ],
     },
     {
-      icon: Map,
       title: "Une méthode agile et continue",
       paragraphs: [
         "Chaque projet suit un cycle agile avec validations claires : cadrage, prototype, déploiement cloud, tests utilisateurs.",
@@ -26,7 +19,6 @@ export const promisesData = {
       ],
     },
     {
-      icon: Speaker,
       title: "Un interlocuteur impliqué",
       paragraphs: [
         "Un seul point de contact : disponible, responsable, engagé.",
@@ -34,7 +26,6 @@ export const promisesData = {
       ],
     },
     {
-      icon: Handshake,
       title: "Une collaboration transparente",
       paragraphs: [
         "Avant de développer, j’explore les SaaS existants. Si l’un d’eux répond à vos besoins, je vous l’indique.",

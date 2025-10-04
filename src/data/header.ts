@@ -1,23 +1,34 @@
+import { LinkedinIcon } from "../ui/atoms/icons";
+
 export const headerData = {
   brand: {
     name: "Kévin Wolff",
-    href: "#app",
+    href: "/",
   },
   navigation: [
     {
-      text: "Méthode",
-      href: "#process",
-      className: "nav_item",
+      text: "Portfolio",
+      href: "/",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
     },
     {
-      text: "Exemples",
-      href: "#examples",
-      className: "nav_item",
+      text: "Solution SaaS",
+      href: "/saas",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
     },
     {
       text: "Linkedin",
       href: "https://www.linkedin.com/in/wolff-kevin/",
-      className: "button",
+      variant: "primary",
+      target: "_blank",
+      icon: LinkedinIcon,
+      icon_side: "right",
     },
   ],
 };

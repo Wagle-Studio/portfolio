@@ -1,4 +1,4 @@
-const strongPartsFormater = (text: string, strongParts?: string[]) => {
+export const strongPartsFormater = (text: string, strongParts?: string[]) => {
   if (!strongParts || strongParts.length === 0) {
     return text;
   }
@@ -15,5 +15,3 @@ const strongPartsFormater = (text: string, strongParts?: string[]) => {
 
   return formattedText;
 };
-
-export default strongPartsFormater;

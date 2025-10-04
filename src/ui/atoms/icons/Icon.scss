@@ -1,0 +1,43 @@
+.icon {
+  display: inline-block;
+  color: var(--gray-darker);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 0;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease,
+    transform 0.15s ease;
+
+  &--small {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--medium {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--large {
+    width: 32px;
+    height: 32px;
+  }
+
+  path {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: currentColor;
+  }
+}
+
+.button:hover .icon {
+  transform: translateY(-1px);
+}
+.button:active .icon {
+  transform: translateY(0);
+}
+.button:disabled .icon,
+.button.button--disabled .icon {
+  opacity: 0.7;
+}
