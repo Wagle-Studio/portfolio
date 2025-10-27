@@ -1,0 +1,6 @@
+services:
+  frontend:
+    restart: always
+    image: ghcr.io/wagle-studio/wgls_dev_prod:1.0.1
+    ports:
+      - 4173:4173
