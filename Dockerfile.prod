@@ -12,8 +12,6 @@ RUN npm run build
 
 RUN npm install -g serve
 
-COPY dist ./app/dist
-
 EXPOSE 4173
 
 CMD ["serve", "-s", "dist", "-l", "4173"]
