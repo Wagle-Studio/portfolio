@@ -29,18 +29,13 @@ jobs:
           REMOTEDIR="${{ secrets.REMOTE_PROD_PROJECT_FOLDER_PATH }}"
 
           lftp sftp://${{ secrets.SFTP_PROD_USERNAME }}:${{ secrets.SFTP_PROD_PWD }}@${{ secrets.REMOTE_HOST }} -e "
-            set sftp:auto-confirm yes;
-            set net:timeout 300;
-            set net:max-retries 3;
-            cd $REMOTEDIR;
-            mirror -R -v --only-newer --delete \
-              --exclude dist/ \
-              --exclude .git/ \
-              --exclude .github/ \
-              --exclude github/ \
-              --exclude node_modules/ \
-              $LOCALDIR/ ./
-            quit
+            set sftp:auto-confirm yes
+            set net:timeout 300
+            set net:max-retries 3
+            cd $REMOTEDIR
+            put -O . docker-compose.prod.yml
+            put -O . .env.example
+            bye
           "
 
       - name: Remote SSH - Install, Build and Restart
@@ -51,6 +46,7 @@ jobs:
 
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
             cd "$APP_DIR"
-            npm install
-            npm run build
+            cp .env.example .env
+            sed -i 's#^GHCR_NAMESPACE=.*#GHCR_NAMESPACE=${{ secrets.GHCR_NAMESPACE }}#' .env
+            docker compose -f docker-compose.prod.yml --env-file .env up --build -d
           EOF
