@@ -2,7 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-0);
+  gap: var(--space-1);
+  width: max-content;
   padding: var(--space-1) var(--space-2);
   font-family: var(--font-primary-medium);
   font-size: var(--font-size-small);
@@ -26,7 +27,7 @@
   &--variant {
     &-default {
       color: var(--black);
-      background-color: var(--primary-05);
+      background-color: var(--body-secondary);
       border: 1px solid var(--primary-25);
     }
 
@@ -35,6 +36,12 @@
       padding: 0;
       background-color: transparent;
       border: 1px solid transparent;
+    }
+
+    &-status {
+      color: var(--status-available);
+      background-color: var(--status-available-25);
+      border: 1px solid var(--status-available-65);
     }
   }
 

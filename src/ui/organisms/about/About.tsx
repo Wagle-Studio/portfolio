@@ -32,11 +32,17 @@ export const About = () => {
   }, []);
 
   return (
-    <section id="about" className="about" aria-labelledby="about-title">
+    <section
+      id="about"
+      className="about grid-pattern"
+    >
       <article ref={cardRef} className="about__card">
         <div className="about__content">
           <header className="about__header">
-            <h2 className="heading_2">{aboutData.profile.name}</h2>
+            <div className="about__header__name">
+              <h2 className="heading_2">{aboutData.profile.name}</h2>
+              <Tag variant="status">Disponible CDI Paris</Tag>
+            </div>
             <p className="paragraph">{aboutData.profile.role}</p>
           </header>
           <div className="about__body">
@@ -54,7 +60,7 @@ export const About = () => {
             ))}
           </div>
         </div>
-        <div className="about__profile__wrapper">
+        {/* <div className="about__profile__wrapper">
           <div className="about__profile">
             <img
               className="about__picture"
@@ -70,12 +76,12 @@ export const About = () => {
               <p className="paragraph">{aboutData.profile.profil.location}</p>
             </div>
           </div>
-        </div>
+        </div> */}
         <ul className="about__tags">
           {aboutData.profile.tags.map((tag, tIndex) => (
             <li key={tIndex} className="about__tags-item">
-              <Tag variant={tag.variant}>
-                {tag.icon && <>{createElement(tag.icon)}</>}
+              <Tag>
+                {tag.icon && <>{createElement(tag.icon, { size: "medium" })}</>}
                 {tag.label}
               </Tag>
             </li>

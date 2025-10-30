@@ -9,6 +9,7 @@ interface ButtonLinkProps
   className?: string;
   href: string;
   variant?: string;
+  size?: "small" | "medium";
   target?: string;
   disabled?: boolean;
   iconSide?: string;
@@ -21,6 +22,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
       className,
       href,
       variant = "primary",
+      size = "medium",
       target = "_self",
       disabled = false,
       iconSide,
@@ -30,39 +32,25 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   ) => {
     const isHash = href.startsWith("#");
 
+    const classes = clsx(
+      className,
+      "button-link",
+      `button-link--variant-${variant}`,
+      `button-link--size-${size}`,
+      disabled ? "button-link--disabled" : "button-link--active",
+      iconSide ? `button-link--icon-${iconSide}` : undefined
+    );
+
     if (isHash) {
       return (
-        <a
-          ref={ref}
-          className={clsx(
-            className,
-            "button-link",
-            `button-link--variant-${variant}`,
-            disabled ? "button-link--disabled" : "button-link--active",
-            iconSide ? `button-link--icon-${iconSide}` : undefined
-          )}
-          href={href}
-          {...props}
-        >
+        <a ref={ref} className={classes} href={href} {...props}>
           {children}
         </a>
       );
     }
 
     return (
-      <Link
-        ref={ref}
-        className={clsx(
-          className,
-          "button-link",
-          `button-link--variant-${variant}`,
-            disabled ? "button-link--disabled" : "button-link--active",
-          iconSide ? `button-link--icon-${iconSide}` : undefined
-        )}
-        to={href}
-        target={target}
-        {...props}
-      >
+      <Link ref={ref} className={classes} to={href} target={target} {...props}>
         {children}
       </Link>
     );

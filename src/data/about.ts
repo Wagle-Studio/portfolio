@@ -1,4 +1,4 @@
-import { MedalIcon } from "../ui/atoms/icons";
+import { MedalIcon, WorkIcon } from "../ui/atoms/icons";
 import ProfilePicture from "./../../public/assets/pictures/profile_picture.jpg";
 
 export const aboutData = {
@@ -31,15 +31,14 @@ export const aboutData = {
       location: "Grenoble | Paris",
     },
     tags: [
-      { label: "5 ans d'expériences", icon: MedalIcon, variant: "ghost" },
+      {
+        label: "5 ans d'expériences",
+        icon: WorkIcon,
+      },
       {
         label: "Certification Symfony en cours",
         icon: MedalIcon,
-        variant: "ghost",
       },
-      // { label: "salariat", icon: undefined, variant: "default" },
-      // { label: "missions freelance", icon: undefined, variant: "default" },
-      // { label: "solutions SaaS", icon: undefined, variant: "default" },
     ],
   },
 };

@@ -47,6 +47,7 @@
   padding: 1.5px;
   width: 34px;
   height: 34px;
+  color: var(--black);
   box-sizing: border-box;
   transition: transform 160ms ease;
 }
@@ -112,6 +113,10 @@
 @media screen and (min-width: 768px) {
   .header__inner {
     padding: var(--space-3) var(--view-horizontal-desktop-padding);
+  }
+
+  .header__brand-link {
+    padding: 0;
   }
 
   .header__menu-button {

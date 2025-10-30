@@ -8,4 +8,5 @@ export { heroBannerData } from "./hero-banner";
 export { mvpData } from "./mvp";
 export { processData } from "./process";
 export { promisesData } from "./promises";
-export { showcaseData } from "./showcase";
+export { projectsData } from "./projects";
+export { skillsData } from "./skills";
