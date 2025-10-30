@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import { About, Showcase } from "../../organisms";
+import { About, Projects, Skills } from "../../organisms";
 
 export const Portfolio = () => {
   const location = useLocation();
@@ -7,7 +7,8 @@ export const Portfolio = () => {
   return (
     <main key={location.pathname} className="page-transition">
       <About />
-      <Showcase />
+      <Skills />
+      <Projects />
     </main>
   );
 };

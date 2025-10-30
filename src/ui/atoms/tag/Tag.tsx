@@ -5,7 +5,7 @@ import clsx from "clsx";
 interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   children?: ReactNode;
   variant?: string;
-  size?: "small" | "default";
+  size?: "small" | "default" | "status";
   iconSide?: string;
 }
 

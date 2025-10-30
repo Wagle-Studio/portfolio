@@ -1,0 +1,176 @@
+.bands {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--view-max-width);
+}
+
+.band {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 2%,
+    black 98%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 2%,
+    black 98%,
+    transparent
+  );
+
+  &--bg {
+    &-gray {
+      background-color: var(--gray);
+    }
+
+    &-secondary {
+      background-color: var(--status-available-25);
+    }
+  }
+
+  &--color {
+    &-primary {
+      li {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &--size {
+    &-small {
+      height: 44px;
+
+      li {
+        font-size: var(--font-size-base);
+      }
+    }
+
+    &-medium {
+      height: 56px;
+
+      li {
+        font-size: var(--font-size-medium);
+      }
+    }
+
+    &-large {
+      height: 64px;
+
+      li {
+        font-size: var(--font-size-large);
+      }
+    }
+  }
+
+  &--gap {
+    &-small {
+      ul {
+        gap: var(--space-2);
+      }
+    }
+
+    &-medium {
+      ul {
+        gap: var(--space-4);
+      }
+    }
+
+    &-large {
+      ul {
+        gap: var(--space-6);
+      }
+    }
+  }
+
+  &--weight {
+    &-small {
+      li {
+        font-weight: var(--font-weight-base);
+      }
+    }
+
+    &-medium {
+      li {
+        font-weight: var(--font-weight-medium);
+      }
+    }
+
+    &-large {
+      li {
+        font-weight: var(--font-weight-large);
+      }
+    }
+  }
+
+  &--dir {
+    &-right {
+      .band__track {
+        animation-name: scroll-right;
+      }
+    }
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 25s linear infinite;
+    will-change: transform;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  &__item {
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (min-width: 640px) {
+  .band__track {
+    animation-duration: 45s;
+  }
+}
+
+@media (min-width: 992px) {
+  .band__track {
+    animation-duration: 65s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band__track {
+    animation: none;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
