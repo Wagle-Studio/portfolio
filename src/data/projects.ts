@@ -3,7 +3,7 @@ export const projectsData = {
   items: [
     {
       title: "Diagramme Merise & UML",
-      media: undefined,
+      media: "assets/pictures/project_merise.png",
       subtitle:
         "Application de modélisation entité-relation permettant de créer des schémas UML/Merise en ligne.",
       tags: ["Architecture avancée", "Approche SaaS"],
@@ -34,7 +34,7 @@ export const projectsData = {
     },
     {
       title: "Logiciel File Renamer",
-      media: undefined,
+      media: "assets/pictures/project_renamer.png",
       subtitle:
         "Application JavaFX pour renommer des fichiers selon différentes stratégies.",
       tags: ["Logiciel de bureau"],

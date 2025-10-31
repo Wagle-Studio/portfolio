@@ -9,43 +9,52 @@ import { Tag } from "../../atoms";
 gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
-  const cardRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const tagsRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    if (cardRef.current) {
+    const animateElement = (
+      element: HTMLElement | null,
+      options: { fromY: number; delay?: number }
+    ) => {
+      if (!element) return;
+
       gsap.fromTo(
-        cardRef.current,
-        { opacity: 0, y: -30 },
+        element,
+        { opacity: 0, y: options.fromY },
         {
           opacity: 1,
           y: 0,
+          delay: options.delay || 0,
           duration: 1,
           scrollTrigger: {
-            trigger: cardRef.current,
-            start: "top bottom",
-            end: "bottom top",
+            trigger: element,
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
       );
-    }
+    };
+
+    animateElement(headerRef.current, { fromY: -30 });
+    animateElement(bodyRef.current, { fromY: 30, delay: 0.2 });
+    animateElement(tagsRef.current, { fromY: 30, delay: 0.4 });
   }, []);
 
   return (
-    <section
-      id="about"
-      className="about grid-pattern"
-    >
-      <article ref={cardRef} className="about__card">
+    <section id="about" className="about grid-pattern">
+      <article className="about__card">
         <div className="about__content">
-          <header className="about__header">
+          <header ref={headerRef} className="about__header">
             <div className="about__header__name">
               <h2 className="heading_2">{aboutData.profile.name}</h2>
               <Tag variant="status">Disponible CDI Paris</Tag>
             </div>
             <p className="paragraph">{aboutData.profile.role}</p>
           </header>
-          <div className="about__body">
+
+          <div ref={bodyRef} className="about__body">
             {aboutData.profile.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
@@ -60,24 +69,8 @@ export const About = () => {
             ))}
           </div>
         </div>
-        {/* <div className="about__profile__wrapper">
-          <div className="about__profile">
-            <img
-              className="about__picture"
-              src={aboutData.profile.picture}
-              alt={aboutData.profile.pictureAlt}
-              aria-hidden="true"
-            />
-            <div className="about__status">
-              <p className="paragraph about__status__paragraph">
-                <strong>{aboutData.profile.profil.status}</strong>
-              </p>
-              <p className="paragraph">{aboutData.profile.profil.work_type}</p>
-              <p className="paragraph">{aboutData.profile.profil.location}</p>
-            </div>
-          </div>
-        </div> */}
-        <ul className="about__tags">
+
+        <ul ref={tagsRef} className="about__tags">
           {aboutData.profile.tags.map((tag, tIndex) => (
             <li key={tIndex} className="about__tags-item">
               <Tag>

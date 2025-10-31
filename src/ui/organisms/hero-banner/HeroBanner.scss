@@ -6,7 +6,7 @@
   width: 100%;
   max-width: var(--view-max-width);
   margin: 0 auto;
-  padding: 0 var(--view-horizontal-mobile-padding);
+  padding: var(--space-10) var(--view-horizontal-mobile-padding);
   background: url("./../../assets/backgrounds/hero_banner_background.svg")
     center no-repeat;
   background-size: cover;
@@ -39,7 +39,7 @@
 
 @media screen and (min-width: 768px) {
   .hero {
-    padding: 0 var(--view-horizontal-desktop-padding);
+    padding: var(--space-10) var(--view-horizontal-desktop-padding);
 
     &__subtitle {
       font-size: var(--font-size-large);
