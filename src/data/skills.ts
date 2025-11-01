@@ -1,10 +1,19 @@
 export const skillsData = {
   technos: [
     {
+      label: "Bash",
+    },
+    {
+      label: "Debian | Linux",
+    },
+    {
+      label: "Git",
+    },
+    {
       label: "PHP",
     },
     {
-      label: "Symfony",
+      label: "Symfony 💙",
     },
     {
       label: "TypeScript",
@@ -17,15 +26,6 @@ export const skillsData = {
     },
     {
       label: "Docker",
-    },
-    {
-      label: "Bash",
-    },
-    {
-      label: "Debian | Linux",
-    },
-    {
-      label: "Git",
     },
   ],
   missions: [

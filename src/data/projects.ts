@@ -9,7 +9,7 @@ export const projectsData = {
       tags: ["Architecture avancée", "Approche SaaS"],
       technos: ["React", "React Flow", "TypeScript"],
       git: "https://github.com/Wagle-Studio/Merise",
-      url: "https://merise-liard.vercel.app/",
+      url: "https://merise.wolff-kevin.fr/",
     },
     {
       title: "Vitrine Chemins du lien",

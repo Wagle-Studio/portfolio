@@ -7,10 +7,10 @@ export const aboutData = {
     picture: ProfilePicture,
     pictureAlt: "Photo de profil de Kévin Wolff",
     name: "Bienvenue, moi c'est Kévin",
-    role: "Développeur fullstack | Formateur CDA & DWWM",
+    role: "Développeur Symfony + React | Formateur CDA & DWWM",
     paragraphs: [
       {
-        text: "Développeur fullstack spécialisé en Symfony et React, j’accompagne vos projets backend et fullstack avec rigueur, professionnalisme et bonne humeur.",
+        text: "Développeur spécialisé en Symfony et React, j’accompagne vos projets backend et fullstack avec rigueur, professionnalisme et bonne humeur.",
         strongParts: [
           "fullstack spécialisé en Symfony et React",
           "rigueur, professionnalisme et bonne humeur",
