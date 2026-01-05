@@ -1,18 +1,25 @@
-import "./ui/globals.scss";
-import { Route, Routes } from "react-router";
-import { Footer, Portfolio, Header, Saas } from "./ui";
+import "@/ui/globals.scss";
 
-function App() {
+import { Header } from "@/ui/components/header/Header";
+import { Footer } from "@/ui/components/footer/Footer";
+import { About } from "@/ui/blocs/about/About";
+import { Skills } from "@/ui/blocs/skills/Skills";
+import { Recommendations } from "@/ui/blocs/recommendations/Recommendations";
+import { Projects } from "@/ui/blocs/projects/Projects";
+
+const App = () => {
   return (
     <div id="app" className="app">
       <Header />
-      <Routes location={location}>
-        <Route path="/" element={<Portfolio />} />
-        <Route path="/saas" element={<Saas />} />
-      </Routes>
+      <main>
+        <About />
+        <Skills />
+        <Recommendations />
+        <Projects />
+      </main>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

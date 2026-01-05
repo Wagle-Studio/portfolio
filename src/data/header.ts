@@ -1,22 +1,22 @@
-import { LinkedinIcon } from "../ui/atoms/icons";
+import { LinkedinIcon } from "@/ui/components/icons";
 
-export const headerData = {
+export default {
   brand: {
     name: "Kévin Wolff",
-    href: "/",
+    href: "#top",
   },
   navigation: [
     {
-      text: "Portfolio",
-      href: "/",
+      text: "Recommandations",
+      href: "#recommendations",
       variant: "ghost",
       target: "_self",
       icon: undefined,
       icon_side: undefined,
     },
     {
-      text: "Solution SaaS",
-      href: "/saas",
+      text: "Projets",
+      href: "#projects",
       variant: "ghost",
       target: "_self",
       icon: undefined,

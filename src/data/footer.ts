@@ -1,6 +1,6 @@
-import { LinkedinIcon } from "../ui/atoms/icons";
+import { LinkedinIcon } from "@/ui/components/icons";
 
-export const footerData = {
+export default {
   brand: {
     name: "Wagle Studio",
     author: "Par Kévin Wolff",
@@ -22,14 +22,6 @@ export const footerData = {
     {
       text: "Portfolio",
       href: "/",
-      variant: "ghost",
-      target: "_self",
-      icon: undefined,
-      icon_side: undefined,
-    },
-    {
-      text: "Solution SaaS",
-      href: "/saas",
       variant: "ghost",
       target: "_self",
       icon: undefined,

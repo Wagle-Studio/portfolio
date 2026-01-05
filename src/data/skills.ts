@@ -1,4 +1,4 @@
-export const skillsData = {
+export default {
   technos: [
     {
       label: "Bash",
@@ -13,7 +13,7 @@ export const skillsData = {
       label: "PHP",
     },
     {
-      label: "Symfony 💙",
+      label: "Symfony",
     },
     {
       label: "TypeScript",

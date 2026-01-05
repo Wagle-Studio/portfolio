@@ -1,16 +1,16 @@
-import { MedalIcon, WorkIcon } from "../ui/atoms/icons";
+import { MedalIcon, WorkIcon } from "@/ui/components/icons";
 import ProfilePicture from "./../../public/assets/pictures/profile_picture.jpg";
 
-export const aboutData = {
+export default {
   title: "À propos",
   profile: {
     picture: ProfilePicture,
     pictureAlt: "Photo de profil de Kévin Wolff",
     name: "Bienvenue, moi c'est Kévin",
-    role: "Développeur Symfony + React | Formateur CDA & DWWM",
+    role: "Développeur PHP Symfony + React",
     paragraphs: [
       {
-        text: "Développeur spécialisé en Symfony et React, j’accompagne vos projets backend et fullstack avec rigueur, professionnalisme et bonne humeur.",
+        text: "Développeur spécialisé en PHP Symfony et React, j’accompagne vos projets backend et fullstack avec rigueur, professionnalisme et bonne humeur.",
         strongParts: [
           "fullstack spécialisé en Symfony et React",
           "rigueur, professionnalisme et bonne humeur",

@@ -1,4 +1,4 @@
-export const projectsData = {
+export default {
   title: "Projets",
   items: [
     {
@@ -26,7 +26,7 @@ export const projectsData = {
       title: "E-commerce Drop Market",
       media: undefined,
       subtitle:
-        "E-commerce Symfony, intégrant Turbo, Mercure et une architecture SOLID pour explorer l'écosystème.",
+        "E-commerce Symfony, intégrant Turbo, Mercure pour explorer l'écosystème.",
       tags: ["Interface temps réel"],
       technos: ["Symfony", "PHP", "Hotwire"],
       git: "https://github.com/Wagle-Studio/drop_market",
