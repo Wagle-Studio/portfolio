@@ -20,8 +20,16 @@ export default {
       icon_side: undefined,
     },
     {
-      text: "Portfolio",
-      href: "/",
+      text: "Recommandations",
+      href: "#recommendations",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
+    },
+    {
+      text: "Projets",
+      href: "#projects",
       variant: "ghost",
       target: "_self",
       icon: undefined,

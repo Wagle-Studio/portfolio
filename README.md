@@ -14,8 +14,8 @@ Portfolio et landing page de mon activité freelance de développeur de solution
 ## Installation
 
 ```sh
-git clone git@github.com:Wagle-Studio/wagle-dev.git
-cd wagle-dev
+git clone git@github.com:Wagle-Studio/portfolio.git
+cd portfolio
 npm install
 npm run dev
 ```

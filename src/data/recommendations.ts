@@ -21,7 +21,7 @@ export default {
     },
     {
       fullName: "Lucas Hezil",
-      role: "Data Analyst",
+      role: "Data Engineer",
       text: "J’ai eu la chance d’avoir Kévin comme formateur en développement, et c’est sans aucun doute le meilleur professeur que j’ai eu. Passionné, investi et profondément à l’écoute, il sait transmettre des notions complexes avec une pédagogie claire, efficace et toujours bienveillante. \n Son énergie, sa sympathie et sa capacité à faire progresser les personnes avec qui il travaille reflètent autant ses qualités humaines, que sa solide maîtrise du développement. \n Je le recommande sans hésitation.",
       source: "Simplon",
       avatar: ProfilePictureLucas,
