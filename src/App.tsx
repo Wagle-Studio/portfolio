@@ -5,7 +5,7 @@ import { Footer } from "@/ui/components/footer/Footer";
 import { About } from "@/ui/blocs/about/About";
 import { Skills } from "@/ui/blocs/skills/Skills";
 import { Recommendations } from "@/ui/blocs/recommendations/Recommendations";
-import { Projects } from "@/ui/blocs/projects/Projects";
+// import { Projects } from "@/ui/blocs/projects/Projects";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <About />
         <Skills />
         <Recommendations />
-        <Projects />
+        {/* <Projects /> */}
       </main>
       <Footer />
     </div>
