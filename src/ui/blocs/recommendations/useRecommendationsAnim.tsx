@@ -36,12 +36,23 @@ export const useRecommendationsAnim = () => {
     window.addEventListener("scroll", markInteracted, { passive: true });
 
     const ctx = gsap.context(() => {
-      const headingTl = gsap
-        .timeline({
-          paused: true,
-          defaults: { ease: "power3.out", duration: 0.6 },
-        })
-        .from(".recommendations .heading_2", { y: 28, opacity: 0 });
+      const sectionTitle = sectionRef.current?.querySelector(".section__title");
+      const sectionIndex = sectionRef.current?.querySelector(
+        ".section__title__index"
+      );
+
+      const headingTl = gsap.timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      });
+
+      if (sectionTitle) {
+        headingTl.from(sectionTitle, { opacity: 0, y: 24, duration: 0.55 });
+      }
+
+      if (sectionIndex) {
+        headingTl.from(sectionIndex, { opacity: 0, x: -12, duration: 0.35 }, "-=0.32");
+      }
 
       let headingPlayed = false;
       const playHeading = () => {
@@ -57,12 +68,20 @@ export const useRecommendationsAnim = () => {
         onEnterBack: playHeading,
       });
 
-      const cards = gsap.utils.toArray<HTMLElement>(".recommendations__card");
+      const cards = gsap.utils.toArray<HTMLElement>(
+        ".recommendations__list__item__card"
+      );
 
       cards.forEach((card) => {
-        const avatar = card.querySelector(".recommendations__card__avatar");
-        const role = card.querySelector(".recommendations__card__role");
-        const texts = card.querySelectorAll(".recommendations__card__text");
+        const avatar = card.querySelector(
+          ".recommendations__list__item__card__avatar"
+        );
+        const role = card.querySelector(
+          ".recommendations__list__item__card__role"
+        );
+        const texts = card.querySelectorAll(
+          ".recommendations__list__item__card__text"
+        );
 
         const tl = gsap
           .timeline({

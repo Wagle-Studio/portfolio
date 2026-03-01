@@ -7,7 +7,7 @@ export default {
   items: [
     {
       fullName: "Théophile Bellintani",
-      role: "Développeur PHP Indépendant",
+      role: "Dev PHP Indépendant",
       text: "J'ai eu l'occasion de travailler avec Kévin, c'est quelqu'un de très investi, curieux, compétent, avec une énergie comme on aime en avoir dans une équipe ! \n Vous pouvez compter sur lui pour des projets de toute taille. On sent que son expérience professionnelle et de formateur lui ont permis de maitriser parfaitement son domaine, c'est très agréable de travailler à ses côtés. \n Je le recommande !",
       source: "Malt",
       avatar: ProfilePictureTheophile,

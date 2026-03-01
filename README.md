@@ -2,8 +2,7 @@
 
 ⚡ Vite.js . ⚛️ React . 🎨 SCSS
 
-🔗 [Site en ligne](https://www.wolff-kevin.fr)  
-🔗 [Maquettes Figma](https://www.figma.com/design/aqUeqZAGxxgaCPojm2ivmh/Dev---Wagle-Dev?t=R3A4ozKZh0laGHJd-1)
+🔗 [Site en ligne](https://www.wolff-kevin.fr)
 
 ## Présentation
 

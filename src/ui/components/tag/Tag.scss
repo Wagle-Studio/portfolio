@@ -10,7 +10,6 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--font-letter-spacing-medium);
   color: var(--black);
-  background-color: var(--primary-05);
   border-radius: var(--border-radius-base);
   transition: background-color 0.2s ease;
 
@@ -27,8 +26,8 @@
   &--variant {
     &-default {
       color: var(--black);
-      background-color: var(--body-secondary);
-      border: 1px solid var(--primary-25);
+      background-color: var(--white);
+      border: 1px solid var(--gray-light);
     }
 
     &-ghost {
@@ -39,9 +38,9 @@
     }
 
     &-status {
-      color: var(--status-available);
-      background-color: var(--status-available-25);
-      border: 1px solid var(--status-available-65);
+      color: var(--primary);
+      background-color: var(--primary-15);
+      border: 1px solid var(--primary-65);
     }
   }
 

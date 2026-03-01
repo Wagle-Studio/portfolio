@@ -1,31 +1,40 @@
 export default {
   technos: [
     {
-      label: "Bash",
-    },
-    {
-      label: "Debian | Linux",
-    },
-    {
-      label: "Git",
-    },
-    {
       label: "PHP",
+      level: "Expert",
     },
     {
       label: "Symfony",
+      level: "Expert",
     },
     {
       label: "TypeScript",
+      level: "Avancé",
     },
     {
       label: "React",
+      level: "Avancé",
     },
     {
       label: "SQL",
+      level: "Avancé",
     },
     {
       label: "Docker",
+      level: "Avancé",
+    },
+    {
+      label: "Bash",
+      level: "Avancé",
+    },
+    {
+      label: "Linux",
+      level: "Avancé",
+    },
+    {
+      label: "Git",
+      level: "Avancé",
     },
   ],
   missions: [
@@ -36,27 +45,31 @@ export default {
       label: "API REST",
     },
     {
+      label: "Architecture DDD | MCD",
+    },
+    {
+      label: "Refacto | Clean code | SOLID",
+    },
+    {
+      label: "Tests",
+    },
+    {
       label: "CI/CD",
     },
     {
       label: "Cloud | hébergement",
     },
     {
-      label: "Design pattern",
-    },
-    {
-      label: "Refacto | Clean code",
-    },
-    {
-      label: "Tests",
-    },
-    {
       label: "Documentation",
     },
+    { label: "Mentoring & Formation d'équipe" },
   ],
   personality: [
     {
-      label: "Gestion et coordination",
+      label: "Exigence de maintenabilité",
+    },
+    {
+      label: "Gestion et coordination de projet",
     },
     {
       label: "Planification et respect des délais",
@@ -65,7 +78,13 @@ export default {
       label: "Collaboration technique et opérationnelle",
     },
     {
-      label: "Suivi de la qualité",
+      label: "Communication et esprit d'équipe",
+    },
+    {
+      label: "Transmission de connaissances et pédagogie",
+    },
+    {
+      label: "Curiosité et veille technique",
     },
   ],
 };

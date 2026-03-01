@@ -2,30 +2,40 @@ export default {
   title: "Projets",
   items: [
     {
-      title: "Diagramme Merise & UML",
-      media: "assets/pictures/project_merise.png",
-      subtitle:
-        "Application de modélisation entité-relation permettant de créer des schémas UML/Merise en ligne.",
-      tags: ["Architecture avancée", "Approche SaaS"],
-      technos: ["React", "TypeScript"],
-      git: "https://github.com/Wagle-Studio/Merise",
-      url: "https://merise.wolff-kevin.fr/",
-    },
-    {
-      title: "E-commerce Drop Market",
+      title: "Drop Market",
       media: undefined,
       subtitle:
-        "E-commerce Symfony, intégrant Turbo, Mercure pour explorer l'écosystème.",
+        "Expérimentation partielle d'un e-commerce en temps réel sans code Javascript, réalisé à l'aide de Symfony Turbo + Mercure + Caddy.",
       tags: ["Interface temps réel"],
       technos: ["Symfony", "PHP", "Hotwire"],
       git: "https://github.com/Wagle-Studio/drop_market",
       url: undefined,
     },
     {
-      title: "Vitrine Chemins du lien",
+      title: "Leveling",
+      media: undefined,
+      subtitle:
+        "Work In Progress API Symfony pour structurer des parcours de progression personnel, avec scénarios générés par agents IA.",
+      tags: ["AI agents"],
+      technos: ["Symfony", "PHP", "Design Pattern"],
+      git: "https://github.com/Wagle-Studio",
+      url: undefined,
+    },
+    {
+      title: "Diagramme Merise & UML",
+      media: "assets/pictures/project_merise.png",
+      subtitle:
+        "Expérimentation de l'architecture DDD (Domain Driven Design) pour une application de modélisation entité-relation inspirée de Looping.",
+      tags: ["Architecture DDD"],
+      technos: ["React", "TypeScript"],
+      git: "https://github.com/Wagle-Studio/Merise",
+      url: "https://merise.wolff-kevin.fr/",
+    },
+    {
+      title: "Chemins du lien",
       media: "assets/pictures/project_chemins_du_lien.jpg",
       subtitle:
-        "Projet associatif, site vitrine et CMS moderne pour accompagnateur en compétences relationnelles.",
+        "Projet associatif, site vitrine et CMS headless moderne pour accompagnateur en compétences relationnelles.",
       tags: ["Projet Associatif", "CMS"],
       technos: ["Payload CMS", "TypeScript"],
       git: "https://github.com/Wagle-Studio/chemins-du-lien",
@@ -33,10 +43,10 @@ export default {
       url: "https://chemins-du-lien.fr/",
     },
     {
-      title: "Logiciel File Renamer",
+      title: "File Renamer",
       media: "assets/pictures/project_renamer.png",
       subtitle:
-        "Application JavaFX pour renommer des fichiers selon différentes stratégies.",
+        "Expérimentation Java avec un mini logiciel pour renommer des fichiers selon différentes stratégies.",
       tags: ["Logiciel de bureau"],
       technos: ["Java", "Java FX"],
       git: "https://github.com/Wagle-Studio/file_renamer",

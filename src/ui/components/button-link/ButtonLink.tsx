@@ -21,7 +21,7 @@ export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
       children,
       className,
       href,
-      variant = "primary",
+      variant = "secondary",
       size = "medium",
       target = "_self",
       disabled = false,

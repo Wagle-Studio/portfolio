@@ -5,7 +5,8 @@ import { Footer } from "@/ui/components/footer/Footer";
 import { About } from "@/ui/blocs/about/About";
 import { Skills } from "@/ui/blocs/skills/Skills";
 import { Recommendations } from "@/ui/blocs/recommendations/Recommendations";
-// import { Projects } from "@/ui/blocs/projects/Projects";
+import { Projects } from "@/ui/blocs/projects/Projects";
+import { Contact } from "@/ui/blocs/contact/Contact";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         <About />
         <Skills />
         <Recommendations />
-        {/* <Projects /> */}
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>

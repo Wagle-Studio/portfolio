@@ -36,9 +36,23 @@ export const useProjectsAnim = () => {
     window.addEventListener("scroll", markInteracted, { passive: true });
 
     const ctx = gsap.context(() => {
-      const headingTl = gsap
-        .timeline({ paused: true, defaults: { ease: "power3.out" } })
-        .from(".projects .heading_2", { y: 28, opacity: 0, duration: 0.6 });
+      const sectionTitle = sectionRef.current?.querySelector(".section__title");
+      const sectionIndex = sectionRef.current?.querySelector(
+        ".section__title__index"
+      );
+
+      const headingTl = gsap.timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      });
+
+      if (sectionTitle) {
+        headingTl.from(sectionTitle, { opacity: 0, y: 24, duration: 0.55 });
+      }
+
+      if (sectionIndex) {
+        headingTl.from(sectionIndex, { opacity: 0, x: -12, duration: 0.35 }, "-=0.32");
+      }
 
       let headingPlayed = false;
       const playHeading = () => {
@@ -57,51 +71,40 @@ export const useProjectsAnim = () => {
       const cards = gsap.utils.toArray<HTMLElement>(".projects__list__card");
 
       cards.forEach((card) => {
-        const picture = card.querySelector(".projects__list__card__picture");
         const content = card.querySelector(
           ".projects__list__card__content"
         ) as HTMLElement | null;
-        const header = card.querySelector(
-          ".projects__list__card__header"
-        ) as HTMLElement | null;
-        const body = card.querySelector(
-          ".projects__list__card__body"
-        ) as HTMLElement | null;
-        const links = card.querySelectorAll(
-          ".projects__list__card__links a"
-        );
+        const title = card.querySelector(".projects__list__card__title") as HTMLElement | null;
+        const tags = card.querySelectorAll(".projects__list__card__body__tags li");
+        const body = card.querySelectorAll(".projects__list__card__body > *");
+        const actions = card.querySelectorAll(".projects__list__card__title--actions a");
 
-        const tl = gsap
-          .timeline({
-            paused: true,
-            defaults: { ease: "power3.out" },
-          })
-          .from(card, { y: 36, opacity: 0, duration: 0.6 })
-          .from(
-            picture,
-            { scale: 0.92, opacity: 0, duration: 0.45 },
-            "-=0.4"
-          )
-          .from(
-            content,
-            { opacity: 0, y: 18, duration: 0.45 },
-            "-=0.35"
-          )
-          .from(
-            header?.children || [],
-            { opacity: 0, y: 10, stagger: 0.08, duration: 0.35 },
-            "-=0.3"
-          )
-          .from(
-            body?.children || [],
-            { opacity: 0, y: 12, duration: 0.35 },
-            "-=0.25"
-          )
-          .from(
-            links,
-            { opacity: 0, y: 8, stagger: 0.06, duration: 0.3 },
-            "-=0.2"
-          );
+        const tl = gsap.timeline({
+          paused: true,
+          defaults: { ease: "power3.out" },
+        });
+
+        tl.from(card, { y: 36, opacity: 0, duration: 0.6 });
+
+        if (content) {
+          tl.from(content, { opacity: 0, y: 18, duration: 0.45 }, "-=0.35");
+        }
+
+        if (title) {
+          tl.from(title.children, { opacity: 0, y: 10, stagger: 0.08, duration: 0.35 }, "-=0.3");
+        }
+
+        if (tags.length > 0) {
+          tl.from(tags, { opacity: 0, y: 10, stagger: 0.05, duration: 0.3 }, "-=0.25");
+        }
+
+        if (body.length > 0) {
+          tl.from(body, { opacity: 0, y: 12, duration: 0.35 }, "-=0.2");
+        }
+
+        if (actions.length > 0) {
+          tl.from(actions, { opacity: 0, y: 8, stagger: 0.06, duration: 0.3 }, "-=0.28");
+        }
 
         let played = false;
         const play = () => {

@@ -12,12 +12,12 @@ export const About = () => {
       <div className="about__wrapper">
         <div className="about__header">
           <div className="about__header__name">
-            <h2 className="heading_2">{data.profile.name}</h2>
             <Tag variant="status">Disponible CDI Paris</Tag>
+            <h2 className="heading_1">{data.profile.name}</h2>
           </div>
-          <p className="paragraph">
+          <h3 className="about__header__title heading_3">
             <strong>{data.profile.role}</strong>
-          </p>
+          </h3>
         </div>
         <div className="about__body">
           {data.profile.paragraphs.map((paragraph, index) => (

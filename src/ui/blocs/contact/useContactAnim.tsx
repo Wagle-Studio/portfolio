@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const useAboutAnim = () => {
+export const useContactAnim = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const hasInteractedRef = useRef(false);
   const hasPlayedRef = useRef(false);
@@ -37,27 +37,56 @@ export const useAboutAnim = () => {
     window.addEventListener("scroll", markInteracted, { passive: true });
 
     const ctx = gsap.context(() => {
-      const tl = gsap
-        .timeline({
-          paused: true,
-          defaults: { ease: "power3.out", duration: 0.6 },
-        })
-        .from(".about__header__name", { y: 28, opacity: 0 })
-        .from(
-          ".about__header h3",
-          { y: 16, opacity: 0 },
-          "-=0.3"
-        )
-        .from(
-          ".about__body p",
-          { y: 22, opacity: 0, stagger: 0.12 },
-          "-=0.15"
-        )
-        .from(
-          ".about__tags-item",
-          { y: 12, opacity: 0, stagger: 0.08 },
+      const sectionTitle = sectionRef.current?.querySelector(".section__title");
+      const sectionIndex = sectionRef.current?.querySelector(
+        ".section__title__index"
+      );
+      const card = sectionRef.current?.querySelector(".contact__card");
+      const paragraphs = sectionRef.current?.querySelectorAll(".contact__intro");
+      const actions = sectionRef.current?.querySelectorAll(".contact__action");
+
+      const tl = gsap.timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      });
+
+      if (sectionTitle) {
+        tl.from(sectionTitle, { opacity: 0, y: 24, duration: 0.55 });
+      }
+
+      if (sectionIndex) {
+        tl.from(sectionIndex, { opacity: 0, x: -12, duration: 0.35 }, "-=0.32");
+      }
+
+      if (card) {
+        tl.from(card, { y: 28, opacity: 0, duration: 0.55 }, "-=0.26");
+      }
+
+      if (paragraphs && paragraphs.length > 0) {
+        tl.from(
+          paragraphs,
+          {
+            opacity: 0,
+            y: 12,
+            stagger: 0.08,
+            duration: 0.35,
+          },
+          "-=0.28"
+        );
+      }
+
+      if (actions && actions.length > 0) {
+        tl.from(
+          actions,
+          {
+            opacity: 0,
+            y: 10,
+            stagger: 0.08,
+            duration: 0.32,
+          },
           "-=0.2"
         );
+      }
 
       const playIfAllowed = () => {
         if (hasPlayedRef.current || !hasInteractedRef.current) return;
@@ -67,7 +96,7 @@ export const useAboutAnim = () => {
 
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top 75%",
+        start: "top 80%",
         onEnter: playIfAllowed,
         onEnterBack: playIfAllowed,
       });

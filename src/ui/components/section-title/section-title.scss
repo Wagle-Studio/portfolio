@@ -1,0 +1,18 @@
+.section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: var(--gray-light);
+  }
+
+  &__index {
+    font-size: var(--font-size-medium);
+    font-family: var(--font-secondary);
+    color: var(--primary);
+  }
+}

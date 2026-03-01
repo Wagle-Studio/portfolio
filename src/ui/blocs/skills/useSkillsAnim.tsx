@@ -36,31 +36,110 @@ export const useSkillsAnim = () => {
     window.addEventListener("scroll", markInteracted, { passive: true });
 
     const ctx = gsap.context(() => {
-      const bands = gsap.utils.toArray<HTMLElement>(".band");
+      const sectionTitle = sectionRef.current?.querySelector(".section__title");
+      const sectionIndex = sectionRef.current?.querySelector(
+        ".section__title__index"
+      );
 
-      bands.forEach((band) => {
-        const track = band.querySelector(".band__track");
-        const items = band.querySelectorAll(".band__item");
+      const headingTl = gsap.timeline({
+        paused: true,
+        defaults: { ease: "power3.out" },
+      });
 
-        if (!track) return;
+      if (sectionTitle) {
+        headingTl.from(sectionTitle, { opacity: 0, y: 24, duration: 0.55 });
+      }
 
-        const tl = gsap
-          .timeline({
-            paused: true,
-            defaults: { ease: "power3.out" },
-          })
-          .from(band, { opacity: 0, y: 32, duration: 0.6 })
-          .fromTo(
-            track,
-            { clipPath: "inset(0 100% 0 0)" },
-            { clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power2.out" },
-            "-=0.35"
-          )
-          .from(
+      if (sectionIndex) {
+        headingTl.from(sectionIndex, { opacity: 0, x: -12, duration: 0.35 }, "-=0.32");
+      }
+
+      let headingPlayed = false;
+      const playHeading = () => {
+        if (headingPlayed || !hasInteractedRef.current) return;
+        headingPlayed = true;
+        headingTl.restart();
+      };
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 80%",
+        onEnter: playHeading,
+        onEnterBack: playHeading,
+      });
+
+      const stacks = gsap.utils.toArray<HTMLElement>(".skills__stack");
+
+      stacks.forEach((stack, index) => {
+        const stackTitle = stack.querySelector(".skills__stack__title");
+        const items = stack.querySelectorAll(".skills__stack__list__item");
+        const technoLabels = stack.querySelectorAll(
+          ".skills__stack__list__item--label-techno"
+        );
+        const technoLevels = stack.querySelectorAll(
+          ".skills__stack__list__item--level"
+        );
+        const genericLabels = stack.querySelectorAll(
+          ".skills__stack__list__item--label, .skills__stack__list__item--label-soft"
+        );
+
+        const direction = index % 2 === 0 ? -20 : 20;
+
+        const tl = gsap.timeline({
+          paused: true,
+          defaults: { ease: "power3.out" },
+        });
+
+        tl.from(stack, { opacity: 0, y: 28, x: direction, duration: 0.55 });
+
+        if (stackTitle) {
+          tl.from(stackTitle, { opacity: 0, y: 10, duration: 0.35 }, "-=0.32");
+        }
+
+        if (items.length > 0) {
+          tl.from(
             items,
-            { opacity: 0, stagger: 0.04, duration: 0.45 },
-            "-=0.45"
+            {
+              opacity: 0,
+              y: 12,
+              scale: 0.97,
+              stagger: 0.05,
+              duration: 0.38,
+            },
+            "-=0.24"
           );
+        }
+
+        if (technoLabels.length > 0) {
+          tl.from(
+            technoLabels,
+            { opacity: 0, x: -8, stagger: 0.04, duration: 0.24 },
+            "-=0.3"
+          );
+        }
+
+        if (technoLevels.length > 0) {
+          tl.from(
+            technoLevels,
+            {
+              opacity: 0,
+              x: 8,
+              scale: 0.82,
+              transformOrigin: "right center",
+              stagger: 0.04,
+              duration: 0.24,
+            },
+            "-=0.26"
+          );
+        }
+
+        if (genericLabels.length > 0) {
+          tl.from(
+            genericLabels,
+            { opacity: 0, y: 6, stagger: 0.03, duration: 0.22 },
+            "-=0.25"
+          );
+        }
 
         let played = false;
         const play = () => {
@@ -70,8 +149,8 @@ export const useSkillsAnim = () => {
         };
 
         ScrollTrigger.create({
-          trigger: band,
-          start: "top 80%",
+          trigger: stack,
+          start: "top 84%",
           onEnter: play,
           onEnterBack: play,
         });
