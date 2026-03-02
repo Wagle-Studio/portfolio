@@ -10,6 +10,7 @@ export const Header = () => {
 
   return (
     <header className="header" role="banner">
+      <div className="header__inner">
       <a href={data.brand.href} className="header__logo">
         {data.brand.name}
       </a>
@@ -24,19 +25,24 @@ export const Header = () => {
             >
               <ButtonLink href={item.href} variant={item.variant}>
                 {item.icon && createElement(item.icon)}
-                {item.text}
+                <span>{item.text}</span>
               </ButtonLink>
             </li>
           ))}
         </ul>
         <button
-          className="header__toggle"
+          className={`header__toggle${isDarkMode ? " header__toggle--dark" : ""}`}
           onClick={() => setIsDarkMode(!isDarkMode)}
+          role="switch"
+          aria-checked={isDarkMode}
           aria-label="Changer le thème"
         >
-          {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+          <LightModeIcon />
+          <span className="header__toggle__thumb" />
+          <DarkModeIcon />
         </button>
       </nav>
+      </div>
     </header>
   );
 };
