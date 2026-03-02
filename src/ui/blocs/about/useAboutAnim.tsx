@@ -6,10 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useAboutAnim = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const hasInteractedRef = useRef(false);
-  const hasPlayedRef = useRef(false);
 
   useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -19,8 +20,7 @@ export const useAboutAnim = () => {
     }
 
     const isSectionVisibleOnLoad = () => {
-      if (!sectionRef.current) return false;
-      const rect = sectionRef.current.getBoundingClientRect();
+      const rect = section.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
       const vw = window.innerWidth || document.documentElement.clientWidth;
       return (
@@ -28,23 +28,18 @@ export const useAboutAnim = () => {
       );
     };
 
-    const markInteracted = () => {
-      hasInteractedRef.current = true;
-      window.removeEventListener("scroll", markInteracted);
-    };
-
-    hasInteractedRef.current = isSectionVisibleOnLoad();
-    window.addEventListener("scroll", markInteracted, { passive: true });
+    let trigger: ScrollTrigger | null = null;
+    let timeline: gsap.core.Timeline | null = null;
 
     const ctx = gsap.context(() => {
-      const tl = gsap
+      timeline = gsap
         .timeline({
           paused: true,
           defaults: { ease: "power3.out", duration: 0.6 },
         })
         .from(".about__header__name", { y: 28, opacity: 0 })
         .from(
-          ".about__header h3",
+          ".about__header__title",
           { y: 16, opacity: 0 },
           "-=0.3"
         )
@@ -55,26 +50,28 @@ export const useAboutAnim = () => {
         )
         .from(
           ".about__tags-item",
-          { y: 12, opacity: 0, stagger: 0.08 },
+          { y: 12, opacity: 0, scale: 0.96, stagger: 0.08 },
           "-=0.2"
         );
 
-      const playIfAllowed = () => {
-        if (hasPlayedRef.current || !hasInteractedRef.current) return;
-        hasPlayedRef.current = true;
-        tl.restart();
-      };
-
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
+      trigger = ScrollTrigger.create({
+        trigger: section,
         start: "top 75%",
-        onEnter: playIfAllowed,
-        onEnterBack: playIfAllowed,
+        once: true,
+        onEnter: () => timeline?.play(0),
       });
+
+      // If the section is already in viewport on first load, play immediately.
+      if (isSectionVisibleOnLoad()) {
+        timeline.play(0);
+        trigger.kill();
+        trigger = null;
+      }
     }, sectionRef);
 
     return () => {
-      window.removeEventListener("scroll", markInteracted);
+      trigger?.kill();
+      timeline?.kill();
       ctx.revert();
     };
   }, []);

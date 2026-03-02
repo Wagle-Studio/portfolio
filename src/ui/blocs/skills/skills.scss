@@ -12,7 +12,7 @@
     gap: var(--space-3);
 
     &__title {
-      color: var(--gray-deep);
+      color: var(--secondary-foreground);
       font-weight: var(--font-weight-large);
       text-transform: uppercase;
     }
@@ -36,22 +36,22 @@
         justify-content: space-between;
         gap: var(--space-5);
         width: 100%;
-        border: 1px solid var(--gray-light);
+        border: 1px solid var(--border);
         border-radius: var(--border-radius-base);
 
         &--techno {
           padding: var(--space-2);
-          background-color: var(--white);
+          background-color: var(--card);
           transition: background-color 100ms ease;
 
           &:hover {
-            background-color: var(--body-secondary);
+            background-color: var(--muted);
           }
         }
 
         &--domain {
           padding: var(--space-1) var(--space-2);
-          background-color: var(--white);
+          background-color: var(--card);
           transition: border 100ms ease;
 
           &:hover {
@@ -61,7 +61,7 @@
 
         &--soft {
           padding: var(--space-1) var(--space-2);
-          background-color: var(--gray-lighter);
+          background-color: var(--secondary);
           transition: border 100ms ease;
 
           &:hover {
@@ -70,17 +70,22 @@
         }
 
         &--label-techno {
+          color: var(--muted-foreground);
           font-family: var(--font-secondary);
           font-weight: var(--font-weight-medium);
         }
 
+        &--label-domain {
+          color: var(--muted-foreground);
+        }
+
         &--label-soft {
-          color: var(--gray-deeper);
+          color: var(--muted-foreground);
         }
 
         &--level {
           padding: var(--space-0) var(--space-2);
-          background-color: var(--primary-15);
+          background-color: var(--primary-soft);
           border-radius: var(--border-radius-medium);
           color: var(--primary);
           font-size: var(--font-size-small);
@@ -93,6 +98,8 @@
 
 @media screen and (min-width: 768px) {
   .skills {
+    padding: var(--space-10) var(--view-horizontal-desktop-padding);
+
     &__stack {
       &__list {
         &__item {

@@ -2,14 +2,12 @@ import { MedalIcon, WorkIcon } from "@/ui/components/icons";
 
 export default {
   profile: {
-    name: "Bienvenue, moi c'est Kévin",
     role: "Développeur PHP Symfony + React",
     paragraphs: [
       {
         text: "J’accompagne vos projets backend PHP Symfony et React avec rigueur, professionnalisme et bonne humeur.",
         strongParts: [
           "projets backend PHP Symfony",
-          "fullstack spécialisé en Symfony et React",
           "rigueur, professionnalisme et bonne humeur",
         ],
       },

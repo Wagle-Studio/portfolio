@@ -14,20 +14,20 @@ export const Footer = () => {
         <div className="footer__divider" aria-hidden />
         <div className="footer__content">
           <div className="footer__brand">
-            <h3>{data.brand.name}</h3>
-            <p>{data.brand.author}</p>
+            <h3 className="footer__brand-title">{data.brand.name}</h3>
+            <p className="footer__brand-author">{data.brand.author}</p>
           </div>
           <address className="footer__info">
-            <p>{data.information.siret}</p>
-            <p>{data.information.tva}</p>
-            <p>{data.information.tvaNote}</p>
+            <p className="footer__info-item">{data.information.siret}</p>
+            <p className="footer__info-item">{data.information.tva}</p>
+            <p className="footer__info-item">{data.information.tvaNote}</p>
           </address>
           <p className="footer__copyright">{data.copyright}</p>
           {backToTop ? (
             <a
               href={backToTop.href}
               target={backToTop.target}
-              className="footer__back-top"
+              className="footer__back-to-top"
               onClick={onNavClick}
             >
               {backToTop.text}

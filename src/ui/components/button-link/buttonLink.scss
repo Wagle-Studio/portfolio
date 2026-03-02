@@ -33,14 +33,14 @@
     &-secondary {
       background-color: var(--primary);
       border: 1px solid var(--primary);
-      color: var(--white);
+      color: var(--card);
     }
 
     &-ghost {
       padding: 0;
       background-color: transparent;
       border: 1px solid transparent;
-      color: var(--black);
+      color: var(--foreground);
     }
   }
 

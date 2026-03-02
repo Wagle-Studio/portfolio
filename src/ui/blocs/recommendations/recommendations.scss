@@ -21,8 +21,8 @@
         height: 100%;
         margin: 0 auto;
         padding: var(--space-4);
-        background-color: var(--white);
-        border: 1px solid var(--gray-lighter);
+        background-color: var(--card);
+        border: 1px solid var(--secondaryer);
         border-radius: var(--border-radius-base);
         box-shadow: var(--card-shadow);
         transition:
@@ -40,7 +40,7 @@
           gap: var(--space-1);
           margin-top: auto;
           padding-top: var(--space-3);
-          border-top: 1px solid var(--gray-light);
+          border-top: 1px solid var(--secondary);
         }
 
         &__avatar {
@@ -52,11 +52,7 @@
           min-width: 52px;
           min-height: 52px;
           border-radius: 999px;
-          background: linear-gradient(
-            140deg,
-            var(--primary-05),
-            var(--body-secondary)
-          );
+          background: linear-gradient(140deg, var(--primary-05), var(--muted));
           color: var(--primary);
           font-family: var(--font-primary);
           font-size: var(--font-size-medium);
@@ -81,20 +77,20 @@
 
         &__name {
           font-size: var(--font-size-base);
-          color: var(--black);
+          color: var(--foreground);
         }
 
         &__role {
           font-family: var(--font-secondary);
           font-size: var(--font-size-small);
-          color: var(--gray-deeper);
+          color: var(--muted-foreground);
         }
 
         &__source {
           width: max-content;
           margin-left: auto;
           padding: var(--space-0) var(--space-2);
-          background-color: var(--primary-15);
+          background-color: var(--secondary);
           border-radius: var(--border-radius-medium);
           color: var(--primary);
           font-size: var(--font-size-small);
@@ -103,7 +99,7 @@
 
         &__text {
           font-size: var(--font-size-base);
-          color: var(--gray-deeper);
+          color: var(--muted-foreground);
           white-space: pre-line;
         }
 
@@ -114,6 +110,12 @@
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .recommendations {
+    padding: var(--space-10) var(--view-horizontal-desktop-padding);
   }
 }
 

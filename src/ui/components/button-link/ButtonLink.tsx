@@ -1,4 +1,4 @@
-import "./ButtonLink.scss";
+import "./buttonLink.scss";
 import { ReactNode, forwardRef } from "react";
 import clsx from "clsx";
 

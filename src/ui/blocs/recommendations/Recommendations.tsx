@@ -36,11 +36,11 @@ export const Recommendations = () => {
                     <h3 className="heading_4 recommendations__list__item__card__name">
                       {item.fullName}
                     </h3>
-                    <p className="recommendations__list__item__card__role">
+                    <p className="paragraph recommendations__list__item__card__role">
                       {item.role}
                     </p>
                   </div>
-                  <p className="recommendations__list__item__card__source">
+                  <p className="paragraph recommendations__list__item__card__source">
                     {item.source}
                   </p>
                 </div>

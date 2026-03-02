@@ -1,44 +1,42 @@
 import "./header.scss";
 import data from "@/data/header";
-
-import { createElement } from "react";
+import { createElement, useContext } from "react";
 import { ButtonLink } from "@/ui/components/button-link/ButtonLink";
+import { AppContext } from "@/ui/AppContext";
+import { DarkModeIcon, LightModeIcon } from "@/ui/components/icons";
 
 export const Header = () => {
+  const { isDarkMode, setIsDarkMode } = useContext(AppContext);
+
   return (
     <header className="header" role="banner">
-      <div className="header__inner">
-        <div className="header__brand">
-          <ButtonLink
-            href={data.brand.href}
-            variant="ghost"
-            className="header__brand-link"
-          >
-            {data.brand.name}
-          </ButtonLink>
-        </div>
-        <nav
-          id="primary-navigation"
-          aria-label="Navigation principale"
-          className="header__nav"
+      <a href={data.brand.href} className="header__logo">
+        {data.brand.name}
+      </a>
+      <nav className="header__nav" aria-label="Principale">
+        <ul className="header__list">
+          {data.navigation.map((item) => (
+            <li
+              key={item.text}
+              className={
+                item.variant === "secondary" ? "header__list__item--cta" : ""
+              }
+            >
+              <ButtonLink href={item.href} variant={item.variant}>
+                {item.icon && createElement(item.icon)}
+                {item.text}
+              </ButtonLink>
+            </li>
+          ))}
+        </ul>
+        <button
+          className="header__toggle"
+          onClick={() => setIsDarkMode(!isDarkMode)}
+          aria-label="Changer le thème"
         >
-          <ul className="header__nav-list" role="list">
-            {data.navigation.map((item) => (
-              <li key={`${item.text}-${item.href}`} className="header__nav-item">
-                <ButtonLink
-                  href={item.href}
-                  variant={item.variant}
-                  target={item.target}
-                  iconSide={item.icon_side}
-                >
-                  {item.icon && createElement(item.icon)}
-                  {item.text}
-                </ButtonLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+          {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+        </button>
+      </nav>
     </header>
   );
 };

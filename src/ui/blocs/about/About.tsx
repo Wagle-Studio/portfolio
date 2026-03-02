@@ -12,10 +12,12 @@ export const About = () => {
       <div className="about__wrapper">
         <div className="about__header">
           <div className="about__header__name">
-            <Tag variant="status">Disponible CDI Paris</Tag>
-            <h2 className="heading_1">{data.profile.name}</h2>
+            <Tag variant="status">Disponible CDI Paris | Rouen</Tag>
+            <h2 className="heading_2">
+              Bienvenue, moi c'est <span>Kévin</span>
+            </h2>
           </div>
-          <h3 className="about__header__title heading_3">
+          <h3 className="about__header__title heading_4">
             <strong>{data.profile.role}</strong>
           </h3>
         </div>
@@ -27,7 +29,7 @@ export const About = () => {
               dangerouslySetInnerHTML={{
                 __html: strongPartsFormatter(
                   paragraph.text,
-                  paragraph.strongParts
+                  paragraph.strongParts,
                 ),
               }}
             />
@@ -59,7 +61,7 @@ const strongPartsFormatter = (text: string, strongParts?: string[]) => {
     const regex = new RegExp(escapedPart, "g");
     formattedText = formattedText.replace(
       regex,
-      `<strong class="paragraph--strong">${part}</strong>`
+      `<strong class="paragraph--strong">${part}</strong>`,
     );
   });
 

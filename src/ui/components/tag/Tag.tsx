@@ -1,12 +1,16 @@
-import "./Tag.scss";
-import { ReactNode } from "react";
+import "./tag.scss";
+import type { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 
-interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
+type TagVariant = "default" | "ghost" | "status";
+type TagSize = "small" | "default";
+type TagIconSide = "right";
+
+interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   children?: ReactNode;
-  variant?: string;
-  size?: "small" | "default" | "status";
-  iconSide?: string;
+  variant?: TagVariant;
+  size?: TagSize;
+  iconSide?: TagIconSide;
 }
 
 export const Tag = ({

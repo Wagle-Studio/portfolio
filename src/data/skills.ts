@@ -45,10 +45,10 @@ export default {
       label: "API REST",
     },
     {
-      label: "Architecture DDD | MCD",
+      label: "Architecture DDD | MVC",
     },
     {
-      label: "Refacto | Clean code | SOLID",
+      label: "SOLID | Refacto | Clean code",
     },
     {
       label: "Tests",

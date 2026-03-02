@@ -5,12 +5,11 @@
   gap: var(--space-1);
   width: max-content;
   padding: var(--space-1) var(--space-2);
-  font-family: var(--font-primary-medium);
+  font-family: var(--font-primary);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--font-letter-spacing-medium);
-  color: var(--black);
-  border-radius: var(--border-radius-base);
+  color: var(--foreground);
   transition: background-color 0.2s ease;
 
   &--size {
@@ -25,22 +24,25 @@
 
   &--variant {
     &-default {
-      color: var(--black);
-      background-color: var(--white);
-      border: 1px solid var(--gray-light);
+      color: var(--secondary-foreground);
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius-base);
     }
 
     &-ghost {
-      color: var(--black);
+      color: var(--foreground);
       padding: 0;
       background-color: transparent;
       border: 1px solid transparent;
+      border-radius: var(--border-radius-base);
     }
 
     &-status {
       color: var(--primary);
-      background-color: var(--primary-15);
-      border: 1px solid var(--primary-65);
+      background-color: var(--secondary);
+      border: 1px solid var(--primary);
+      border-radius: var(--border-radius-medium);
     }
   }
 

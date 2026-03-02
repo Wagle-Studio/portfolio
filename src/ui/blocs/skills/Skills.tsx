@@ -33,7 +33,7 @@ export const Skills = () => {
               key={`mission_${mission.label}`}
               className="skills__stack__list__item skills__stack__list__item--domain"
             >
-              <p className="skills__stack__list__item--label">
+              <p className="skills__stack__list__item--label-domain">
                 {mission.label}
               </p>
             </li>
