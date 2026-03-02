@@ -10,17 +10,14 @@ export const Recommendations = () => {
     <section id="recommendations" className="recommendations" ref={sectionRef}>
       <SectionTitle index={2} title={data.title} />
       <ul className="recommendations__list">
-        {data.items.map((item, index) => {
+        {data.items.map((item) => {
           return (
-            <li
-              key={`${item.fullName}-${index}`}
-              className="recommendations__list__item"
-            >
+            <li key={item.fullName} className="recommendations__list__item">
               <article className="recommendations__list__item__card">
                 <div className="recommendations__list__item__card__content">
-                  {getParagraphs(item.text).map((paragraph, pIndex) => (
+                  {getParagraphs(item.text).map((paragraph) => (
                     <p
-                      key={`${item.fullName}-${pIndex}`}
+                      key={`${item.fullName}-${paragraph}`}
                       className="paragraph recommendations__list__item__card__text"
                     >
                       {paragraph}

@@ -20,12 +20,12 @@ export const About = () => {
           </h3>
         </div>
         <div className="about__body">
-          {data.profile.paragraphs.map((paragraph, index) => (
+          {data.profile.paragraphs.map((paragraph) => (
             <p
-              key={index}
+              key={paragraph.text}
               className="paragraph"
               dangerouslySetInnerHTML={{
-                __html: strongPartsFormater(
+                __html: strongPartsFormatter(
                   paragraph.text,
                   paragraph.strongParts
                 ),
@@ -34,10 +34,10 @@ export const About = () => {
           ))}
         </div>
         <ul className="about__tags">
-          {data.profile.tags.map((tag, tIndex) => (
-            <li key={tIndex} className="about__tags-item">
+          {data.profile.tags.map((tag) => (
+            <li key={tag.label} className="about__tags-item">
               <Tag>
-                {tag.icon && <>{createElement(tag.icon, { size: "medium" })}</>}
+                {tag.icon && createElement(tag.icon, { size: "medium" })}
                 {tag.label}
               </Tag>
             </li>
@@ -48,7 +48,7 @@ export const About = () => {
   );
 };
 
-const strongPartsFormater = (text: string, strongParts?: string[]) => {
+const strongPartsFormatter = (text: string, strongParts?: string[]) => {
   if (!strongParts || strongParts.length === 0) {
     return text;
   }

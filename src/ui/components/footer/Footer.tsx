@@ -6,7 +6,7 @@ export const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const backToTop = data.navigation[0];
+  const [backToTop] = data.navigation;
 
   return (
     <footer className="footer" role="contentinfo">

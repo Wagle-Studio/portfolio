@@ -1,9 +1,7 @@
 export default {
-  title: "Projets",
   items: [
     {
       title: "Drop Market",
-      media: undefined,
       subtitle:
         "Expérimentation partielle d'un e-commerce en temps réel sans code Javascript, réalisé à l'aide de Symfony Turbo + Mercure + Caddy.",
       tags: ["Interface temps réel"],
@@ -13,7 +11,6 @@ export default {
     },
     {
       title: "Leveling",
-      media: undefined,
       subtitle:
         "Work In Progress API Symfony pour structurer des parcours de progression personnel, avec scénarios générés par agents IA.",
       tags: ["AI agents"],
@@ -23,7 +20,6 @@ export default {
     },
     {
       title: "Diagramme Merise & UML",
-      media: "assets/pictures/project_merise.png",
       subtitle:
         "Expérimentation de l'architecture DDD (Domain Driven Design) pour une application de modélisation entité-relation inspirée de Looping.",
       tags: ["Architecture DDD"],
@@ -33,7 +29,6 @@ export default {
     },
     {
       title: "Chemins du lien",
-      media: "assets/pictures/project_chemins_du_lien.jpg",
       subtitle:
         "Projet associatif, site vitrine et CMS headless moderne pour accompagnateur en compétences relationnelles.",
       tags: ["Projet Associatif", "CMS"],
@@ -44,7 +39,6 @@ export default {
     },
     {
       title: "File Renamer",
-      media: "assets/pictures/project_renamer.png",
       subtitle:
         "Expérimentation Java avec un mini logiciel pour renommer des fichiers selon différentes stratégies.",
       tags: ["Logiciel de bureau"],

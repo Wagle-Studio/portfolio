@@ -1,11 +1,7 @@
 import { MedalIcon, WorkIcon } from "@/ui/components/icons";
-import ProfilePicture from "./../../public/assets/pictures/profile_picture.jpg";
 
 export default {
-  title: "À propos",
   profile: {
-    picture: ProfilePicture,
-    pictureAlt: "Photo de profil de Kévin Wolff",
     name: "Bienvenue, moi c'est Kévin",
     role: "Développeur PHP Symfony + React",
     paragraphs: [
@@ -28,11 +24,6 @@ export default {
         ],
       },
     ],
-    profil: {
-      status: "À l'écoute du marché",
-      work_type: "Remote ou présentiel",
-      location: "Grenoble | Paris",
-    },
     tags: [
       {
         label: "5 ans d'expériences",

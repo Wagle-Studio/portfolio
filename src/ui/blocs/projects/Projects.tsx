@@ -17,9 +17,9 @@ export const Projects = () => {
     <section id="realisations" className="projects" ref={sectionRef}>
       <SectionTitle index={3} title="Réalisations" />
       <ul className="projects__list">
-        {data.items.map((item, index) => {
+        {data.items.map((item) => {
           return (
-            <li key={index}>
+            <li key={`${item.title}-${item.git ?? item.url ?? "project"}`}>
               <article className="projects__list__card">
                 <div className="projects__list__card__content">
                   <div className="projects__list__card__header">
@@ -27,30 +27,30 @@ export const Projects = () => {
                       <h3 className="heading_4">{item.title}</h3>
                       <div className="projects__list__card__title--actions">
                         {item.url && (
-                          <a href={item.url} target="_blank">
+                          <a href={item.url} target="_blank" rel="noreferrer noopener">
                             <ExternUrlIcon size="medium" />
                           </a>
                         )}
                         {item.git && (
-                          <a href={item.git} target="_blank">
+                          <a href={item.git} target="_blank" rel="noreferrer noopener">
                             <GitHubIcon size="medium" />
                           </a>
                         )}
                         {item.figma && (
-                          <a href={item.figma} target="_blank">
+                          <a href={item.figma} target="_blank" rel="noreferrer noopener">
                             <FigmaIcon size="medium" />
                           </a>
                         )}
                       </div>
                     </div>
                     <ul className="projects__list__card__body__tags">
-                      {item.technos.map((techno, idx) => (
-                        <li key={idx} className="showcase__item-tags-list-item">
+                      {item.technos.map((techno) => (
+                        <li key={`${item.title}-tech-${techno}`}>
                           <Tag size="small">{techno}</Tag>
                         </li>
                       ))}
-                      {item.tags.map((tag, idx) => (
-                        <li key={idx} className="showcase__data__bottom-item">
+                      {item.tags.map((tag) => (
+                        <li key={`${item.title}-tag-${tag}`}>
                           <Tag size="small">
                             <StarIcon size="small" /> {tag}
                           </Tag>

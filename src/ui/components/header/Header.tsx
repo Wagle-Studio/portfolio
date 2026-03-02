@@ -23,15 +23,15 @@ export const Header = () => {
           className="header__nav"
         >
           <ul className="header__nav-list" role="list">
-            {data.navigation.map((item, index) => (
-              <li key={index} className="header__nav-item">
+            {data.navigation.map((item) => (
+              <li key={`${item.text}-${item.href}`} className="header__nav-item">
                 <ButtonLink
                   href={item.href}
                   variant={item.variant}
                   target={item.target}
                   iconSide={item.icon_side}
                 >
-                  {item.icon && <>{createElement(item.icon)}</>}
+                  {item.icon && createElement(item.icon)}
                   {item.text}
                 </ButtonLink>
               </li>

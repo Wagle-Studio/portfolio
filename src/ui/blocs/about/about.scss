@@ -58,8 +58,6 @@
     gap: var(--space-2);
 
     &-item {
-      list-style: none;
-
       svg {
         color: var(--primary);
       }
@@ -90,11 +88,6 @@
     &__header {
       align-items: flex-start;
       gap: var(--space-1);
-
-      .paragraph {
-        padding-left: var(--space-1);
-        border-left: 5px solid var(--primary-85);
-      }
 
       &__name {
         flex-direction: row;

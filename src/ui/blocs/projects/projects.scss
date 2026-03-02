@@ -74,29 +74,6 @@
           font-size: var(--font-size-base);
         }
       }
-
-      &__links {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-        width: 100%;
-
-        > a {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 560px) {
-  .projects {
-    &__list {
-      &__card {
-        &__links {
-          flex-direction: row;
-        }
-      }
     }
   }
 }
@@ -109,12 +86,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-5);
-
-      &__card {
-        &__links {
-          flex-direction: row;
-        }
-      }
     }
   }
 }

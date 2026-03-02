@@ -13,10 +13,7 @@ export default {
     {
       text: "Haut de la page",
       href: "#top",
-      variant: "ghost",
       target: "_self",
-      icon: undefined,
-      icon_side: undefined,
     },
   ],
 };
