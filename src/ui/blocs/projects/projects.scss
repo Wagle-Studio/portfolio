@@ -96,6 +96,18 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-5);
+
+      li {
+        display: flex;
+
+        article {
+          flex: 1;
+
+          .projects__list__card__content {
+            height: 100%;
+          }
+        }
+      }
     }
   }
 }

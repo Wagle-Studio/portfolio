@@ -39,6 +39,12 @@
         border: 1px solid var(--border);
         border-radius: var(--border-radius-base);
 
+        &:hover {
+          > p:first-child {
+            color: var(--foreground);
+          }
+        }
+
         &--techno {
           padding: var(--space-2);
           background-color: var(--card);

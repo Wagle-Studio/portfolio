@@ -1,11 +1,11 @@
 export default {
   technos: [
     {
-      label: "PHP",
+      label: "PHP > 7",
       level: "Expert",
     },
     {
-      label: "Symfony",
+      label: "Symfony > 6",
       level: "Expert",
     },
     {
@@ -13,7 +13,7 @@ export default {
       level: "Avancé",
     },
     {
-      label: "React",
+      label: "React > 13",
       level: "Avancé",
     },
     {
@@ -42,13 +42,16 @@ export default {
       label: "App métier | logiciel",
     },
     {
-      label: "API REST",
-    },
-    {
       label: "Architecture DDD | MVC",
     },
     {
+      label: "API REST",
+    },
+    {
       label: "SOLID | Refacto | Clean code",
+    },
+    {
+      label: "Maintenance et évolution",
     },
     {
       label: "Tests",
@@ -62,7 +65,7 @@ export default {
     {
       label: "Documentation",
     },
-    { label: "Mentoring & Formation d'équipe" },
+    { label: "Mentoring et formation d'équipe" },
   ],
   personality: [
     {
@@ -85,6 +88,9 @@ export default {
     },
     {
       label: "Curiosité et veille technique",
+    },
+    {
+      label: "Utilisation d'agents IA",
     },
   ],
 };

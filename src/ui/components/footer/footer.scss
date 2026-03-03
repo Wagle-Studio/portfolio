@@ -59,16 +59,22 @@
   }
 
   &__back-to-top {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-1);
+    align-items: center;
     font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
     line-height: 1.5;
     color: var(--secondary-foreground);
     justify-self: start;
     width: fit-content;
     text-decoration: none;
-    transition: color 150ms ease;
+    transition: 100ms ease;
 
     &:hover {
       color: var(--primary);
+      transform: translateY(-2px);
     }
   }
 }

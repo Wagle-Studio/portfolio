@@ -1,5 +1,6 @@
 import "./footer.scss";
 import data from "@/data/footer";
+import { ArrowUpIcon } from "@/ui/components/icons";
 
 export const Footer = () => {
   const onNavClick = () => {
@@ -31,6 +32,7 @@ export const Footer = () => {
               onClick={onNavClick}
             >
               {backToTop.text}
+              <ArrowUpIcon />
             </a>
           ) : null}
         </div>
