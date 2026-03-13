@@ -12,22 +12,22 @@ const defaultValues: AppContextValues = {
 
 export const AppContext = createContext(defaultValues);
 
+const getInitialTheme = (): boolean => {
+  if (typeof window === "undefined") return false;
+
+  const storedTheme = localStorage.getItem("theme");
+
+  if (storedTheme === "dark") return true;
+  if (storedTheme === "light") return false;
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+};
+
 export default function AppContextProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  const getInitialTheme = (): boolean => {
-    if (typeof window === "undefined") return false;
-
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme === "dark") return true;
-    if (storedTheme === "light") return false;
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  };
-
   const [isDarkMode, setIsDarkMode] = useState<boolean>(getInitialTheme);
 
   useEffect(() => {

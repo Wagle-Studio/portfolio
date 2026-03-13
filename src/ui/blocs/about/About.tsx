@@ -4,6 +4,29 @@ import { createElement } from "react";
 import { Tag } from "@/ui/components/tag/Tag";
 import { useAboutAnim } from "./useAboutAnim";
 
+const strongPartsFormatter = (text: string, strongParts?: string[]) => {
+  if (!strongParts || strongParts.length === 0) {
+    return text;
+  }
+
+  let formattedText = text;
+  strongParts.forEach((part) => {
+    const escapedPart = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(escapedPart, "g");
+    formattedText = formattedText.replace(
+      regex,
+      `<strong class="paragraph--strong">${part}</strong>`,
+    );
+  });
+
+  return formattedText;
+};
+
+const formattedParagraphs = data.profile.paragraphs.map((paragraph) => ({
+  key: paragraph.text,
+  html: strongPartsFormatter(paragraph.text, paragraph.strongParts),
+}));
+
 export const About = () => {
   const { sectionRef } = useAboutAnim();
 
@@ -22,16 +45,11 @@ export const About = () => {
           </h3>
         </div>
         <div className="about__body">
-          {data.profile.paragraphs.map((paragraph) => (
+          {formattedParagraphs.map(({ key, html }) => (
             <p
-              key={paragraph.text}
+              key={key}
               className="paragraph"
-              dangerouslySetInnerHTML={{
-                __html: strongPartsFormatter(
-                  paragraph.text,
-                  paragraph.strongParts,
-                ),
-              }}
+              dangerouslySetInnerHTML={{ __html: html }}
             />
           ))}
         </div>
@@ -48,22 +66,4 @@ export const About = () => {
       </div>
     </section>
   );
-};
-
-const strongPartsFormatter = (text: string, strongParts?: string[]) => {
-  if (!strongParts || strongParts.length === 0) {
-    return text;
-  }
-
-  let formattedText = text;
-  strongParts.forEach((part) => {
-    const escapedPart = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(escapedPart, "g");
-    formattedText = formattedText.replace(
-      regex,
-      `<strong class="paragraph--strong">${part}</strong>`,
-    );
-  });
-
-  return formattedText;
 };
