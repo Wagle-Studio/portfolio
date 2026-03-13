@@ -6,6 +6,7 @@ import { Skills } from "@/ui/blocs/skills/Skills";
 import { Recommendations } from "@/ui/blocs/recommendations/Recommendations";
 import { Projects } from "@/ui/blocs/projects/Projects";
 import { Contact } from "@/ui/blocs/contact/Contact";
+import { DocsMention } from "@/ui/blocs/docs-mention/DocsMention";
 import { Footer } from "@/ui/components/footer/Footer";
 import { AppContext } from "@/ui/AppContext";
 
@@ -20,6 +21,7 @@ const App = () => {
         <Skills />
         <Recommendations />
         <Projects />
+        <DocsMention />
         <Contact />
       </main>
       <Footer />

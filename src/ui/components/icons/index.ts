@@ -9,3 +9,4 @@ export { StarIcon } from "./StarIcon";
 export { LightModeIcon } from "./LightModeIcon";
 export { DarkModeIcon } from "./DarkModeIcon";
 export { ArrowUpIcon } from "./ArrowUpIcon";
+export { BookIcon } from "./BookIcon";
