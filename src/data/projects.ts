@@ -1,6 +1,15 @@
 export default {
   items: [
     {
+      title: "Elastic Search Formula 1",
+      subtitle:
+        "Plateforme d'analyse de données Formula 1 avec Elasticsearch. Parcourez les données de l'histoire de la F1.",
+      tags: ["Plus de 600K données"],
+      technos: ["Symfony", "Elastic Search"],
+      git: "https://github.com/Wagle-Studio/elastic_search_formula_1",
+      url: "https://f1.wolff-kevin.fr/drivers",
+    },
+    {
       title: "Drop Market",
       subtitle:
         "Expérimentation partielle d'un e-commerce en temps réel sans code Javascript, réalisé à l'aide de Symfony Turbo + Mercure + Caddy.",
@@ -34,7 +43,8 @@ export default {
       tags: ["Projet Associatif", "CMS"],
       technos: ["Payload CMS", "TypeScript"],
       git: "https://github.com/Wagle-Studio/chemins-du-lien",
-      figma: "https://www.figma.com/design/lKdSHdWN1PsyFuTJhorYNJ/Archive---Chemins-du-lien?node-id=0-1&t=jtzAdZ9Nwr83aPDu-1",
+      figma:
+        "https://www.figma.com/design/lKdSHdWN1PsyFuTJhorYNJ/Archive---Chemins-du-lien?node-id=0-1&t=jtzAdZ9Nwr83aPDu-1",
       url: "https://chemins-du-lien.fr/",
     },
     {
