@@ -7,7 +7,7 @@ export default {
       tags: ["Plus de 600K données"],
       technos: ["Symfony", "Elastic Search"],
       git: "https://github.com/Wagle-Studio/elastic_search_formula_1",
-      url: "https://f1.wolff-kevin.fr/drivers",
+      url: "https://f1.wolff-kevin.fr",
     },
     {
       title: "Drop Market",
