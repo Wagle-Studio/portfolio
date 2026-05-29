@@ -6,7 +6,7 @@ export default {
   information: {
     siret: "SIRET : 84132048400022",
     tva: "TVA : FR27841320484",
-    tvaNote: "TVA non applicable Org. Form.",
+    tvaNote: "TVA non applicable - Art. 261-4-4° (organisme de formation)",
   },
   copyright: "© 2026 Kevin Wolff. Tous droits reserves.",
   navigation: [

@@ -2,33 +2,30 @@ import { MedalIcon, WorkIcon } from "@/ui/components/icons";
 
 export default {
   profile: {
-    role: "Développeur PHP Symfony + React",
+    role: "Développeur d’applications métier · PHP · Symfony",
     paragraphs: [
       {
-        text: "J’accompagne vos projets backend PHP Symfony et React avec rigueur, professionnalisme et bonne humeur.",
+        text: "Après deux expériences en agence et plusieurs missions en freelance, j’ai passé trois ans à former plus de 70 développeurs web. Je reviens aujourd’hui au développement à temps plein.",
         strongParts: [
-          "projets backend PHP Symfony",
-          "rigueur, professionnalisme et bonne humeur",
+          "deux expériences en agence",
+          "plus de 70 développeurs web",
         ],
       },
       {
-        text: "Fort de plusieurs expériences en agence, en freelance et en formation, je suis à même d’intervenir sur des projets backend tels que la création de solutions métiers (DDD, CRM, ERP, SaaS), le développement d’API REST, l’intégration de services tiers ainsi que la maintenance ou l’évolution d’applications.",
+        text: "J’interviens sur des projets backend : création de solutions métiers (CRM, ERP, SaaS) avec une approche DDD, développement d’API REST, intégration de services tiers, maintenance et évolution d’applications existantes.",
         strongParts: [
-          "Fort de plusieurs expériences en agence, en freelance et en formation",
-          "création de solutions métiers (DDD, CRM, ERP, SaaS)",
+          "CRM, ERP, SaaS",
           "API REST",
-          "maintenance",
-          "évolution",
         ],
       },
     ],
     tags: [
       {
-        label: "5 ans d'expériences",
+        label: "5 ans d’expériences",
         icon: WorkIcon,
       },
       {
-        label: "Certification Symfony en cours",
+        label: "Certification Symfony 8 · T3 2026",
         icon: MedalIcon,
       },
     ],
