@@ -4,7 +4,7 @@ export default {
       title: "Evidence Vault",
       subtitle:
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",
-      tags: ["Beta ouverte"],
+      tags: ["Beta ouverte", "Pipeline de données"],
       technos: [
         "Symfony 8",
         "React 19",
