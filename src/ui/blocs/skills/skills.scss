@@ -36,6 +36,26 @@
         text-transform: uppercase;
         letter-spacing: 0.08em;
       }
+
+      &--accent {
+        .skills__stack__category__label {
+          color: var(--accent);
+        }
+
+        .skills__stack__list__item--techno {
+          border-color: var(--accent);
+        }
+      }
+
+      &--discreet {
+        .skills__stack__category__label {
+          opacity: 0.7;
+        }
+
+        .skills__stack__list__item--techno {
+          opacity: 0.8;
+        }
+      }
     }
 
     &__list {
@@ -137,6 +157,18 @@
           .skills__stack__list__item--techno {
             width: 100%;
           }
+        }
+      }
+
+      &__category--accent {
+        .skills__stack__list--techno {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      &__category--discreet {
+        .skills__stack__list--techno {
+          grid-template-columns: repeat(4, 1fr);
         }
       }
     }

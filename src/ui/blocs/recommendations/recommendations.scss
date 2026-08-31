@@ -122,30 +122,11 @@
 @media screen and (min-width: 992px) {
   .recommendations {
     &__list {
-      grid-template-columns: repeat(2, 450px);
-      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
 
       &__item {
-        &:last-child {
-          grid-column: 1/3;
-
-          > .recommendations__list__item__card {
-            max-width: unset;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .recommendations {
-    &__list {
-      grid-template-columns: repeat(3, 1fr);
-
-      &__item {
-        &:last-child {
-          grid-column: unset;
+        &__card {
+          max-width: unset;
         }
       }
     }

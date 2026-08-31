@@ -27,9 +27,9 @@ Header → main[About, Skills, Recommendations, Projects, Contact] → Footer
 ```
 
 **Directory conventions:**
-- `src/data/` — static content data files (plain TS exports). To update site content, edit these files.
-- `src/ui/blocs/` — page sections (About, Skills, Recommendations, Projects, Contact). Each bloc has three files: `BlocName.tsx`, `bloc-name.scss`, `useBlocNameAnim.tsx`.
-- `src/ui/components/` — shared UI components (Header, Footer, ButtonLink, Tag, SectionTitle, icons).
+- `src/data/` static content data files (plain TS exports). To update site content, edit these files.
+- `src/ui/blocs/` page sections (About, Skills, Recommendations, Projects, Contact). Each bloc has three files: `BlocName.tsx`, `bloc-name.scss`, `useBlocNameAnim.tsx`.
+- `src/ui/components/` shared UI components (Header, Footer, ButtonLink, Tag, SectionTitle, icons).
 
 **Animation pattern:** Every bloc uses a dedicated `use<BlocName>Anim` hook that encapsulates GSAP + ScrollTrigger logic. Animations respect `prefers-reduced-motion`. The pattern: create a GSAP context on a `sectionRef`, build a paused timeline, attach a `ScrollTrigger` with `once: true`, and play immediately if the section is already in the viewport on load.
 

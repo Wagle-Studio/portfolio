@@ -4,17 +4,18 @@ export default {
       title: "Evidence Vault",
       subtitle:
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",
+      technicalNote:
+        "Côté technique : ingestion de contenus non structurés, orchestration asynchrone des traitements, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
       tags: ["Beta ouverte", "Pipeline de données"],
       technos: [
         "Symfony 8",
         "React 19",
         "PostgreSQL",
-        "Elastic Search",
+        "Elasticsearch",
         "Redis",
         "Docker",
       ],
       highlight: true,
-      highlightBadge: "Projet phare",
       features: [
         "Surveillance continue des commentaires Instagram",
         "Score de toxicité IA multilingue",
@@ -26,9 +27,17 @@ export default {
     {
       title: "Elastic Search Formula 1",
       subtitle:
-        "Visualisation de l'intégralité des statistiques de l'histoire de la F1, plus de 600 000 données indexées avec Elasticsearch.",
+        "Ingestion et indexation de plus de 600 000 enregistrements issus de jeux de données open source (CSV) dans Elasticsearch, pour explorer et visualiser l'intégralité des statistiques de l'histoire de la F1.",
+      technicalNote:
+        "Côté technique : parsing de jeux de données CSV volumineux, modélisation des index Elasticsearch, requêtes d'agrégation pour l'exploration statistique et API Symfony pour l'exposition des données.",
       tags: ["Plus de 600K données"],
-      technos: ["Symfony", "Elastic Search"],
+      technos: ["Symfony", "Elasticsearch"],
+      highlight: true,
+      features: [
+        "Ingestion de plus de 600 000 enregistrements CSV open source",
+        "Indexation et recherche full-text avec Elasticsearch",
+        "Exploration et visualisation des statistiques de l'histoire de la F1",
+      ],
       git: "https://github.com/Wagle-Studio/elastic_search_formula_1",
       url: "https://f1.wolff-kevin.fr",
     },
@@ -58,17 +67,6 @@ export default {
       technos: ["React", "TypeScript"],
       git: "https://github.com/Wagle-Studio/Merise",
       url: "https://merise.wolff-kevin.fr/",
-    },
-    {
-      title: "Chemins du lien",
-      subtitle:
-        "Projet associatif, site vitrine et CMS headless moderne pour accompagnateur en compétences relationnelles.",
-      tags: ["Projet Associatif", "CMS"],
-      technos: ["Payload CMS", "TypeScript"],
-      git: "https://github.com/Wagle-Studio/chemins-du-lien",
-      figma:
-        "https://www.figma.com/design/lKdSHdWN1PsyFuTJhorYNJ/Archive---Chemins-du-lien?node-id=0-1&t=jtzAdZ9Nwr83aPDu-1",
-      url: "https://chemins-du-lien.fr/",
     },
     {
       title: "File Renamer",

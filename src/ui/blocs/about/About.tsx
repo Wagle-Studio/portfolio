@@ -37,7 +37,7 @@ export const About = () => {
           <div className="about__header__name">
             <Tag variant="status">{data.profile.status}</Tag>
             <h2 className="heading_2">
-              Bienvenue, moi c'est <span>Kévin</span>
+              Bienvenue, moi c'est <span>Kévin Wolff</span>
             </h2>
           </div>
           <h3 className="about__header__title heading_4">

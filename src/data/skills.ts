@@ -1,18 +1,16 @@
 export default {
   technos: {
+    data: [
+      { label: "SQL", level: "Avancé" },
+      { label: "PostgreSQL", level: "Intermédiaire" },
+      { label: "Elasticsearch", level: "Intermédiaire" },
+      { label: "Redis", level: "Intermédiaire" },
+    ],
     backend: [
       { label: "PHP > 7", level: "Avancé" },
       { label: "Symfony > 7", level: "Avancé" },
     ],
-    frontend: [
-      { label: "TypeScript", level: "Avancé" },
-      { label: "React", level: "Avancé" },
-    ],
     infra: [
-      { label: "Elastic Search", level: "Intermédiaire" },
-      { label: "PostgreSQL", level: "Intermédiaire" },
-      { label: "Redis", level: "Intermédiaire" },
-      { label: "SQL", level: "Avancé" },
       { label: "Docker", level: "Avancé" },
       { label: "Linux", level: "Avancé" },
       { label: "Git", level: "Avancé" },
@@ -20,18 +18,22 @@ export default {
       { label: "Apache", level: "Intermédiaire" },
       { label: "Nginx", level: "Intermédiaire" },
     ],
+    frontend: [
+      { label: "TypeScript", level: "Avancé" },
+      { label: "React", level: "Avancé" },
+    ],
   },
   missions: [
     { label: "Pipelines de données" },
-    { label: "Modélisation de données métier" },
     { label: "Orchestration de traitements asynchrones" },
     { label: "Indexation et recherche (Elasticsearch)" },
+    { label: "Modélisation de données métier" },
+    { label: "Intégration d'agents IA" },
     { label: "API REST" },
     { label: "Architecture DDD | MVC" },
     { label: "SOLID | Clean code" },
     { label: "CI/CD | Docker" },
     { label: "Mentoring et formation d'équipe" },
-    { label: "Intégration d'agents IA" },
   ],
   personality: [
     { label: "Exigence de maintenabilité" },

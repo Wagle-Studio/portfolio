@@ -2,7 +2,6 @@ import "./projects.scss";
 import data from "@/data/projects";
 import {
   ExternUrlIcon,
-  FigmaIcon,
   GitHubIcon,
   StarIcon,
 } from "@/ui/components/icons";
@@ -20,7 +19,7 @@ export const Projects = () => {
         {data.items.map((item) => {
           const isHighlight = "highlight" in item && item.highlight;
           const features = "features" in item ? item.features : undefined;
-          const highlightBadge = "highlightBadge" in item ? item.highlightBadge : undefined;
+          const technicalNote = "technicalNote" in item ? item.technicalNote : undefined;
 
           return (
             <li
@@ -29,12 +28,6 @@ export const Projects = () => {
             >
               <article className={`projects__list__card${isHighlight ? " projects__list__card--highlight" : ""}`}>
                 <div className="projects__list__card__content">
-                  {isHighlight && highlightBadge && (
-                    <span className="projects__list__card__badge">
-                      <StarIcon size="small" />
-                      {highlightBadge}
-                    </span>
-                  )}
                   <div className="projects__list__card__inner">
                     <div className="projects__list__card__header">
                       <div className="projects__list__card__title">
@@ -48,11 +41,6 @@ export const Projects = () => {
                           {item.git && (
                             <a href={item.git} target="_blank" rel="noreferrer noopener">
                               <GitHubIcon size="medium" />
-                            </a>
-                          )}
-                          {item.figma && (
-                            <a href={item.figma} target="_blank" rel="noreferrer noopener">
-                              <FigmaIcon size="medium" />
                             </a>
                           )}
                         </div>
@@ -85,6 +73,11 @@ export const Projects = () => {
                         </li>
                       ))}
                     </ul>
+                  )}
+                  {technicalNote && (
+                    <p className="projects__list__card__technical-note">
+                      {technicalNote}
+                    </p>
                   )}
                 </div>
               </article>

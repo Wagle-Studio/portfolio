@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Header } from "@/ui/components/header/Header";
 import { About } from "@/ui/blocs/about/About";
 import { Skills } from "@/ui/blocs/skills/Skills";
+import { Learning } from "@/ui/blocs/learning/Learning";
 import { Recommendations } from "@/ui/blocs/recommendations/Recommendations";
 import { Projects } from "@/ui/blocs/projects/Projects";
 import { Contact } from "@/ui/blocs/contact/Contact";
@@ -19,6 +20,7 @@ const App = () => {
       <main>
         <About />
         <Skills />
+        <Learning />
         <Recommendations />
         <Projects />
         <DocsMention />
