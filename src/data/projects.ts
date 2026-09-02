@@ -5,7 +5,7 @@ export default {
       subtitle:
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",
       technicalNote:
-        "Côté technique : ingestion de contenus non structurés, orchestration asynchrone des traitements, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
+        "Côté technique : ingestion de contenus non structurés, orchestration asynchrone des traitements, jobs asynchrones avec reprise sur erreur, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
       tags: ["Beta ouverte", "Pipeline de données"],
       technos: [
         "Symfony 8",
@@ -14,11 +14,15 @@ export default {
         "Elasticsearch",
         "Redis",
         "Docker",
+        "BullMQ",
+        "Playwright",
+        "AI local",
       ],
       highlight: true,
       features: [
         "Surveillance continue des commentaires Instagram",
         "Score de toxicité IA multilingue",
+        "Enrichissement par scoring IA multilingue",
         "Certification cryptographique SHA-256 & ancrage blockchain",
         "Export dossier PDF de preuves",
       ],
