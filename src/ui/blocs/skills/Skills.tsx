@@ -4,18 +4,10 @@ import { useSkillsAnim } from "./useSkillsAnim";
 import { SectionTitle } from "@/ui/components/section-title/SectionTitle";
 
 const TECHNO_CATEGORY_LABELS = {
-  data: "Data & traitement",
-  backend: "Backend & ingénierie",
-  infra: "Infra & outils",
-  frontend: "Également",
+  backend: "Backend",
+  frontend: "Frontend",
+  infra: "Infra & data",
 } as const;
-
-const TECHNO_CATEGORY_MODIFIERS: Partial<
-  Record<keyof typeof TECHNO_CATEGORY_LABELS, string>
-> = {
-  data: "skills__stack__category--accent",
-  frontend: "skills__stack__category--discreet",
-};
 
 type TechnoCategory = keyof typeof TECHNO_CATEGORY_LABELS;
 
@@ -34,15 +26,7 @@ export const Skills = () => {
         <h3 className="skills__stack__title">Stack technique</h3>
         <div className="skills__stack__categories">
           {technoCategories.map(([category, technos]) => (
-            <div
-              key={category}
-              className={[
-                "skills__stack__category",
-                TECHNO_CATEGORY_MODIFIERS[category],
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            >
+            <div key={category} className="skills__stack__category">
               <p className="skills__stack__category__label">
                 {TECHNO_CATEGORY_LABELS[category]}
               </p>

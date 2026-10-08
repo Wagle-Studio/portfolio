@@ -1,6 +1,9 @@
 {
-  "name": "Wolff Kévin",
-  "short_name": "Wolff Kévin",
+  "name": "Kévin Wolff · Développeur web full stack",
+  "short_name": "Kévin Wolff",
+  "description": "Portfolio de Kévin Wolff, développeur web full stack PHP / Symfony & React.",
+  "lang": "fr",
+  "start_url": "/",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",
@@ -13,5 +16,7 @@
       "type": "image/png"
     }
   ],
+  "theme_color": "#0f1426",
+  "background_color": "#0f1426",
   "display": "standalone"
 }

@@ -1,21 +1,22 @@
-import { HandshakeIcon, MedalIcon, WorkIcon } from "@/ui/components/icons";
+import { WorkIcon } from "@/ui/components/icons";
 
 export default {
   profile: {
-    status: "Disponible en alternance · Rentrée 2026",
-    role: "Développeur confirmé, en spécialisation ingénierie des données et IA",
+    role: "Développeur web full stack · PHP · Symfony · React",
     paragraphs: [
       {
-        text: "Développeur backend depuis cinq ans, entre agence, freelance et formateur auprès de plus de 70 développeurs, je me spécialise aujourd’hui en ingénierie des données et prépare un Bac+5 en alternance.",
+        text: "Développeur web depuis cinq ans, entre agence, freelance et formateur auprès de plus de 70 développeurs, je conçois aujourd’hui des applications web full stack.",
         strongParts: [
-          "Développeur backend depuis cinq ans",
-          "je me spécialise aujourd’hui en ingénierie des données et prépare un Bac+5 en alternance",
+          "Développeur web depuis cinq ans",
+          "plus de 70 développeurs",
         ],
       },
       {
-        text: "Je recherche un contrat de professionnalisation où je serais opérationnel dès le premier jour tout en développant mes compétences sur les outils spécifiques de la data. Disponible à la rentrée 2026, je serais ravi d'échanger avec vous afin d'imaginer ce parcours au sein de vos équipes.",
+        text: "J’interviens de bout en bout sur des projets web : création de solutions métiers (CRM, ERP, SaaS) avec une approche DDD, développement d’API REST, interfaces React et TypeScript, intégration de services tiers, maintenance et évolution d’applications existantes.",
         strongParts: [
-          "Je recherche un contrat de professionnalisation où je serais opérationnel dès le premier jour tout en développant mes compétences sur les outils spécifiques de la data",
+          "CRM, ERP, SaaS",
+          "API REST",
+          "React et TypeScript",
         ],
       },
     ],
@@ -23,14 +24,6 @@ export default {
       {
         label: "5 ans d’expérience",
         icon: WorkIcon,
-      },
-      {
-        label: "Bac+5 Ingénierie des données",
-        icon: MedalIcon,
-      },
-      {
-        label: "Contrat de professionnalisation",
-        icon: HandshakeIcon,
       },
     ],
   },

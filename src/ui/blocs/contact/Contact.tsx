@@ -16,11 +16,9 @@ export const Contact = () => {
       <div className="contact__card">
         <div className="contact__content">
           <p className="paragraph contact__intro">
-            Vous recrutez en alternance pour une spécialisation ingénierie des données ?
+            Vous avez un projet ou souhaitez discuter d'une opportunité ?
           </p>
-          <p className="paragraph contact__intro">
-            Discutons de ce que je peux apporter à votre équipe dès la rentrée 2026.
-          </p>
+          <p className="paragraph contact__intro">N'hésitez pas à me contacter.</p>
         </div>
         <div className="contact__actions">
           <ButtonLink
