@@ -63,7 +63,7 @@ export const Skills = () => {
         </ul>
       </article>
       <article className="skills__stack">
-        <h3 className="skills__stack__title">Competences transversales</h3>
+        <h3 className="skills__stack__title">Compétences transversales</h3>
         <ul className="skills__stack__list">
           {data.personality.map((personality) => (
             <li

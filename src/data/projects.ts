@@ -5,8 +5,8 @@ export default {
       subtitle:
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",
       technicalNote:
-        "Côté technique : ingestion de contenus non structurés, orchestration asynchrone des traitements, jobs asynchrones avec reprise sur erreur, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
-      tags: ["Beta ouverte", "Pipeline de données"],
+        "Côté technique : ingestion de contenus non structurés, traitements asynchrones avec reprise sur erreur, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
+      tags: ["Bêta fermée", "Pipeline de données"],
       technos: [
         "Symfony 8",
         "React 19",
@@ -16,20 +16,19 @@ export default {
         "Docker",
         "BullMQ",
         "Playwright",
-        "AI local",
+        "IA locale",
       ],
       highlight: true,
       features: [
         "Surveillance continue des commentaires Instagram",
         "Score de toxicité IA multilingue",
-        "Enrichissement par scoring IA multilingue",
         "Certification cryptographique SHA-256 & ancrage blockchain",
         "Export dossier PDF de preuves",
       ],
       url: "https://evidencevault.fr"
     },
     {
-      title: "Elastic Search Formula 1",
+      title: "Elasticsearch Formula 1",
       subtitle:
         "Ingestion et indexation de plus de 600 000 enregistrements issus de jeux de données open source (CSV) dans Elasticsearch, pour explorer et visualiser l'intégralité des statistiques de l'histoire de la F1.",
       technicalNote:
@@ -77,7 +76,7 @@ export default {
       subtitle:
         "Mini-logiciel Java pour renommer des fichiers selon des stratégies configurables, exploration des patterns de conception en dehors de PHP.",
       tags: ["Logiciel de bureau"],
-      technos: ["Java", "Java FX"],
+      technos: ["Java", "JavaFX"],
       git: "https://github.com/Wagle-Studio/file_renamer",
       url: undefined,
     },

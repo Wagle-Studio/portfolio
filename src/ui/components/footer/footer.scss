@@ -36,22 +36,6 @@
     font-weight: var(--font-weight-base);
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin: 0;
-    font-style: normal;
-    text-align: start;
-  }
-
-  &__info-item {
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-small);
-    line-height: 1.4;
-    color: var(--secondary-foreground);
-  }
-
   &__copyright {
     font-size: var(--font-size-small);
     line-height: 1.5;
@@ -91,10 +75,13 @@
       gap: var(--space-8) var(--space-10);
     }
 
-    &__info,
     &__back-to-top {
       justify-self: end;
       text-align: end;
+    }
+
+    &__copyright {
+      grid-column: 1 / -1;
     }
   }
 }

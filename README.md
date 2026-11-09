@@ -6,7 +6,7 @@
 
 ## Présentation
 
-Portfolio et landing page de mon activité freelance de développeur de solutions digitales sur-mesure.  
+Portfolio de développeur web full stack (PHP, Symfony, React) : présentation, stack technique, recommandations et réalisations.
 
 ---
 

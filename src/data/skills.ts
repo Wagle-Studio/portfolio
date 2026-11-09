@@ -1,8 +1,8 @@
 export default {
   technos: {
     backend: [
-      { label: "PHP > 7", level: "Avancé" },
-      { label: "Symfony > 7", level: "Avancé" },
+      { label: "PHP 8", level: "Avancé" },
+      { label: "Symfony 7 / 8", level: "Avancé" },
     ],
     frontend: [
       { label: "TypeScript", level: "Avancé" },
@@ -14,7 +14,6 @@ export default {
       { label: "SQL", level: "Avancé" },
       { label: "PostgreSQL", level: "Intermédiaire" },
       { label: "Docker", level: "Avancé" },
-      { label: "GHCR", level: "Intermédiaire" },
       { label: "Apache", level: "Intermédiaire" },
       { label: "Nginx", level: "Intermédiaire" },
       { label: "Elasticsearch", level: "Intermédiaire" },
@@ -28,7 +27,7 @@ export default {
     { label: "SOLID | Refacto | Clean code" },
     { label: "Maintenance et évolution" },
     { label: "Tests" },
-    { label: "CI/CD" },
+    { label: "CI/CD (GitHub Actions, GHCR)" },
     { label: "Cloud | hébergement" },
     { label: "Documentation" },
     { label: "Mentoring et formation d'équipe" },

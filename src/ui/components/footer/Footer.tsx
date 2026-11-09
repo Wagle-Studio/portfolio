@@ -18,12 +18,6 @@ export const Footer = () => {
             <h3 className="footer__brand-title">{data.brand.name}</h3>
             <p className="footer__brand-author">{data.brand.author}</p>
           </div>
-          <address className="footer__info">
-            <p className="footer__info-item">{data.information.siret}</p>
-            <p className="footer__info-item">{data.information.tva}</p>
-            <p className="footer__info-item">{data.information.tvaNote}</p>
-          </address>
-          <p className="footer__copyright">{data.copyright}</p>
           {backToTop ? (
             <a
               href={backToTop.href}
@@ -35,6 +29,7 @@ export const Footer = () => {
               <ArrowUpIcon />
             </a>
           ) : null}
+          <p className="footer__copyright">{data.copyright}</p>
         </div>
       </div>
     </footer>

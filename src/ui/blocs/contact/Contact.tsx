@@ -16,9 +16,9 @@ export const Contact = () => {
       <div className="contact__card">
         <div className="contact__content">
           <p className="paragraph contact__intro">
-            Vous avez un projet ou souhaitez discuter d'une opportunité ?
+            Un poste à pourvoir ou un projet à mener ?
           </p>
-          <p className="paragraph contact__intro">N'hésitez pas à me contacter.</p>
+          <p className="paragraph contact__intro">Échangeons.</p>
         </div>
         <div className="contact__actions">
           <ButtonLink
