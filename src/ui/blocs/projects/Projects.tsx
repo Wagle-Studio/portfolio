@@ -1,98 +1,139 @@
 import "./projects.scss";
+import { useState } from "react";
+import clsx from "clsx";
 import data from "@/data/projects";
-import {
-  ExternUrlIcon,
-  GitHubIcon,
-  StarIcon,
-} from "@/ui/components/icons";
+import { ExternUrlIcon, GitHubIcon, StarIcon } from "@/ui/components/icons";
 import { Tag } from "@/ui/components/tag/Tag";
 import { useProjectsAnim } from "./useProjectsAnim";
 import { SectionTitle } from "@/ui/components/section-title/SectionTitle";
+import { DocsMention } from "@/ui/blocs/docs-mention/DocsMention";
+
+const projects = data.items.map((item) => ({
+  ...item,
+  status: "status" in item ? item.status : undefined,
+  features: "features" in item ? item.features : undefined,
+  technicalNote: "technicalNote" in item ? item.technicalNote : undefined,
+}));
 
 export const Projects = () => {
   const { sectionRef } = useProjectsAnim();
+  const [picked, setPicked] = useState(0);
 
   return (
     <section id="realisations" className="projects" ref={sectionRef}>
-      <SectionTitle index={3} title="Réalisations" />
-      <ul className="projects__list">
-        {data.items.map((item) => {
-          const isHighlight = "highlight" in item && item.highlight;
-          const features = "features" in item ? item.features : undefined;
-          const technicalNote = "technicalNote" in item ? item.technicalNote : undefined;
-          const status = "status" in item ? item.status : undefined;
-
-          return (
-            <li
-              key={`${item.title}-${item.git ?? item.url ?? "project"}`}
-              className={isHighlight ? "projects__list__highlight" : undefined}
-            >
-              <article
-                className={`projects__list__card${isHighlight ? " projects__list__card--highlight" : ""}${status ? " projects__list__card--ribbon" : ""}`}
-              >
-                {status && (
-                  <div className="projects__list__card__ribbon">
-                    <span>{status}</span>
-                  </div>
+      <SectionTitle index={4} title="Réalisations" />
+      <div className="projects__layout">
+        <ul className="projects__list" aria-label="Mes projets">
+          {projects.map((project, index) => (
+            <li key={project.title}>
+              <button
+                type="button"
+                className={clsx(
+                  "projects__item",
+                  index === picked && "is-picked",
                 )}
-                <div className="projects__list__card__content">
-                  <div className="projects__list__card__inner">
-                    <div className="projects__list__card__header">
-                      <div className="projects__list__card__title">
-                        <h3 className="heading_4">{item.title}</h3>
-                        <div className="projects__list__card__title--actions">
-                          {item.url && (
-                            <a href={item.url} target="_blank" rel="noreferrer noopener">
-                              <ExternUrlIcon size="medium" />
-                            </a>
-                          )}
-                          {item.git && (
-                            <a href={item.git} target="_blank" rel="noreferrer noopener">
-                              <GitHubIcon size="medium" />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                      <ul className="projects__list__card__body__tags">
-                        {item.technos.map((techno) => (
-                          <li key={`${item.title}-tech-${techno}`}>
-                            <Tag size="small">{techno}</Tag>
-                          </li>
-                        ))}
-                        {item.tags.map((tag) => (
-                          <li key={`${item.title}-tag-${tag}`}>
-                            <Tag size="small">
-                              <StarIcon size="small" /> {tag}
-                            </Tag>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="projects__list__card__body">
-                      <p className="paragraph">{item.subtitle}</p>
-                    </div>
-                  </div>
-                  {isHighlight && features && features.length > 0 && (
-                    <ul className="projects__list__card__features">
-                      {features.map((feature) => (
-                        <li key={`${item.title}-feat-${feature}`}>
-                          <span className="projects__list__card__features__dot" aria-hidden="true" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                aria-pressed={index === picked}
+                onMouseEnter={() => setPicked(index)}
+                onFocus={() => setPicked(index)}
+                onClick={() => setPicked(index)}
+              >
+                <span className="projects__item__title">{project.title}</span>
+                <span className="projects__item__tags">
+                  {project.tags.join(" · ")}
+                </span>
+                {project.status && (
+                  <span className="projects__item__status">
+                    {project.status}
+                  </span>
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <div className="projects__details" aria-live="polite">
+          {projects.map((project, index) => (
+            <article
+              key={project.title}
+              className={clsx(
+                "projects__detail",
+                index === picked && "is-shown",
+                project.status && "projects__detail--ribbon",
+              )}
+            >
+              {project.status && (
+                <div className="projects__ribbon">
+                  <span>{project.status}</span>
+                </div>
+              )}
+              <header className="projects__detail__header">
+                <h3 className="heading_4">{project.title}</h3>
+                <div className="projects__detail__links">
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`Voir ${project.title} en ligne`}
+                    >
+                      <ExternUrlIcon size="medium" />
+                    </a>
                   )}
-                  {technicalNote && (
-                    <p className="projects__list__card__technical-note">
-                      {technicalNote}
-                    </p>
+                  {project.git && (
+                    <a
+                      href={project.git}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`Code de ${project.title} sur GitHub`}
+                    >
+                      <GitHubIcon size="medium" />
+                    </a>
                   )}
                 </div>
-              </article>
-            </li>
-          );
-        })}
-      </ul>
+              </header>
+
+              <p className="projects__detail__subtitle">{project.subtitle}</p>
+
+              {project.features && project.features.length > 0 && (
+                <ul className="projects__detail__features">
+                  {project.features.map((feature) => (
+                    <li key={feature}>
+                      <span
+                        className="projects__detail__dot"
+                        aria-hidden="true"
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <ul className="projects__detail__tags">
+                {project.technos.map((techno) => (
+                  <li key={`tech-${techno}`}>
+                    <Tag size="small">{techno}</Tag>
+                  </li>
+                ))}
+                {project.tags.map((tag) => (
+                  <li key={`tag-${tag}`}>
+                    <Tag size="small">
+                      <StarIcon size="small" /> {tag}
+                    </Tag>
+                  </li>
+                ))}
+              </ul>
+
+              {project.technicalNote && (
+                <p className="projects__detail__note">
+                  {project.technicalNote}
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <DocsMention className="projects__docs" />
+      </div>
     </section>
   );
 };

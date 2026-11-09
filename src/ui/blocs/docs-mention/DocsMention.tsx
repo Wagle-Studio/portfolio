@@ -1,14 +1,19 @@
 import "./docs-mention.scss";
+import clsx from "clsx";
 import { BookIcon } from "@/ui/components/icons";
 import { useDocsMentionAnim } from "./useDocsMentionAnim";
 
 const DOCS_URL = "https://documentations.wolff-kevin.fr/";
 
-export const DocsMention = () => {
+export const DocsMention = ({ className }: { className?: string }) => {
   const { asideRef } = useDocsMentionAnim();
 
   return (
-    <aside className="docs-mention" aria-label="Documentation personnelle" ref={asideRef}>
+    <aside
+      className={clsx("docs-mention", className)}
+      aria-label="Documentation personnelle"
+      ref={asideRef}
+    >
       <div className="docs-mention__inner">
         <BookIcon size="medium" className="docs-mention__icon" />
         <p className="docs-mention__text">

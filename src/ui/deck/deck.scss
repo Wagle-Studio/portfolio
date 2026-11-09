@@ -1,0 +1,224 @@
+// Défilement classique : les écrans sont de simples blocs pleine largeur
+.deck__slide,
+.deck__slide__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+// Diaporama : un écran à la fois, en fondu, entre le header et la barre du bas
+html.is-deck,
+html.is-deck body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.app--deck {
+  --deck-nav-height: 72px;
+
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+
+  main.deck {
+    position: fixed;
+    inset: var(--header-height, 70px) 0 var(--deck-nav-height) 0;
+    display: block;
+    margin-top: 0;
+  }
+
+  .deck__slide {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 350ms ease,
+      visibility 0s linear 350ms;
+
+    &.is-on {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 350ms ease,
+        visibility 0s;
+    }
+  }
+
+  // Centré verticalement ; un écran trop haut défile au lieu d'être coupé
+  .deck__slide__inner {
+    margin-block: auto;
+
+    > section,
+    > aside {
+      padding-top: var(--space-3);
+      padding-bottom: var(--space-3);
+    }
+
+    > section {
+      gap: var(--space-5);
+    }
+  }
+}
+
+// Fenêtres basses (portables 720 px) : on resserre pour que chaque écran tienne
+@media (max-height: 820px) {
+  .app--deck {
+    .deck__slide__inner {
+      > section,
+      > aside {
+        padding-top: var(--space-1);
+        padding-bottom: var(--space-1);
+      }
+
+      > section {
+        gap: var(--space-3);
+      }
+    }
+
+    .skills__chip {
+      padding: 4px 10px;
+    }
+
+    .skills__stack__categories {
+      gap: var(--space-2);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app--deck .deck__slide,
+  .app--deck .deck__slide.is-on {
+    transition: none;
+  }
+}
+
+// Barre du bas
+.deck-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  height: var(--deck-nav-height, 72px);
+  background-color: var(--background);
+  transition: background-color 0.25s ease;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    height: 100%;
+    max-width: var(--view-max-width);
+    margin: 0 auto;
+    padding: 0 var(--view-horizontal-desktop-padding);
+  }
+
+  &__position {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    min-width: 220px;
+  }
+
+  &__count {
+    font-family: var(--font-secondary);
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+  }
+
+  &__label {
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    color: var(--foreground);
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: width 250ms ease;
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background-color: color-mix(
+          in srgb,
+          var(--foreground) 25%,
+          transparent
+        );
+        transition:
+          width 250ms ease,
+          background-color 250ms ease;
+      }
+
+      &:hover::before {
+        background-color: var(--muted-foreground);
+      }
+
+      &.is-current {
+        width: 32px;
+
+        &::before {
+          width: 22px;
+          background-color: var(--foreground);
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__next {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-left: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius-large);
+    background-color: var(--foreground);
+    color: var(--background);
+    font: inherit;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition:
+      transform 150ms ease,
+      background-color 150ms ease,
+      color 150ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+  }
+}

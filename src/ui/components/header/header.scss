@@ -152,3 +152,33 @@
     }
   }
 }
+
+// Diaporama : lien de l'écran affiché
+.header__list .button-link[aria-current="true"] {
+  color: var(--primary);
+}
+
+// Bouton LinkedIn : discret, en contour, qui se colore au survol
+.header__list__item--cta .button-link {
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-large);
+  background-color: transparent;
+  color: var(--secondary-foreground);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+
+  .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--primary);
+  }
+
+  &:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-soft);
+    color: var(--primary);
+    transform: none;
+  }
+}

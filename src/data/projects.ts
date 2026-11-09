@@ -7,7 +7,7 @@ export default {
       technicalNote:
         "Côté technique : ingestion de contenus non structurés, traitements asynchrones avec reprise sur erreur, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
       status: "Bêta fermée",
-      tags: ["Pipeline de données"],
+      tags: ["Pipeline de données", "Accompagné par l'IA"],
       technos: [
         "Symfony 8",
         "React 19",
@@ -34,7 +34,7 @@ export default {
         "Ingestion et indexation de plus de 600 000 enregistrements issus de jeux de données open source (CSV) dans Elasticsearch, pour explorer et visualiser l'intégralité des statistiques de l'histoire de la F1.",
       technicalNote:
         "Côté technique : parsing de jeux de données CSV volumineux, modélisation des index Elasticsearch, requêtes d'agrégation pour l'exploration statistique et API Symfony pour l'exposition des données.",
-      tags: ["Plus de 600K données"],
+      tags: ["Plus de 600K données", "Accompagné par l'IA"],
       technos: ["Symfony", "Elasticsearch"],
       highlight: true,
       features: [
@@ -67,7 +67,7 @@ export default {
       title: "Diagramme Merise & UML",
       subtitle:
         "Application DDD de modélisation entité-relation (Merise/UML), inspirée de Looping.",
-      tags: ["Architecture DDD"],
+      tags: ["Architecture DDD", "Réalisé sans IA"],
       technos: ["React", "TypeScript"],
       git: "https://github.com/Wagle-Studio/Merise",
       url: "https://merise.wolff-kevin.fr/",
@@ -76,7 +76,7 @@ export default {
       title: "File Renamer",
       subtitle:
         "Mini-logiciel Java pour renommer des fichiers selon des stratégies configurables, exploration des patterns de conception en dehors de PHP.",
-      tags: ["Logiciel de bureau"],
+      tags: ["Logiciel de bureau", "Réalisé sans IA"],
       technos: ["Java", "JavaFX"],
       git: "https://github.com/Wagle-Studio/file_renamer",
       url: undefined,

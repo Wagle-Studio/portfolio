@@ -1,0 +1,252 @@
+.parcours {
+  --parcours-bar: color-mix(in srgb, var(--foreground) 16%, transparent);
+  --parcours-axis: color-mix(in srgb, var(--foreground) 20%, transparent);
+  --parcours-tick: color-mix(in srgb, var(--foreground) 25%, transparent);
+  --parcours-line: color-mix(in srgb, var(--foreground) 10%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: var(--view-max-width);
+  padding: var(--space-10) var(--view-horizontal-mobile-padding);
+  box-sizing: border-box;
+
+  &__body,
+  &__frise {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Axe des années
+  &__axis {
+    --axis-scale: 1;
+    position: relative;
+    height: 22px;
+    margin-top: 4px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: var(--parcours-axis);
+      transform-origin: left center;
+      transform: scaleX(var(--axis-scale));
+    }
+
+    span {
+      position: absolute;
+      top: 6px;
+      left: var(--x);
+      font-family: var(--font-secondary);
+      font-size: 0.7rem;
+      color: var(--muted-foreground);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 1px;
+        height: 5px;
+        background-color: var(--parcours-tick);
+      }
+    }
+  }
+
+  // Barres des postes
+  &__bars {
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      height: 34px;
+    }
+
+    button {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      padding: 0;
+      border: none;
+      border-radius: 6px;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: -2px;
+      }
+    }
+  }
+
+  &__bar {
+    position: absolute;
+    top: 50%;
+    left: var(--x);
+    width: var(--w);
+    height: 10px;
+    margin-top: -5px;
+    border-radius: 5px;
+    background-color: var(--parcours-bar);
+    transform-origin: left center;
+    transition: background-color 300ms ease;
+  }
+
+  &__bar-name {
+    position: absolute;
+    top: 50%;
+    left: calc(10px + var(--x) + var(--w));
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    transition: color 300ms ease;
+  }
+
+  &__bars li.is-before &__bar-name {
+    left: auto;
+    right: calc(100% + 10px - var(--x));
+  }
+
+  &__bars li.is-picked &__bar {
+    background-color: var(--foreground);
+  }
+
+  &__bars li.is-picked &__bar-name {
+    color: var(--foreground);
+  }
+
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  // Détail du poste choisi
+  &__detail {
+    display: grid;
+    margin-top: var(--space-3);
+    padding-top: 12px;
+    border-top: 1px solid var(--parcours-line);
+
+    &__item {
+      grid-area: 1 / 1;
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        opacity 200ms ease,
+        visibility 200ms;
+
+      &.is-shown {
+        visibility: visible;
+        opacity: 1;
+        transition:
+          opacity 250ms ease,
+          visibility 0s;
+      }
+    }
+
+    &__line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 2px 12px;
+      margin: 0;
+    }
+
+    &__name {
+      font-size: var(--font-size-large);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: -0.015em;
+      color: var(--foreground);
+    }
+
+    &__meta {
+      font-size: 0.85rem;
+      color: var(--muted-foreground);
+    }
+
+    &__dates {
+      margin-left: auto;
+      font-family: var(--font-secondary);
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+    }
+
+    &__text {
+      max-width: 72ch;
+      margin: 6px 0 0;
+      font-size: var(--font-size-base);
+      line-height: 1.5;
+      color: var(--muted-foreground);
+
+      &--short {
+        display: none;
+      }
+    }
+
+    &__tools {
+      margin: 6px 0 0;
+      font-family: var(--font-secondary);
+      font-size: 0.72rem;
+      color: var(--secondary-foreground);
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .parcours {
+    &__bars li {
+      height: 28px;
+    }
+
+    &__bar-name {
+      font-size: 0.78rem;
+    }
+
+    &__axis span {
+      font-size: 0.62rem;
+    }
+
+    &__detail {
+      &__dates {
+        order: 1;
+      }
+
+      &__meta {
+        flex-basis: 100%;
+        order: 2;
+        font-size: 0.78rem;
+      }
+
+      &__text {
+        font-size: 0.85rem;
+        line-height: 1.4;
+
+        &--long {
+          display: none;
+        }
+
+        &--short {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .parcours {
+    padding: var(--space-10) var(--view-horizontal-desktop-padding);
+  }
+}

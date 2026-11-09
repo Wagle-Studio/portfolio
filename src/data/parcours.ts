@@ -1,0 +1,73 @@
+// Dates au format "AAAA-MM". Un poste sans `end` est en cours.
+export default {
+  title: "Parcours",
+  experiences: [
+    {
+      name: "Ecedi",
+      meta: "Stage, CDD puis alternance · agence web, Grenoble",
+      start: "2020-11",
+      end: "2022-05",
+      text: "Agence spécialisée dans les sites institutionnels (Fondation Abbé Pierre, Téléthon, ministère de la Transition écologique) : développement backend Drupal, intégration de modules, mise en place en autonomie d'un CMS headless Strapi.",
+      shortText:
+        "Sites institutionnels en agence : backend Drupal, CMS headless Strapi.",
+      tools: [
+        "PHP",
+        "Drupal 6 à 9",
+        "Symfony",
+        "Sylius",
+        "Strapi",
+        "MySQL",
+        "Docker",
+        "Git",
+      ],
+    },
+    {
+      name: "Extellient",
+      meta: "CDI · Grenoble",
+      start: "2022-05",
+      end: "2023-04",
+      text: "Applications métiers sur mesure : gestion d'interventions multiplateforme (web, tablette, mobile) pilotant du matériel connecté, et outil de gestion patrimoniale pour un cabinet de conseil.",
+      shortText:
+        "Applications métiers : interventions avec matériel connecté, gestion patrimoniale.",
+      tools: [
+        "Symfony",
+        "API Platform",
+        "Doctrine",
+        "Angular",
+        "TypeScript",
+        "MySQL",
+        "Docker",
+        "CI/CD",
+      ],
+    },
+    {
+      name: "Simplon",
+      meta: "Formateur indépendant · Grenoble",
+      start: "2023-02",
+      end: "2026-01",
+      text: "Formateur en développement web (bac +2 / +3) à temps plein : plus de 70 apprenants accompagnés, plus de 2400 heures dispensées, plus de 90 % de réussite à l'examen. Pédagogie par projets, du PHP natif à Symfony et React.",
+      shortText: "70+ apprenants, 2400 h dispensées, plus de 90 % de réussite.",
+      tools: [
+        "PHP",
+        "Symfony",
+        "POO",
+        "API REST",
+        "TypeScript",
+        "React",
+        "PostgreSQL",
+        "Docker",
+        "CI/CD",
+        "Linux",
+      ],
+    },
+    {
+      name: "peexweb",
+      meta: "CDI · Saint-Priest",
+      start: "2026-10",
+      end: undefined,
+      text: "Développeur full stack.",
+      shortText: "Développeur full stack.",
+      tools: [] as string[],
+    },
+  ],
+};

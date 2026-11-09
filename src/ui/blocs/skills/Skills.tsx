@@ -22,61 +22,70 @@ export const Skills = () => {
   return (
     <section id="expertise" className="skills" ref={sectionRef}>
       <SectionTitle index={1} title="Expertise" />
-      <article className="skills__stack">
-        <h3 className="skills__stack__title">Stack technique</h3>
-        <div className="skills__stack__categories">
-          {technoCategories.map(([category, technos]) => (
-            <div key={category} className="skills__stack__category">
-              <p className="skills__stack__category__label">
-                {TECHNO_CATEGORY_LABELS[category]}
-              </p>
-              <ul className="skills__stack__list skills__stack__list--techno">
-                {technos.map((techno) => (
-                  <li
-                    key={`techno_${techno.label}`}
-                    className="skills__stack__list__item skills__stack__list__item--techno"
-                  >
-                    <p className="skills__stack__list__item--label-techno">
-                      {techno.label}
-                    </p>
-                    <p className="skills__stack__list__item--level">{techno.level}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <div className="skills__columns">
+        <article className="skills__stack">
+          <h3 className="skills__stack__title">Stack technique</h3>
+          <div className="skills__stack__categories">
+            {technoCategories.map(([category, technos]) => (
+              <div key={category} className="skills__stack__category">
+                <p className="skills__stack__category__label">
+                  {TECHNO_CATEGORY_LABELS[category]}
+                </p>
+                <ul className="skills__chips">
+                  {technos.map((techno) => (
+                    <li
+                      key={`techno_${techno.label}`}
+                      className="skills__chip skills__chip--techno"
+                    >
+                      <span className="skills__chip__label">
+                        {techno.label}
+                      </span>
+                      <span
+                        className={`skills__chip__level${
+                          techno.level === "Avancé"
+                            ? " skills__chip__level--high"
+                            : ""
+                        }`}
+                      >
+                        {techno.level}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <div className="skills__side">
+          <article className="skills__stack">
+            <h3 className="skills__stack__title">Domaines d'intervention</h3>
+            <ul className="skills__chips">
+              {data.missions.map((mission) => (
+                <li
+                  key={`mission_${mission.label}`}
+                  className="skills__chip skills__chip--domain"
+                >
+                  {mission.label}
+                </li>
+              ))}
+            </ul>
+          </article>
+          <article className="skills__stack">
+            <h3 className="skills__stack__title">Compétences transversales</h3>
+            <ul className="skills__chips">
+              {data.personality.map((personality) => (
+                <li
+                  key={`personality_${personality.label}`}
+                  className="skills__chip skills__chip--soft"
+                >
+                  {personality.label}
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
-      </article>
-      <article className="skills__stack">
-        <h3 className="skills__stack__title">Domaines d'intervention</h3>
-        <ul className="skills__stack__list">
-          {data.missions.map((mission) => (
-            <li
-              key={`mission_${mission.label}`}
-              className="skills__stack__list__item skills__stack__list__item--domain"
-            >
-              <p className="skills__stack__list__item--label-domain">
-                {mission.label}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </article>
-      <article className="skills__stack">
-        <h3 className="skills__stack__title">Compétences transversales</h3>
-        <ul className="skills__stack__list">
-          {data.personality.map((personality) => (
-            <li
-              key={`personality_${personality.label}`}
-              className="skills__stack__list__item skills__stack__list__item--soft"
-            >
-              <p className="skills__stack__list__item--label-soft">
-                {personality.label}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </article>
+      </div>
     </section>
   );
 };

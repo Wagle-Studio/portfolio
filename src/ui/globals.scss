@@ -74,6 +74,7 @@
   --border-radius-large: 32px;
 
   --card-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+  --grid-line: rgba(15, 23, 42, 0.045);
 }
 
 .app--dark {
@@ -93,6 +94,7 @@
   --border: #2f3b60;
   --ring: #2dd4bf;
   --card-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.35);
+  --grid-line: rgba(236, 241, 255, 0.04);
 }
 
 * {
@@ -108,6 +110,8 @@
 }
 
 .app {
+  position: relative;
+  isolation: isolate; // le fond quadrillé (z-index -1) reste derrière le contenu
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +127,20 @@
     width: 100%;
     margin-top: var(--space-5);
   }
+}
+
+// Fond quadrillé à peine visible, estompé vers les bords de la fenêtre
+.app__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
 }
 
 ul,

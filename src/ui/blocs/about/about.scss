@@ -108,3 +108,41 @@
     }
   }
 }
+
+// Pastille « En poste » : point plein et onde qui pulse
+.about__tags-status {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--primary);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: var(--primary);
+    animation: about-status-pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes about-status-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__tags-status::after {
+    animation: none;
+  }
+}

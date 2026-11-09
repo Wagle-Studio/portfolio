@@ -15,6 +15,14 @@ export default {
       icon_side: undefined,
     },
     {
+      text: "Parcours",
+      href: "#parcours",
+      variant: "ghost",
+      target: "_self",
+      icon: undefined,
+      icon_side: undefined,
+    },
+    {
       text: "Recommandations",
       href: "#recommendations",
       variant: "ghost",
@@ -31,15 +39,7 @@ export default {
       icon_side: undefined,
     },
     {
-      text: "Contact",
-      href: "#contact",
-      variant: "ghost",
-      target: "_self",
-      icon: undefined,
-      icon_side: undefined,
-    },
-    {
-      text: "Linkedin",
+      text: "LinkedIn",
       href: "https://www.linkedin.com/in/wolff-kevin/",
       variant: "secondary",
       target: "_blank",

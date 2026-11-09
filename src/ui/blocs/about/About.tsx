@@ -56,6 +56,9 @@ export const About = () => {
           {data.profile.tags.map((tag) => (
             <li key={tag.label} className="about__tags-item">
               <Tag>
+                {tag.status && (
+                  <span className="about__tags-status" aria-hidden="true" />
+                )}
                 {tag.icon && createElement(tag.icon, { size: "medium" })}
                 {tag.label}
               </Tag>
