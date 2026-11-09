@@ -20,13 +20,21 @@ export const Projects = () => {
           const isHighlight = "highlight" in item && item.highlight;
           const features = "features" in item ? item.features : undefined;
           const technicalNote = "technicalNote" in item ? item.technicalNote : undefined;
+          const status = "status" in item ? item.status : undefined;
 
           return (
             <li
               key={`${item.title}-${item.git ?? item.url ?? "project"}`}
               className={isHighlight ? "projects__list__highlight" : undefined}
             >
-              <article className={`projects__list__card${isHighlight ? " projects__list__card--highlight" : ""}`}>
+              <article
+                className={`projects__list__card${isHighlight ? " projects__list__card--highlight" : ""}${status ? " projects__list__card--ribbon" : ""}`}
+              >
+                {status && (
+                  <div className="projects__list__card__ribbon">
+                    <span>{status}</span>
+                  </div>
+                )}
                 <div className="projects__list__card__content">
                   <div className="projects__list__card__inner">
                     <div className="projects__list__card__header">

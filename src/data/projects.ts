@@ -6,7 +6,8 @@ export default {
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",
       technicalNote:
         "Côté technique : ingestion de contenus non structurés, traitements asynchrones avec reprise sur erreur, enrichissement par scoring IA multilingue, indexation Elasticsearch et garantie d'intégrité par hachage SHA-256.",
-      tags: ["Bêta fermée", "Pipeline de données"],
+      status: "Bêta fermée",
+      tags: ["Pipeline de données"],
       technos: [
         "Symfony 8",
         "React 19",
