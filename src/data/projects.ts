@@ -26,10 +26,11 @@ export default {
         "Certification cryptographique SHA-256 & ancrage blockchain",
         "Export dossier PDF de preuves",
       ],
-      url: "https://evidencevault.fr"
+      url: "https://evidencevault.fr",
     },
     {
       title: "Elasticsearch Formula 1",
+      status: "Non maintenu",
       subtitle:
         "Ingestion et indexation de plus de 600 000 enregistrements issus de jeux de données open source (CSV) dans Elasticsearch, pour explorer et visualiser l'intégralité des statistiques de l'histoire de la F1.",
       technicalNote:
@@ -66,18 +67,34 @@ export default {
     {
       title: "Diagramme Merise & UML",
       subtitle:
-        "Application DDD de modélisation entité-relation (Merise/UML), inspirée de Looping.",
+        "Modélisation entité-relation (MCD Merise) inspirée de Looping : schémas en glisser-déposer avec règles de cohérence intégrées. Une mise en pratique de l'architecture DDD.",
+      technicalNote:
+        "Côté technique : architecture en couches (Kernel, Domain, Managers, DTO), DTO immuables validés avec Zod, et domaine Merise branché sur un socle commun prêt à accueillir d'autres diagrammes.",
       tags: ["Architecture DDD", "Réalisé sans IA"],
-      technos: ["React", "TypeScript"],
-      git: "https://github.com/Wagle-Studio/Merise",
+      technos: ["React 19", "TypeScript", "React Flow", "Zod", "SCSS"],
+      features: [
+        "Entités et associations en glisser-déposer",
+        "Cardinalités et contraintes personnalisables",
+        "Validation automatique entre schéma et modèle métier",
+        "Sauvegardes locales et paramètres",
+      ],
+      git: "https://github.com/Wagle-Studio/merise_like",
       url: "https://merise.wolff-kevin.fr/",
     },
     {
       title: "File Renamer",
       subtitle:
-        "Mini-logiciel Java pour renommer des fichiers selon des stratégies configurables, exploration des patterns de conception en dehors de PHP.",
+        "Logiciel de bureau pour renommer des fichiers en lot selon des stratégies configurables. Un projet d'apprentissage pour explorer Java et les patterns de conception en dehors de PHP.",
+      technicalNote:
+        "Côté technique : architecture MVCI (Model, View, Controller, Interactor) avec JavaFX, patterns Strategy et Factory pour les modes de renommage, injecteur de dépendances maison, et interface mise à jour par propriétés observables et bindings.",
       tags: ["Logiciel de bureau", "Réalisé sans IA"],
-      technos: ["Java", "JavaFX"],
+      technos: ["Java", "JavaFX", "Maven"],
+      features: [
+        "Renommage par date de prise de vue (métadonnées EXIF)",
+        "Formats snake_case, kebab-case, camelCase et PascalCase",
+        "Nom personnalisé ou aléatoire",
+        "Statut de chaque fichier : traitable, ignoré, renommé",
+      ],
       git: "https://github.com/Wagle-Studio/file_renamer",
       url: undefined,
     },

@@ -37,15 +37,20 @@ export const Projects = () => {
                 onFocus={() => setPicked(index)}
                 onClick={() => setPicked(index)}
               >
-                <span className="projects__item__title">{project.title}</span>
-                <span className="projects__item__tags">
+                <span className="projects__item__head">
+                  <span className="projects__item__title">{project.title}</span>
+                  {project.status && (
+                    <span className="projects__item__status">
+                      {project.status}
+                    </span>
+                  )}
+                </span>
+                <span
+                  className="projects__item__tags"
+                  title={project.tags.join(" · ")}
+                >
                   {project.tags.join(" · ")}
                 </span>
-                {project.status && (
-                  <span className="projects__item__status">
-                    {project.status}
-                  </span>
-                )}
               </button>
             </li>
           ))}

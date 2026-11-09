@@ -96,15 +96,26 @@
       color: var(--foreground);
     }
 
+    // Titre et pastille de statut sur la même ligne
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px var(--space-1);
+    }
+
+    // Tags sur une ligne, coupés si trop longs (la carte de détail les montre tous)
     &__tags {
+      overflow: hidden;
       color: var(--muted-foreground);
       font-family: var(--font-secondary);
       font-size: 0.72rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &__status {
       width: max-content;
-      margin-top: 2px;
       padding: 1px 8px;
       border-radius: var(--border-radius-medium);
       background-color: var(--secondary-foreground);
