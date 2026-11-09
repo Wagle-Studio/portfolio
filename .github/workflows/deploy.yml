@@ -82,10 +82,15 @@ jobs:
           IMAGE_TAG=${{ needs.build_and_push.outputs.image_tag }}
           CONTAINER_PREFIX=${{ secrets.REMOTE_CONTAINER_PREFIX }}
           DIST_PORT=${{ secrets.REMOTE_DIST_PORT }}
+          GHCR_OWNER=${{ secrets.GHCR_OWNER }}
+          GHCR_TOKEN=${{ secrets.GITHUB_TOKEN }}
 
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
+            set -e
             cd "$APP_DIR"
             sed -i "s#^GHCR_NAMESPACE=.*#GHCR_NAMESPACE=${GHCR_NAMESPACE}:${IMAGE_TAG}#" .env
             sed -i "s#^REMOTE_DIST_PORT=.*#REMOTE_DIST_PORT=${DIST_PORT}#" .env
+            # Connexion propre à ce déploiement : ne pas dépendre d'un login GHCR resté sur le serveur
+            echo "${GHCR_TOKEN}" | docker login ghcr.io -u ${GHCR_OWNER} --password-stdin
             docker compose -p ${CONTAINER_PREFIX} up -d --pull always
           EOF
