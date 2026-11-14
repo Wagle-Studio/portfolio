@@ -1,6 +1,5 @@
 import { MapPinIcon, WorkIcon } from "@/ui/components/icons";
 
-// Début de carrière de développeur (premier contrat chez Ecedi, février 2021)
 const CAREER_START = new Date(2021, 1, 1);
 const YEAR_MS = 365.25 * 24 * 60 * 60 * 1000;
 const yearsOfExperience = Math.floor(
@@ -9,21 +8,24 @@ const yearsOfExperience = Math.floor(
 
 export default {
   profile: {
-    role: "Développeur web full stack · PHP · Symfony · React",
+    role: "Développeur web full stack · PHP · Symfony · TS · React",
     paragraphs: [
       {
-        text: `Développeur web depuis ${CAREER_START.getFullYear()}, entre agence, freelance et formateur auprès de plus de 70 développeurs, je conçois aujourd’hui des applications web full stack.`,
+        text: `Développeur web depuis ${CAREER_START.getFullYear()}, entre agence, freelance et formateur, j’ai pour objectif de simplifier la vie des entreprises à l’aide de solutions innovantes adaptées à leurs besoins.`,
         strongParts: [
-          `Développeur web depuis ${CAREER_START.getFullYear()}`,
-          "plus de 70 développeurs",
+          `Développeur web depuis ${CAREER_START.getFullYear()}, entre agence, freelance et formateur, j’ai pour objectif de simplifier la vie des entreprises à l’aide de solutions innovantes adaptées à leurs besoins.`,
         ],
       },
       {
-        text: "J’interviens de bout en bout sur des projets web : création de solutions métiers (CRM, ERP, SaaS) avec une approche DDD, développement d’API REST, interfaces React et TypeScript, intégration de services tiers, maintenance et évolution d’applications existantes.",
-        strongParts: ["CRM, ERP, SaaS", "API REST", "React et TypeScript"],
+        text: "J’interviens de bout en bout sur des projets web : création de solutions métiers (back office, CRM, ERP, SaaS), intégration de services tiers, maintenance et évolution d’applications existantes.",
+        strongParts: [
+          "J’interviens de bout en bout sur des projets web",
+          "back office, CRM, ERP, SaaS",
+          "services tiers",
+          "maintenance et évolution",
+        ],
       },
     ],
-    // `status` affiche une pastille animée à la place d'une icône
     tags: [
       {
         label: "En poste",

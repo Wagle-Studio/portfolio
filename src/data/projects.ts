@@ -1,6 +1,32 @@
 export default {
   items: [
     {
+      title: "Assistant IA personnel",
+      subtitle:
+        "Un tableau de bord auto-hébergé qui centralise l'organisation du quotidien, et un agent IA qui le pilote en conversation depuis Telegram, en lisant et en mettant à jour les données à ma place.",
+      technicalNote:
+        "Côté technique : API Express typée validée avec Zod, PostgreSQL via Drizzle avec rôles séparés (migrations et application), serveur MCP exposant les modules à un agent Claude Code isolé dans son conteneur, et suite de tests unitaires et d'intégration sur une base éphémère.",
+      tags: ["Agent IA & MCP", "Accompagné par l'IA"],
+      technos: [
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "React 19",
+        "PostgreSQL",
+        "Drizzle",
+        "Zod",
+        "Docker",
+        "MCP",
+      ],
+      features: [
+        "Architecture modulaire : chaque fonctionnalité s'active ou se retire",
+        "Agent IA conversationnel qui consulte et met à jour les données",
+        "Base de connaissances versionnée, enrichie par l'agent",
+        "Accès sécurisé et données hébergées sur mon propre serveur",
+      ],
+      url: undefined,
+    },
+    {
       title: "Evidence Vault",
       subtitle:
         "Documentez votre cyberharcèlement sans vous y exposer. Surveillance automatique des commentaires Instagram, analyse IA de toxicité, et archivage certifié des preuves.",

@@ -1,18 +1,50 @@
 // Dates au format "AAAA-MM". Un poste sans `end` est en cours.
+// Des entrées consécutives de même `row` (à défaut, de même nom) partagent une
+// ligne de la frise, nommée par `row`. `kind: "formation"` change leur style.
 export default {
   title: "Parcours",
   experiences: [
     {
-      name: "Ecedi",
-      meta: "Stage, CDD puis alternance · agence web, Grenoble",
-      start: "2020-11",
+      name: "Développeur web et web mobile",
+      row: "Formation",
+      kind: "formation",
+      meta: "Titre professionnel · bac +2",
+      start: "2020-04",
+      end: "2021-05",
+      text: "Développement d'interfaces web et d'applications côté serveur : intégration responsive, JavaScript, PHP, bases de données relationnelles, en parallèle du stage puis du CDD chez Ecedi.",
+      shortText: "Front-end et back-end, en parallèle du stage puis du CDD.",
+      tools: [],
+    },
+    {
+      name: "Concepteur développeur d'applications",
+      row: "Formation",
+      kind: "formation",
+      meta: "Titre professionnel · bac +3, en alternance",
+      start: "2021-06",
       end: "2022-05",
-      text: "Agence spécialisée dans les sites institutionnels (Fondation Abbé Pierre, Téléthon, ministère de la Transition écologique) : développement backend Drupal, intégration de modules, mise en place en autonomie d'un CMS headless Strapi.",
-      shortText:
-        "Sites institutionnels en agence : backend Drupal, CMS headless Strapi.",
+      text: "Conception et développement d'applications sécurisées en couches : modélisation, architecture, tests et déploiement, en alternance chez Ecedi.",
+      shortText: "Conception d'applications en couches, en alternance chez Ecedi.",
+      tools: [],
+    },
+    {
+      name: "Ecedi",
+      meta: "Stage puis CDD · agence web, Grenoble",
+      start: "2020-07",
+      end: "2021-05",
+      text: "Agence spécialisée dans les sites institutionnels (Fondation Abbé Pierre, Téléthon, ministère de la Transition écologique) : développement backend Drupal et intégration de modules.",
+      shortText: "Sites institutionnels en agence : backend Drupal, modules.",
+      tools: ["PHP", "Drupal 6 à 9", "MySQL", "Docker", "Git"],
+    },
+    {
+      name: "Ecedi",
+      meta: "Alternance · agence web, Grenoble",
+      start: "2021-06",
+      end: "2022-05",
+      text: "Dans la continuité, en alternance : évolution des sites institutionnels sous Drupal et mise en place en autonomie d'un CMS headless Strapi.",
+      shortText: "Alternance : sites Drupal, CMS headless Strapi en autonomie.",
       tools: [
         "PHP",
-        "Drupal 6 à 9",
+        "Drupal",
         "Symfony",
         "Sylius",
         "Strapi",
