@@ -39,14 +39,32 @@ const bars = data.experiences.map((experience, index) => {
   const w = toPercent(experience.end ?? CURRENT_MONTH, true) - x;
   return {
     ...experience,
+    row: "row" in experience ? experience.row : experience.name,
+    isFormation: "kind" in experience && experience.kind === "formation",
     x,
     w,
     index,
     dates: formatYears(experience.start, experience.end),
-    // Libellé à gauche de la barre quand elle finit trop près du bord droit
-    labelBefore: x + w > 72,
   };
 });
+
+type Bar = (typeof bars)[number];
+
+// Une ligne de la frise : les entrées consécutives de même `row` y sont regroupées
+const rows = bars.reduce<Bar[][]>((acc, bar) => {
+  const last = acc[acc.length - 1];
+  if (last && last[0].row === bar.row) last.push(bar);
+  else acc.push([bar]);
+  return acc;
+}, []);
+
+const rowSpan = (row: Bar[]) => {
+  const x = row[0].x;
+  const end = row[row.length - 1];
+  const w = end.x + end.w - x;
+  // Libellé à gauche de la ligne quand elle finit trop près du bord droit
+  return { x, w, labelBefore: x + w > 72 };
+};
 
 type FriseStyle = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -76,39 +94,64 @@ export const Parcours = () => {
 
           <ol
             className="parcours__bars"
-            aria-label="Mes postes, du plus ancien au plus récent"
+            aria-label="Mes postes et formations, du plus ancien au plus récent"
           >
-            {bars.map((bar) => (
-              <li
-                key={bar.name}
-                className={[
-                  bar.index === picked ? "is-picked" : "",
-                  bar.labelBefore ? "is-before" : "",
-                ].join(" ")}
-                style={{ "--x": `${bar.x}%`, "--w": `${bar.w}%` } as FriseStyle}
-              >
-                <button
-                  type="button"
-                  aria-pressed={bar.index === picked}
-                  onMouseEnter={() => setPicked(bar.index)}
-                  onFocus={() => setPicked(bar.index)}
-                  onClick={() => setPicked(bar.index)}
+            {rows.map((row) => {
+              const span = rowSpan(row);
+              const lastIndex = row[row.length - 1].index;
+              return (
+                <li
+                  key={`${row[0].name}-${row[0].start}`}
+                  className={[
+                    row.some((bar) => bar.index === picked) ? "is-picked" : "",
+                    span.labelBefore ? "is-before" : "",
+                    row[0].isFormation ? "is-formation" : "",
+                  ].join(" ")}
+                  style={
+                    { "--x": `${span.x}%`, "--w": `${span.w}%` } as FriseStyle
+                  }
                 >
-                  <i className="parcours__bar" aria-hidden="true" />
-                  <span className="parcours__bar-name">
-                    {bar.name}{" "}
-                    <span className="parcours__sr-only">{bar.dates}</span>
+                  {row.map((bar, position) => (
+                    <button
+                      key={bar.start}
+                      type="button"
+                      className={[
+                        bar.index === picked ? "is-picked" : "",
+                        position > 0 ? "is-joined" : "",
+                      ].join(" ")}
+                      style={
+                        { "--x": `${bar.x}%`, "--w": `${bar.w}%` } as FriseStyle
+                      }
+                      aria-pressed={bar.index === picked}
+                      onMouseEnter={() => setPicked(bar.index)}
+                      onFocus={() => setPicked(bar.index)}
+                      onClick={() => setPicked(bar.index)}
+                    >
+                      <i className="parcours__bar" aria-hidden="true" />
+                      <span className="parcours__sr-only">
+                        {bar.name}
+                        {row.length > 1 && ` · ${bar.meta}`} {bar.dates}
+                      </span>
+                    </button>
+                  ))}
+                  <span
+                    className="parcours__bar-name"
+                    aria-hidden="true"
+                    onMouseEnter={() => setPicked(lastIndex)}
+                    onClick={() => setPicked(lastIndex)}
+                  >
+                    {row[0].row}
                   </span>
-                </button>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ol>
         </div>
 
         <div className="parcours__detail" aria-live="polite">
           {bars.map((bar) => (
             <div
-              key={bar.name}
+              key={`${bar.name}-${bar.start}`}
               className={`parcours__detail__item${bar.index === picked ? " is-shown" : ""}`}
             >
               <p className="parcours__detail__line">

@@ -68,10 +68,13 @@
       height: 34px;
     }
 
+    // Un bouton par poste, à l'emplacement de sa barre sur la ligne
     button {
       position: absolute;
-      inset: 0;
-      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: var(--x);
+      width: var(--w);
       padding: 0;
       border: none;
       border-radius: 6px;
@@ -89,8 +92,8 @@
   &__bar {
     position: absolute;
     top: 50%;
-    left: var(--x);
-    width: var(--w);
+    left: 0;
+    width: 100%;
     height: 10px;
     margin-top: -5px;
     border-radius: 5px;
@@ -99,12 +102,19 @@
     transition: background-color 300ms ease;
   }
 
+  // Poste dans la continuité du précédent : un court espace les sépare
+  &__bars button.is-joined &__bar {
+    left: 3px;
+    width: calc(100% - 3px);
+  }
+
   &__bar-name {
     position: absolute;
     top: 50%;
     left: calc(10px + var(--x) + var(--w));
     transform: translateY(-50%);
     white-space: nowrap;
+    cursor: pointer;
     font-size: 0.85rem;
     color: var(--muted-foreground);
     transition: color 300ms ease;
@@ -115,8 +125,24 @@
     right: calc(100% + 10px - var(--x));
   }
 
-  &__bars li.is-picked &__bar {
+  &__bars button.is-picked &__bar {
     background-color: var(--foreground);
+  }
+
+  // Formation : barre contournée, remplie une fois choisie, libellé en italique
+  &__bars li.is-formation &__bar {
+    box-sizing: border-box;
+    border: 1.5px solid var(--parcours-axis);
+    background-color: transparent;
+  }
+
+  &__bars li.is-formation button.is-picked &__bar {
+    border-color: var(--foreground);
+    background-color: var(--foreground);
+  }
+
+  &__bars li.is-formation &__bar-name {
+    font-style: italic;
   }
 
   &__bars li.is-picked &__bar-name {

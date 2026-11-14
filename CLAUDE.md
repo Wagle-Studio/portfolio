@@ -23,14 +23,14 @@ Single-page portfolio app built with React 19, TypeScript, and SCSS (via sass-em
 
 **Layout structure in `App.tsx`:**
 ```
-Header → main.deck[Slide(About), Slide(Skills), Slide(Parcours), Slide(Recommendations), Slide(Projects + DocsMention)] → Footer (scroll mode only) | DeckNav (deck mode)
+Header → main.deck[Slide(About), Slide(Skills), Slide(Parcours), Slide(Recommendations), Slide(Projects)] → Footer (scroll mode only) | DeckNav (deck mode)
 ```
 
 **Slide deck (`src/ui/deck/`):** on large windows (`DECK_MEDIA_QUERY`, at least 992 × 700 px) the page does not scroll: each `<Slide>` is a full-screen layer shown one at a time with a fade. `DeckProvider` handles the active slide, wheel (one gesture = one slide, inner scroll first), keyboard (arrows, PageUp/Down, Space, Home/End), swipe, `#anchor` links and the URL hash. `DeckNav` is the bottom bar (position, dots, "Suivant"). Below that size, slides are plain blocks and the page scrolls normally. Slide ids and labels live in `src/data/slides.ts`; every slide content must fit in one screen (tighter spacing under 820 px height in `deck.scss`).
 
 **Directory conventions:**
 - `src/data/` static content data files (plain TS exports). To update site content, edit these files.
-- `src/ui/blocs/` page sections (About, Skills, Parcours, Recommendations, Projects, DocsMention). Each bloc has three files: `BlocName.tsx`, `bloc-name.scss`, `useBlocNameAnim.tsx`.
+- `src/ui/blocs/` page sections (About, Skills, Parcours, Recommendations, Projects). Each bloc has three files: `BlocName.tsx`, `bloc-name.scss`, `useBlocNameAnim.tsx`.
 - `src/ui/components/` shared UI components (Header, Footer, ButtonLink, Tag, SectionTitle, icons).
 
 **Animation pattern:** Every bloc uses a dedicated `use<BlocName>Anim` hook that defines a module-level `RevealBuilder` (adds tweens to a paused GSAP timeline) and passes it to `useSectionReveal` (`src/ui/anim/useSectionReveal.ts`). That hook replays the timeline each time the bloc's slide becomes active in deck mode, or plays it once via `ScrollTrigger` in scroll mode, and skips everything under `prefers-reduced-motion`. `revealSectionTitle` animates the shared section title.

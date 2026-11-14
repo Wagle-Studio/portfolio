@@ -6,7 +6,6 @@ import { ExternUrlIcon, GitHubIcon, StarIcon } from "@/ui/components/icons";
 import { Tag } from "@/ui/components/tag/Tag";
 import { useProjectsAnim } from "./useProjectsAnim";
 import { SectionTitle } from "@/ui/components/section-title/SectionTitle";
-import { DocsMention } from "@/ui/blocs/docs-mention/DocsMention";
 
 const projects = data.items.map((item) => ({
   ...item,
@@ -137,7 +136,6 @@ export const Projects = () => {
           ))}
         </div>
 
-        <DocsMention className="projects__docs" />
       </div>
     </section>
   );

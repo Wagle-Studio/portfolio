@@ -11,8 +11,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
       "list"
-      "details"
-      "docs";
+      "details";
     gap: var(--space-3);
   }
 
@@ -22,24 +21,6 @@
 
   &__details {
     grid-area: details;
-  }
-
-  // Mention de la documentation, sous la liste des projets
-  .docs-mention.projects__docs {
-    grid-area: docs;
-    padding: 0;
-
-    .docs-mention__inner {
-      align-items: flex-start;
-      gap: var(--space-2);
-      max-width: none;
-      margin: 0;
-      padding: var(--space-2);
-    }
-
-    .docs-mention__text {
-      line-height: 1.55;
-    }
   }
 
   // Liste des projets
@@ -281,10 +262,7 @@
   .projects {
     &__layout {
       grid-template-columns: minmax(260px, 320px) 1fr;
-      grid-template-rows: auto 1fr;
-      grid-template-areas:
-        "list details"
-        "docs details";
+      grid-template-areas: "list details";
       column-gap: var(--space-5);
       row-gap: var(--space-3);
       align-items: start;
